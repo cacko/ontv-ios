@@ -1,0 +1,1153 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		160F6958277B7F8B00EBEE26 /* ontv_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6957277B7F8B00EBEE26 /* ontv_iosApp.swift */; };
+		160F69E9277B7FD500EBEE26 /* PlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6966277B7FD400EBEE26 /* PlayerInterface.swift */; };
+		160F69EA277B7FD500EBEE26 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6967277B7FD400EBEE26 /* Player.swift */; };
+		160F69EB277B7FD500EBEE26 /* AbstractPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6968277B7FD400EBEE26 /* AbstractPlayer.swift */; };
+		160F69EC277B7FD500EBEE26 /* FFMpeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F696A277B7FD400EBEE26 /* FFMpeg.swift */; };
+		160F69ED277B7FD500EBEE26 /* FFMpegPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F696C277B7FD400EBEE26 /* FFMpegPlayerView.swift */; };
+		160F69EE277B7FD500EBEE26 /* FFMpegStateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F696D277B7FD400EBEE26 /* FFMpegStateDelegate.swift */; };
+		160F69EF277B7FD500EBEE26 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F696E277B7FD400EBEE26 /* Apple.swift */; };
+		160F69F0277B7FD500EBEE26 /* AVMetadataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6970277B7FD400EBEE26 /* AVMetadataLoader.swift */; };
+		160F69F1277B7FD500EBEE26 /* AVStateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6971277B7FD400EBEE26 /* AVStateDelegate.swift */; };
+		160F69F2277B7FD500EBEE26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6972277B7FD400EBEE26 /* AppDelegate.swift */; };
+		160F69F3277B7FD500EBEE26 /* ScheduleEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6975277B7FD400EBEE26 /* ScheduleEvents.swift */; };
+		160F69F4277B7FD500EBEE26 /* ScheduleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6976277B7FD400EBEE26 /* ScheduleStorage.swift */; };
+		160F69F5277B7FD500EBEE26 /* LivescoreScrollGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6978277B7FD400EBEE26 /* LivescoreScrollGenerator.swift */; };
+		160F69F6277B7FD500EBEE26 /* LivescoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6979277B7FD400EBEE26 /* LivescoreStorage.swift */; };
+		160F69F7277B7FD500EBEE26 /* LivescoreEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F697A277B7FD400EBEE26 /* LivescoreEvents.swift */; };
+		160F69F8277B7FD500EBEE26 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F697B277B7FD400EBEE26 /* Generator.swift */; };
+		160F69F9277B7FD500EBEE26 /* ActivityStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F697D277B7FD400EBEE26 /* ActivityStorage.swift */; };
+		160F69FA277B7FD500EBEE26 /* ActivityEPGList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F697E277B7FD400EBEE26 /* ActivityEPGList.swift */; };
+		160F69FB277B7FD500EBEE26 /* StreamSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6980277B7FD400EBEE26 /* StreamSearch.swift */; };
+		160F69FC277B7FD500EBEE26 /* Streams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6981277B7FD400EBEE26 /* Streams.swift */; };
+		160F69FD277B7FD500EBEE26 /* StreamCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6982277B7FD400EBEE26 /* StreamCategory.swift */; };
+		160F69FE277B7FD500EBEE26 /* QuickStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6983277B7FD400EBEE26 /* QuickStream.swift */; };
+		160F69FF277B7FD500EBEE26 /* RecentStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6984277B7FD400EBEE26 /* RecentStream.swift */; };
+		160F6A00277B7FD500EBEE26 /* LeagueList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6986277B7FD400EBEE26 /* LeagueList.swift */; };
+		160F6A01277B7FD500EBEE26 /* LeagueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6987277B7FD400EBEE26 /* LeagueStorage.swift */; };
+		160F6A02277B7FD500EBEE26 /* EPGGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6989277B7FD400EBEE26 /* EPGGuide.swift */; };
+		160F6A03277B7FD500EBEE26 /* EPGLiveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F698A277B7FD400EBEE26 /* EPGLiveList.swift */; };
+		160F6A04277B7FD500EBEE26 /* EPGStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F698B277B7FD400EBEE26 /* EPGStorage.swift */; };
+		160F6A05277B7FD500EBEE26 /* EPGLiveSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F698C277B7FD400EBEE26 /* EPGLiveSearch.swift */; };
+		160F6A06277B7FD500EBEE26 /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F698D277B7FD400EBEE26 /* Providers.swift */; };
+		160F6A07277B7FD500EBEE26 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6990277B7FD400EBEE26 /* Styles.swift */; };
+		160F6A08277B7FD500EBEE26 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6991277B7FD400EBEE26 /* SearchView.swift */; };
+		160F6A09277B7FD500EBEE26 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6992277B7FD400EBEE26 /* VideoView.swift */; };
+		160F6A0A277B7FD500EBEE26 /* StreamTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6994277B7FD400EBEE26 /* StreamTitle.swift */; };
+		160F6A0B277B7FD500EBEE26 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6995277B7FD400EBEE26 /* Icon.swift */; };
+		160F6A0C277B7FD500EBEE26 /* ContentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6996277B7FD400EBEE26 /* ContentHeader.swift */; };
+		160F6A0D277B7FD500EBEE26 /* ScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6997277B7FD400EBEE26 /* ScrollingView.swift */; };
+		160F6A0E277B7FD500EBEE26 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6998277B7FD400EBEE26 /* ProgressIndicator.swift */; };
+		160F6A0F277B7FD500EBEE26 /* ControlSFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6999277B7FD400EBEE26 /* ControlSFSymbol.swift */; };
+		160F6A10277B7FD500EBEE26 /* ApiLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F699A277B7FD400EBEE26 /* ApiLoadingView.swift */; };
+		160F6A11277B7FD500EBEE26 /* ListNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F699C277B7FD400EBEE26 /* ListNavigator.swift */; };
+		160F6A12277B7FD500EBEE26 /* ScoreChangeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F699D277B7FD400EBEE26 /* ScoreChangeAction.swift */; };
+		160F6A13277B7FD500EBEE26 /* TickerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F699E277B7FD400EBEE26 /* TickerAction.swift */; };
+		160F6A14277B7FD500EBEE26 /* NavigateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F699F277B7FD400EBEE26 /* NavigateAction.swift */; };
+		160F6A15277B7FD500EBEE26 /* ListActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69A0277B7FD400EBEE26 /* ListActions.swift */; };
+		160F6A16277B7FD500EBEE26 /* HideAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69A1277B7FD400EBEE26 /* HideAction.swift */; };
+		160F6A17277B7FD500EBEE26 /* LiveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69A2277B7FD400EBEE26 /* LiveBackground.swift */; };
+		160F6A18277B7FD500EBEE26 /* ThemeColorFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69A5277B7FD400EBEE26 /* ThemeColorFont.swift */; };
+		160F6A19277B7FD500EBEE26 /* ThemeColorBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69A6277B7FD400EBEE26 /* ThemeColorBackground.swift */; };
+		160F6A1A277B7FD500EBEE26 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69A7277B7FD400EBEE26 /* ThemeColor.swift */; };
+		160F6A1B277B7FD500EBEE26 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69A9277B7FD400EBEE26 /* ThemeFont.swift */; };
+		160F6A1D277B7FD500EBEE26 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69AC277B7FD400EBEE26 /* Theme.swift */; };
+		160F6A1E277B7FD500EBEE26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69AD277B7FD400EBEE26 /* ContentView.swift */; };
+		160F6A1F277B7FD500EBEE26 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69AE277B7FD400EBEE26 /* LoadingView.swift */; };
+		160F6A20277B7FD500EBEE26 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69B0277B7FD400EBEE26 /* CategoryView.swift */; };
+		160F6A21277B7FD500EBEE26 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69B1277B7FD400EBEE26 /* TitleView.swift */; };
+		160F6A22277B7FD500EBEE26 /* EPGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69B2277B7FD400EBEE26 /* EPGView.swift */; };
+		160F6A23277B7FD500EBEE26 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69B3277B7FD400EBEE26 /* BookmarkView.swift */; };
+		160F6A24277B7FD500EBEE26 /* EPGContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69B4277B7FD400EBEE26 /* EPGContentView.swift */; };
+		160F6A25277B7FD500EBEE26 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69B5277B7FD400EBEE26 /* ScheduleView.swift */; };
+		160F6A26277B7FD500EBEE26 /* LivescoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69B6277B7FD400EBEE26 /* LivescoreView.swift */; };
+		160F6A27277B7FD500EBEE26 /* LivescoreTickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69B7277B7FD400EBEE26 /* LivescoreTickerView.swift */; };
+		160F6A28277B7FD500EBEE26 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69B8277B7FD400EBEE26 /* ControlsView.swift */; };
+		160F6A29277B7FD500EBEE26 /* ToggleViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69B9277B7FD400EBEE26 /* ToggleViews.swift */; };
+		160F6A2A277B7FD500EBEE26 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69BA277B7FD400EBEE26 /* ErrorView.swift */; };
+		160F6A2B277B7FD500EBEE26 /* v1League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69BD277B7FD400EBEE26 /* v1League.swift */; };
+		160F6A2C277B7FD500EBEE26 /* v1Livescore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69BE277B7FD400EBEE26 /* v1Livescore.swift */; };
+		160F6A2D277B7FD500EBEE26 /* v1Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69BF277B7FD400EBEE26 /* v1Schedule.swift */; };
+		160F6A2E277B7FD500EBEE26 /* v1Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69C0277B7FD400EBEE26 /* v1Category.swift */; };
+		160F6A2F277B7FD500EBEE26 /* v1Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69C1277B7FD400EBEE26 /* v1Stream.swift */; };
+		160F6A30277B7FD500EBEE26 /* v1EPG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69C2277B7FD400EBEE26 /* v1EPG.swift */; };
+		160F6A31277B7FD500EBEE26 /* v1Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69C3277B7FD400EBEE26 /* v1Activity.swift */; };
+		160F6A32277B7FD500EBEE26 /* AbstractEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69C4277B7FD400EBEE26 /* AbstractEntity.swift */; };
+		160F6A33277B7FD500EBEE26 /* Validity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69C6277B7FD400EBEE26 /* Validity.swift */; };
+		160F6A34277B7FD500EBEE26 /* Importable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69C7277B7FD400EBEE26 /* Importable.swift */; };
+		160F6A35277B7FD500EBEE26 /* LazyStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69C8277B7FD400EBEE26 /* LazyStream.swift */; };
+		160F6A36277B7FD500EBEE26 /* Thumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69CA277B7FD400EBEE26 /* Thumb.swift */; };
+		160F6A37277B7FD500EBEE26 /* ActivityEPG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69CB277B7FD400EBEE26 /* ActivityEPG.swift */; };
+		160F6A38277B7FD500EBEE26 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69CC277B7FD400EBEE26 /* Teams.swift */; };
+		160F6A39277B7FD500EBEE26 /* StreamActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69CD277B7FD400EBEE26 /* StreamActivity.swift */; };
+		160F6A3A277B7FD500EBEE26 /* LivescoreTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69CE277B7FD400EBEE26 /* LivescoreTicker.swift */; };
+		160F6A3B277B7FD500EBEE26 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69CF277B7FD400EBEE26 /* Schema.swift */; };
+		160F6A3C277B7FD500EBEE26 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69D1277B7FD400EBEE26 /* Notification.swift */; };
+		160F6A3D277B7FD500EBEE26 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69D3277B7FD400EBEE26 /* ApiResponse.swift */; };
+		160F6A3E277B7FD500EBEE26 /* ApiUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69D4277B7FD400EBEE26 /* ApiUrl.swift */; };
+		160F6A3F277B7FD500EBEE26 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69D5277B7FD400EBEE26 /* Api.swift */; };
+		160F6A40277B7FD500EBEE26 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69D7277B7FD500EBEE26 /* Date.swift */; };
+		160F6A41277B7FD500EBEE26 /* Fraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69D8277B7FD500EBEE26 /* Fraction.swift */; };
+		160F6A42277B7FD500EBEE26 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69D9277B7FD500EBEE26 /* Size.swift */; };
+		160F6A43277B7FD500EBEE26 /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69DA277B7FD500EBEE26 /* Int64.swift */; };
+		160F6A44277B7FD500EBEE26 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69DB277B7FD500EBEE26 /* Int.swift */; };
+		160F6A45277B7FD500EBEE26 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69DC277B7FD500EBEE26 /* String.swift */; };
+		160F6A46277B7FD500EBEE26 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69DD277B7FD500EBEE26 /* Double.swift */; };
+		160F6A47277B7FD500EBEE26 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69DE277B7FD500EBEE26 /* Bool.swift */; };
+		160F6A48277B7FD500EBEE26 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F69DF277B7FD500EBEE26 /* Bundle.swift */; };
+		160F6A49277B7FD500EBEE26 /* MajorMonoDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E1277B7FD500EBEE26 /* MajorMonoDisplay-Regular.ttf */; };
+		160F6A4A277B7FD500EBEE26 /* Teko-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E2277B7FD500EBEE26 /* Teko-Bold.ttf */; };
+		160F6A4B277B7FD500EBEE26 /* Teko-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E3277B7FD500EBEE26 /* Teko-Medium.ttf */; };
+		160F6A4C277B7FD500EBEE26 /* Teko-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E4277B7FD500EBEE26 /* Teko-SemiBold.ttf */; };
+		160F6A4D277B7FD500EBEE26 /* AtamiStencilBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E5277B7FD500EBEE26 /* AtamiStencilBold.otf */; };
+		160F6A4E277B7FD500EBEE26 /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E6277B7FD500EBEE26 /* Teko-Regular.ttf */; };
+		160F6A4F277B7FD500EBEE26 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E7277B7FD500EBEE26 /* Teko-Light.ttf */; };
+		160F6A50277B7FD500EBEE26 /* AtamiStencil.otf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E8277B7FD500EBEE26 /* AtamiStencil.otf */; };
+		161E5E85277EC037007504BE /* Splash2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161E5E84277EC037007504BE /* Splash2.storyboard */; };
+		166BD901277B844A00A597BE /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD900277B844A00A597BE /* Introspect */; };
+		166BD904277B846000A597BE /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD903277B846000A597BE /* Defaults */; };
+		166BD907277B847900A597BE /* CoreStore in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD906277B847900A597BE /* CoreStore */; };
+		166BD90A277B849100A597BE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD909277B849100A597BE /* Kingfisher */; };
+		166BD90D277B84A600A597BE /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD90C277B84A600A597BE /* SwiftDate */; };
+		166BD911277C23DD00A597BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166BD910277C23DD00A597BE /* Assets.xcassets */; };
+		166BD916277C49EC00A597BE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 166BD915277C49EC00A597BE /* Settings.bundle */; };
+		16BBBDA827823DFE00292CCF /* UIpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBBDA727823DFE00292CCF /* UIpdatable.swift */; };
+		EA61EEFC4FA834BE2F812F45 /* Pods_ontv_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06519CAA938E92E538F37EB7 /* Pods_ontv_ios.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06519CAA938E92E538F37EB7 /* Pods_ontv_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ontv_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		160F6954277B7F8B00EBEE26 /* ontv-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ontv-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		160F6957277B7F8B00EBEE26 /* ontv_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ontv_iosApp.swift; sourceTree = "<group>"; };
+		160F6966277B7FD400EBEE26 /* PlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInterface.swift; sourceTree = "<group>"; };
+		160F6967277B7FD400EBEE26 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		160F6968277B7FD400EBEE26 /* AbstractPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractPlayer.swift; sourceTree = "<group>"; };
+		160F696A277B7FD400EBEE26 /* FFMpeg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFMpeg.swift; sourceTree = "<group>"; };
+		160F696C277B7FD400EBEE26 /* FFMpegPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFMpegPlayerView.swift; sourceTree = "<group>"; };
+		160F696D277B7FD400EBEE26 /* FFMpegStateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFMpegStateDelegate.swift; sourceTree = "<group>"; };
+		160F696E277B7FD400EBEE26 /* Apple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
+		160F6970277B7FD400EBEE26 /* AVMetadataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVMetadataLoader.swift; sourceTree = "<group>"; };
+		160F6971277B7FD400EBEE26 /* AVStateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVStateDelegate.swift; sourceTree = "<group>"; };
+		160F6972277B7FD400EBEE26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		160F6975277B7FD400EBEE26 /* ScheduleEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleEvents.swift; sourceTree = "<group>"; };
+		160F6976277B7FD400EBEE26 /* ScheduleStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleStorage.swift; sourceTree = "<group>"; };
+		160F6978277B7FD400EBEE26 /* LivescoreScrollGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivescoreScrollGenerator.swift; sourceTree = "<group>"; };
+		160F6979277B7FD400EBEE26 /* LivescoreStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivescoreStorage.swift; sourceTree = "<group>"; };
+		160F697A277B7FD400EBEE26 /* LivescoreEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivescoreEvents.swift; sourceTree = "<group>"; };
+		160F697B277B7FD400EBEE26 /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		160F697D277B7FD400EBEE26 /* ActivityStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityStorage.swift; sourceTree = "<group>"; };
+		160F697E277B7FD400EBEE26 /* ActivityEPGList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityEPGList.swift; sourceTree = "<group>"; };
+		160F6980277B7FD400EBEE26 /* StreamSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSearch.swift; sourceTree = "<group>"; };
+		160F6981277B7FD400EBEE26 /* Streams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streams.swift; sourceTree = "<group>"; };
+		160F6982277B7FD400EBEE26 /* StreamCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamCategory.swift; sourceTree = "<group>"; };
+		160F6983277B7FD400EBEE26 /* QuickStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickStream.swift; sourceTree = "<group>"; };
+		160F6984277B7FD400EBEE26 /* RecentStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentStream.swift; sourceTree = "<group>"; };
+		160F6986277B7FD400EBEE26 /* LeagueList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeagueList.swift; sourceTree = "<group>"; };
+		160F6987277B7FD400EBEE26 /* LeagueStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeagueStorage.swift; sourceTree = "<group>"; };
+		160F6989277B7FD400EBEE26 /* EPGGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPGGuide.swift; sourceTree = "<group>"; };
+		160F698A277B7FD400EBEE26 /* EPGLiveList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPGLiveList.swift; sourceTree = "<group>"; };
+		160F698B277B7FD400EBEE26 /* EPGStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPGStorage.swift; sourceTree = "<group>"; };
+		160F698C277B7FD400EBEE26 /* EPGLiveSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPGLiveSearch.swift; sourceTree = "<group>"; };
+		160F698D277B7FD400EBEE26 /* Providers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
+		160F6990277B7FD400EBEE26 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		160F6991277B7FD400EBEE26 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		160F6992277B7FD400EBEE26 /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		160F6994277B7FD400EBEE26 /* StreamTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamTitle.swift; sourceTree = "<group>"; };
+		160F6995277B7FD400EBEE26 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		160F6996277B7FD400EBEE26 /* ContentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentHeader.swift; sourceTree = "<group>"; };
+		160F6997277B7FD400EBEE26 /* ScrollingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingView.swift; sourceTree = "<group>"; };
+		160F6998277B7FD400EBEE26 /* ProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
+		160F6999277B7FD400EBEE26 /* ControlSFSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlSFSymbol.swift; sourceTree = "<group>"; };
+		160F699A277B7FD400EBEE26 /* ApiLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiLoadingView.swift; sourceTree = "<group>"; };
+		160F699C277B7FD400EBEE26 /* ListNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNavigator.swift; sourceTree = "<group>"; };
+		160F699D277B7FD400EBEE26 /* ScoreChangeAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreChangeAction.swift; sourceTree = "<group>"; };
+		160F699E277B7FD400EBEE26 /* TickerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerAction.swift; sourceTree = "<group>"; };
+		160F699F277B7FD400EBEE26 /* NavigateAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigateAction.swift; sourceTree = "<group>"; };
+		160F69A0277B7FD400EBEE26 /* ListActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListActions.swift; sourceTree = "<group>"; };
+		160F69A1277B7FD400EBEE26 /* HideAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideAction.swift; sourceTree = "<group>"; };
+		160F69A2277B7FD400EBEE26 /* LiveBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBackground.swift; sourceTree = "<group>"; };
+		160F69A5277B7FD400EBEE26 /* ThemeColorFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeColorFont.swift; sourceTree = "<group>"; };
+		160F69A6277B7FD400EBEE26 /* ThemeColorBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeColorBackground.swift; sourceTree = "<group>"; };
+		160F69A7277B7FD400EBEE26 /* ThemeColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		160F69A9277B7FD400EBEE26 /* ThemeFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
+		160F69AC277B7FD400EBEE26 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		160F69AD277B7FD400EBEE26 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		160F69AE277B7FD400EBEE26 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		160F69B0277B7FD400EBEE26 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		160F69B1277B7FD400EBEE26 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		160F69B2277B7FD400EBEE26 /* EPGView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPGView.swift; sourceTree = "<group>"; };
+		160F69B3277B7FD400EBEE26 /* BookmarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
+		160F69B4277B7FD400EBEE26 /* EPGContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPGContentView.swift; sourceTree = "<group>"; };
+		160F69B5277B7FD400EBEE26 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		160F69B6277B7FD400EBEE26 /* LivescoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivescoreView.swift; sourceTree = "<group>"; };
+		160F69B7277B7FD400EBEE26 /* LivescoreTickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivescoreTickerView.swift; sourceTree = "<group>"; };
+		160F69B8277B7FD400EBEE26 /* ControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		160F69B9277B7FD400EBEE26 /* ToggleViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleViews.swift; sourceTree = "<group>"; };
+		160F69BA277B7FD400EBEE26 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		160F69BD277B7FD400EBEE26 /* v1League.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = v1League.swift; sourceTree = "<group>"; };
+		160F69BE277B7FD400EBEE26 /* v1Livescore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = v1Livescore.swift; sourceTree = "<group>"; };
+		160F69BF277B7FD400EBEE26 /* v1Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = v1Schedule.swift; sourceTree = "<group>"; };
+		160F69C0277B7FD400EBEE26 /* v1Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = v1Category.swift; sourceTree = "<group>"; };
+		160F69C1277B7FD400EBEE26 /* v1Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = v1Stream.swift; sourceTree = "<group>"; };
+		160F69C2277B7FD400EBEE26 /* v1EPG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = v1EPG.swift; sourceTree = "<group>"; };
+		160F69C3277B7FD400EBEE26 /* v1Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = v1Activity.swift; sourceTree = "<group>"; };
+		160F69C4277B7FD400EBEE26 /* AbstractEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractEntity.swift; sourceTree = "<group>"; };
+		160F69C6277B7FD400EBEE26 /* Validity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validity.swift; sourceTree = "<group>"; };
+		160F69C7277B7FD400EBEE26 /* Importable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Importable.swift; sourceTree = "<group>"; };
+		160F69C8277B7FD400EBEE26 /* LazyStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyStream.swift; sourceTree = "<group>"; };
+		160F69CA277B7FD400EBEE26 /* Thumb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thumb.swift; sourceTree = "<group>"; };
+		160F69CB277B7FD400EBEE26 /* ActivityEPG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityEPG.swift; sourceTree = "<group>"; };
+		160F69CC277B7FD400EBEE26 /* Teams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
+		160F69CD277B7FD400EBEE26 /* StreamActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamActivity.swift; sourceTree = "<group>"; };
+		160F69CE277B7FD400EBEE26 /* LivescoreTicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivescoreTicker.swift; sourceTree = "<group>"; };
+		160F69CF277B7FD400EBEE26 /* Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
+		160F69D1277B7FD400EBEE26 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		160F69D3277B7FD400EBEE26 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		160F69D4277B7FD400EBEE26 /* ApiUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUrl.swift; sourceTree = "<group>"; };
+		160F69D5277B7FD400EBEE26 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		160F69D7277B7FD500EBEE26 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		160F69D8277B7FD500EBEE26 /* Fraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fraction.swift; sourceTree = "<group>"; };
+		160F69D9277B7FD500EBEE26 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		160F69DA277B7FD500EBEE26 /* Int64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int64.swift; sourceTree = "<group>"; };
+		160F69DB277B7FD500EBEE26 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		160F69DC277B7FD500EBEE26 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		160F69DD277B7FD500EBEE26 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		160F69DE277B7FD500EBEE26 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
+		160F69DF277B7FD500EBEE26 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		160F69E1277B7FD500EBEE26 /* MajorMonoDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MajorMonoDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		160F69E2277B7FD500EBEE26 /* Teko-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Bold.ttf"; sourceTree = "<group>"; };
+		160F69E3277B7FD500EBEE26 /* Teko-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Medium.ttf"; sourceTree = "<group>"; };
+		160F69E4277B7FD500EBEE26 /* Teko-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-SemiBold.ttf"; sourceTree = "<group>"; };
+		160F69E5277B7FD500EBEE26 /* AtamiStencilBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AtamiStencilBold.otf; sourceTree = "<group>"; };
+		160F69E6277B7FD500EBEE26 /* Teko-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Regular.ttf"; sourceTree = "<group>"; };
+		160F69E7277B7FD500EBEE26 /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
+		160F69E8277B7FD500EBEE26 /* AtamiStencil.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AtamiStencil.otf; sourceTree = "<group>"; };
+		160F6A51277B814A00EBEE26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		161E5E84277EC037007504BE /* Splash2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash2.storyboard; sourceTree = "<group>"; };
+		166BD910277C23DD00A597BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		166BD915277C49EC00A597BE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		16BBBDA727823DFE00292CCF /* UIpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIpdatable.swift; sourceTree = "<group>"; };
+		16BBBDAB27827B1F00292CCF /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
+		BBD123D892EF5C8ABF926B8D /* Pods-ontv-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontv-ios.debug.xcconfig"; path = "Target Support Files/Pods-ontv-ios/Pods-ontv-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		EE569CDC83B90E5A196BA865 /* Pods-ontv-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontv-ios.release.xcconfig"; path = "Target Support Files/Pods-ontv-ios/Pods-ontv-ios.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		160F6951277B7F8B00EBEE26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				166BD904277B846000A597BE /* Defaults in Frameworks */,
+				EA61EEFC4FA834BE2F812F45 /* Pods_ontv_ios.framework in Frameworks */,
+				166BD90D277B84A600A597BE /* SwiftDate in Frameworks */,
+				166BD901277B844A00A597BE /* Introspect in Frameworks */,
+				166BD907277B847900A597BE /* CoreStore in Frameworks */,
+				166BD90A277B849100A597BE /* Kingfisher in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		160F694B277B7F8B00EBEE26 = {
+			isa = PBXGroup;
+			children = (
+				166BD915277C49EC00A597BE /* Settings.bundle */,
+				160F6956277B7F8B00EBEE26 /* ontv-ios */,
+				160F6955277B7F8B00EBEE26 /* Products */,
+				6A6DC93A23F6E6BC42DAE7C5 /* Pods */,
+				E0756FC9A729692E3A93F0E4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		160F6955277B7F8B00EBEE26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				160F6954277B7F8B00EBEE26 /* ontv-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		160F6956277B7F8B00EBEE26 /* ontv-ios */ = {
+			isa = PBXGroup;
+			children = (
+				161E5E84277EC037007504BE /* Splash2.storyboard */,
+				166BD910277C23DD00A597BE /* Assets.xcassets */,
+				160F6A51277B814A00EBEE26 /* Info.plist */,
+				160F69D2277B7FD400EBEE26 /* api */,
+				160F69E0277B7FD500EBEE26 /* fonts */,
+				160F69BB277B7FD400EBEE26 /* models */,
+				160F69D0277B7FD400EBEE26 /* notification */,
+				160F6965277B7FD400EBEE26 /* player */,
+				160F6973277B7FD400EBEE26 /* providers */,
+				160F69D6277B7FD500EBEE26 /* utils */,
+				160F698E277B7FD400EBEE26 /* views */,
+				160F6957277B7F8B00EBEE26 /* ontv_iosApp.swift */,
+				160F6972277B7FD400EBEE26 /* AppDelegate.swift */,
+			);
+			path = "ontv-ios";
+			sourceTree = "<group>";
+		};
+		160F6965277B7FD400EBEE26 /* player */ = {
+			isa = PBXGroup;
+			children = (
+				160F6969277B7FD400EBEE26 /* vendor */,
+				160F6966277B7FD400EBEE26 /* PlayerInterface.swift */,
+				160F6967277B7FD400EBEE26 /* Player.swift */,
+				160F6968277B7FD400EBEE26 /* AbstractPlayer.swift */,
+			);
+			path = player;
+			sourceTree = "<group>";
+		};
+		160F6969277B7FD400EBEE26 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				160F696B277B7FD400EBEE26 /* ffmpeg */,
+				160F696A277B7FD400EBEE26 /* FFMpeg.swift */,
+				160F696E277B7FD400EBEE26 /* Apple.swift */,
+				160F696F277B7FD400EBEE26 /* av */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		160F696B277B7FD400EBEE26 /* ffmpeg */ = {
+			isa = PBXGroup;
+			children = (
+				160F696C277B7FD400EBEE26 /* FFMpegPlayerView.swift */,
+				160F696D277B7FD400EBEE26 /* FFMpegStateDelegate.swift */,
+			);
+			path = ffmpeg;
+			sourceTree = "<group>";
+		};
+		160F696F277B7FD400EBEE26 /* av */ = {
+			isa = PBXGroup;
+			children = (
+				160F6970277B7FD400EBEE26 /* AVMetadataLoader.swift */,
+				160F6971277B7FD400EBEE26 /* AVStateDelegate.swift */,
+			);
+			path = av;
+			sourceTree = "<group>";
+		};
+		160F6973277B7FD400EBEE26 /* providers */ = {
+			isa = PBXGroup;
+			children = (
+				160F6974277B7FD400EBEE26 /* schedule */,
+				160F6977277B7FD400EBEE26 /* livescore */,
+				160F697C277B7FD400EBEE26 /* activity */,
+				160F697F277B7FD400EBEE26 /* stream */,
+				160F6985277B7FD400EBEE26 /* league */,
+				160F6988277B7FD400EBEE26 /* epg */,
+				160F698D277B7FD400EBEE26 /* Providers.swift */,
+				160F697B277B7FD400EBEE26 /* Generator.swift */,
+			);
+			path = providers;
+			sourceTree = "<group>";
+		};
+		160F6974277B7FD400EBEE26 /* schedule */ = {
+			isa = PBXGroup;
+			children = (
+				160F6975277B7FD400EBEE26 /* ScheduleEvents.swift */,
+				160F6976277B7FD400EBEE26 /* ScheduleStorage.swift */,
+			);
+			path = schedule;
+			sourceTree = "<group>";
+		};
+		160F6977277B7FD400EBEE26 /* livescore */ = {
+			isa = PBXGroup;
+			children = (
+				160F6978277B7FD400EBEE26 /* LivescoreScrollGenerator.swift */,
+				160F6979277B7FD400EBEE26 /* LivescoreStorage.swift */,
+				160F697A277B7FD400EBEE26 /* LivescoreEvents.swift */,
+			);
+			path = livescore;
+			sourceTree = "<group>";
+		};
+		160F697C277B7FD400EBEE26 /* activity */ = {
+			isa = PBXGroup;
+			children = (
+				160F697D277B7FD400EBEE26 /* ActivityStorage.swift */,
+				160F697E277B7FD400EBEE26 /* ActivityEPGList.swift */,
+			);
+			path = activity;
+			sourceTree = "<group>";
+		};
+		160F697F277B7FD400EBEE26 /* stream */ = {
+			isa = PBXGroup;
+			children = (
+				160F6980277B7FD400EBEE26 /* StreamSearch.swift */,
+				160F6981277B7FD400EBEE26 /* Streams.swift */,
+				160F6982277B7FD400EBEE26 /* StreamCategory.swift */,
+				160F6983277B7FD400EBEE26 /* QuickStream.swift */,
+				160F6984277B7FD400EBEE26 /* RecentStream.swift */,
+			);
+			path = stream;
+			sourceTree = "<group>";
+		};
+		160F6985277B7FD400EBEE26 /* league */ = {
+			isa = PBXGroup;
+			children = (
+				160F6986277B7FD400EBEE26 /* LeagueList.swift */,
+				160F6987277B7FD400EBEE26 /* LeagueStorage.swift */,
+			);
+			path = league;
+			sourceTree = "<group>";
+		};
+		160F6988277B7FD400EBEE26 /* epg */ = {
+			isa = PBXGroup;
+			children = (
+				160F6989277B7FD400EBEE26 /* EPGGuide.swift */,
+				160F698A277B7FD400EBEE26 /* EPGLiveList.swift */,
+				160F698B277B7FD400EBEE26 /* EPGStorage.swift */,
+				160F698C277B7FD400EBEE26 /* EPGLiveSearch.swift */,
+			);
+			path = epg;
+			sourceTree = "<group>";
+		};
+		160F698E277B7FD400EBEE26 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				160F699B277B7FD400EBEE26 /* action */,
+				160F6993277B7FD400EBEE26 /* component */,
+				160F698F277B7FD400EBEE26 /* extend */,
+				160F69A3277B7FD400EBEE26 /* theme */,
+				160F69AF277B7FD400EBEE26 /* toggleviews */,
+				160F6991277B7FD400EBEE26 /* SearchView.swift */,
+				160F6992277B7FD400EBEE26 /* VideoView.swift */,
+				160F699A277B7FD400EBEE26 /* ApiLoadingView.swift */,
+				160F69AD277B7FD400EBEE26 /* ContentView.swift */,
+				160F69AE277B7FD400EBEE26 /* LoadingView.swift */,
+				160F69BA277B7FD400EBEE26 /* ErrorView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		160F698F277B7FD400EBEE26 /* extend */ = {
+			isa = PBXGroup;
+			children = (
+				160F6990277B7FD400EBEE26 /* Styles.swift */,
+			);
+			path = extend;
+			sourceTree = "<group>";
+		};
+		160F6993277B7FD400EBEE26 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				160F6994277B7FD400EBEE26 /* StreamTitle.swift */,
+				160F6995277B7FD400EBEE26 /* Icon.swift */,
+				160F6996277B7FD400EBEE26 /* ContentHeader.swift */,
+				160F6997277B7FD400EBEE26 /* ScrollingView.swift */,
+				160F6998277B7FD400EBEE26 /* ProgressIndicator.swift */,
+				160F6999277B7FD400EBEE26 /* ControlSFSymbol.swift */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		160F699B277B7FD400EBEE26 /* action */ = {
+			isa = PBXGroup;
+			children = (
+				160F699C277B7FD400EBEE26 /* ListNavigator.swift */,
+				160F699D277B7FD400EBEE26 /* ScoreChangeAction.swift */,
+				160F699E277B7FD400EBEE26 /* TickerAction.swift */,
+				160F699F277B7FD400EBEE26 /* NavigateAction.swift */,
+				160F69A0277B7FD400EBEE26 /* ListActions.swift */,
+				160F69A1277B7FD400EBEE26 /* HideAction.swift */,
+				160F69A2277B7FD400EBEE26 /* LiveBackground.swift */,
+			);
+			path = action;
+			sourceTree = "<group>";
+		};
+		160F69A3277B7FD400EBEE26 /* theme */ = {
+			isa = PBXGroup;
+			children = (
+				160F69A4277B7FD400EBEE26 /* color */,
+				160F69A8277B7FD400EBEE26 /* font */,
+				160F69AC277B7FD400EBEE26 /* Theme.swift */,
+			);
+			path = theme;
+			sourceTree = "<group>";
+		};
+		160F69A4277B7FD400EBEE26 /* color */ = {
+			isa = PBXGroup;
+			children = (
+				160F69A5277B7FD400EBEE26 /* ThemeColorFont.swift */,
+				160F69A6277B7FD400EBEE26 /* ThemeColorBackground.swift */,
+				160F69A7277B7FD400EBEE26 /* ThemeColor.swift */,
+			);
+			path = color;
+			sourceTree = "<group>";
+		};
+		160F69A8277B7FD400EBEE26 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				160F69A9277B7FD400EBEE26 /* ThemeFont.swift */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
+		160F69AF277B7FD400EBEE26 /* toggleviews */ = {
+			isa = PBXGroup;
+			children = (
+				160F69B0277B7FD400EBEE26 /* CategoryView.swift */,
+				160F69B1277B7FD400EBEE26 /* TitleView.swift */,
+				160F69B2277B7FD400EBEE26 /* EPGView.swift */,
+				160F69B3277B7FD400EBEE26 /* BookmarkView.swift */,
+				160F69B4277B7FD400EBEE26 /* EPGContentView.swift */,
+				160F69B5277B7FD400EBEE26 /* ScheduleView.swift */,
+				160F69B6277B7FD400EBEE26 /* LivescoreView.swift */,
+				160F69B7277B7FD400EBEE26 /* LivescoreTickerView.swift */,
+				160F69B8277B7FD400EBEE26 /* ControlsView.swift */,
+				160F69B9277B7FD400EBEE26 /* ToggleViews.swift */,
+			);
+			path = toggleviews;
+			sourceTree = "<group>";
+		};
+		160F69BB277B7FD400EBEE26 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				160F69C9277B7FD400EBEE26 /* extension */,
+				160F69C5277B7FD400EBEE26 /* interface */,
+				160F69BC277B7FD400EBEE26 /* V1 */,
+				160F69C4277B7FD400EBEE26 /* AbstractEntity.swift */,
+				160F69CF277B7FD400EBEE26 /* Schema.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		160F69BC277B7FD400EBEE26 /* V1 */ = {
+			isa = PBXGroup;
+			children = (
+				160F69BD277B7FD400EBEE26 /* v1League.swift */,
+				160F69BE277B7FD400EBEE26 /* v1Livescore.swift */,
+				160F69BF277B7FD400EBEE26 /* v1Schedule.swift */,
+				160F69C0277B7FD400EBEE26 /* v1Category.swift */,
+				160F69C1277B7FD400EBEE26 /* v1Stream.swift */,
+				160F69C2277B7FD400EBEE26 /* v1EPG.swift */,
+				160F69C3277B7FD400EBEE26 /* v1Activity.swift */,
+			);
+			path = V1;
+			sourceTree = "<group>";
+		};
+		160F69C5277B7FD400EBEE26 /* interface */ = {
+			isa = PBXGroup;
+			children = (
+				160F69C6277B7FD400EBEE26 /* Validity.swift */,
+				160F69C7277B7FD400EBEE26 /* Importable.swift */,
+				160F69C8277B7FD400EBEE26 /* LazyStream.swift */,
+				16BBBDA727823DFE00292CCF /* UIpdatable.swift */,
+			);
+			path = interface;
+			sourceTree = "<group>";
+		};
+		160F69C9277B7FD400EBEE26 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				160F69CA277B7FD400EBEE26 /* Thumb.swift */,
+				160F69CB277B7FD400EBEE26 /* ActivityEPG.swift */,
+				160F69CC277B7FD400EBEE26 /* Teams.swift */,
+				160F69CD277B7FD400EBEE26 /* StreamActivity.swift */,
+				160F69CE277B7FD400EBEE26 /* LivescoreTicker.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		160F69D0277B7FD400EBEE26 /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				160F69D1277B7FD400EBEE26 /* Notification.swift */,
+			);
+			path = notification;
+			sourceTree = "<group>";
+		};
+		160F69D2277B7FD400EBEE26 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				160F69D3277B7FD400EBEE26 /* ApiResponse.swift */,
+				160F69D4277B7FD400EBEE26 /* ApiUrl.swift */,
+				160F69D5277B7FD400EBEE26 /* Api.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		160F69D6277B7FD500EBEE26 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				160F69D7277B7FD500EBEE26 /* Date.swift */,
+				160F69D8277B7FD500EBEE26 /* Fraction.swift */,
+				160F69D9277B7FD500EBEE26 /* Size.swift */,
+				160F69DA277B7FD500EBEE26 /* Int64.swift */,
+				160F69DB277B7FD500EBEE26 /* Int.swift */,
+				160F69DC277B7FD500EBEE26 /* String.swift */,
+				160F69DD277B7FD500EBEE26 /* Double.swift */,
+				160F69DE277B7FD500EBEE26 /* Bool.swift */,
+				160F69DF277B7FD500EBEE26 /* Bundle.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		160F69E0277B7FD500EBEE26 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				160F69E1277B7FD500EBEE26 /* MajorMonoDisplay-Regular.ttf */,
+				160F69E2277B7FD500EBEE26 /* Teko-Bold.ttf */,
+				160F69E3277B7FD500EBEE26 /* Teko-Medium.ttf */,
+				160F69E4277B7FD500EBEE26 /* Teko-SemiBold.ttf */,
+				160F69E5277B7FD500EBEE26 /* AtamiStencilBold.otf */,
+				160F69E6277B7FD500EBEE26 /* Teko-Regular.ttf */,
+				160F69E7277B7FD500EBEE26 /* Teko-Light.ttf */,
+				160F69E8277B7FD500EBEE26 /* AtamiStencil.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		6A6DC93A23F6E6BC42DAE7C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBD123D892EF5C8ABF926B8D /* Pods-ontv-ios.debug.xcconfig */,
+				EE569CDC83B90E5A196BA865 /* Pods-ontv-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E0756FC9A729692E3A93F0E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16BBBDAB27827B1F00292CCF /* CryptoKit.framework */,
+				06519CAA938E92E538F37EB7 /* Pods_ontv_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		160F6953277B7F8B00EBEE26 /* ontv-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 160F6962277B7F8C00EBEE26 /* Build configuration list for PBXNativeTarget "ontv-ios" */;
+			buildPhases = (
+				5360E241C55D65686761019B /* [CP] Check Pods Manifest.lock */,
+				160F6950277B7F8B00EBEE26 /* Sources */,
+				160F6951277B7F8B00EBEE26 /* Frameworks */,
+				160F6952277B7F8B00EBEE26 /* Resources */,
+				64038DA0258344FA48BE484A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ontv-ios";
+			packageProductDependencies = (
+				166BD900277B844A00A597BE /* Introspect */,
+				166BD903277B846000A597BE /* Defaults */,
+				166BD906277B847900A597BE /* CoreStore */,
+				166BD909277B849100A597BE /* Kingfisher */,
+				166BD90C277B84A600A597BE /* SwiftDate */,
+			);
+			productName = "ontv-ios";
+			productReference = 160F6954277B7F8B00EBEE26 /* ontv-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		160F694C277B7F8B00EBEE26 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					160F6953277B7F8B00EBEE26 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 160F694F277B7F8B00EBEE26 /* Build configuration list for PBXProject "ontv-ios" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 160F694B277B7F8B00EBEE26;
+			packageReferences = (
+				166BD8FF277B844A00A597BE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				166BD902277B846000A597BE /* XCRemoteSwiftPackageReference "Defaults" */,
+				166BD905277B847900A597BE /* XCRemoteSwiftPackageReference "CoreStore" */,
+				166BD908277B849100A597BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				166BD90B277B84A600A597BE /* XCRemoteSwiftPackageReference "SwiftDate" */,
+			);
+			productRefGroup = 160F6955277B7F8B00EBEE26 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				160F6953277B7F8B00EBEE26 /* ontv-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		160F6952277B7F8B00EBEE26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				160F6A4F277B7FD500EBEE26 /* Teko-Light.ttf in Resources */,
+				160F6A4D277B7FD500EBEE26 /* AtamiStencilBold.otf in Resources */,
+				161E5E85277EC037007504BE /* Splash2.storyboard in Resources */,
+				160F6A4C277B7FD500EBEE26 /* Teko-SemiBold.ttf in Resources */,
+				160F6A4B277B7FD500EBEE26 /* Teko-Medium.ttf in Resources */,
+				166BD911277C23DD00A597BE /* Assets.xcassets in Resources */,
+				160F6A4A277B7FD500EBEE26 /* Teko-Bold.ttf in Resources */,
+				160F6A4E277B7FD500EBEE26 /* Teko-Regular.ttf in Resources */,
+				160F6A49277B7FD500EBEE26 /* MajorMonoDisplay-Regular.ttf in Resources */,
+				166BD916277C49EC00A597BE /* Settings.bundle in Resources */,
+				160F6A50277B7FD500EBEE26 /* AtamiStencil.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5360E241C55D65686761019B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ontv-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64038DA0258344FA48BE484A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ontv-ios/Pods-ontv-ios-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ontv-ios/Pods-ontv-ios-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ontv-ios/Pods-ontv-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		160F6950277B7F8B00EBEE26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				160F6A47277B7FD500EBEE26 /* Bool.swift in Sources */,
+				160F6A48277B7FD500EBEE26 /* Bundle.swift in Sources */,
+				160F6A07277B7FD500EBEE26 /* Styles.swift in Sources */,
+				160F6A09277B7FD500EBEE26 /* VideoView.swift in Sources */,
+				160F6A1E277B7FD500EBEE26 /* ContentView.swift in Sources */,
+				160F69F2277B7FD500EBEE26 /* AppDelegate.swift in Sources */,
+				160F6A16277B7FD500EBEE26 /* HideAction.swift in Sources */,
+				160F6A0D277B7FD500EBEE26 /* ScrollingView.swift in Sources */,
+				160F6A36277B7FD500EBEE26 /* Thumb.swift in Sources */,
+				160F6A11277B7FD500EBEE26 /* ListNavigator.swift in Sources */,
+				160F69FD277B7FD500EBEE26 /* StreamCategory.swift in Sources */,
+				160F6A35277B7FD500EBEE26 /* LazyStream.swift in Sources */,
+				160F6A2E277B7FD500EBEE26 /* v1Category.swift in Sources */,
+				160F6A05277B7FD500EBEE26 /* EPGLiveSearch.swift in Sources */,
+				160F6A13277B7FD500EBEE26 /* TickerAction.swift in Sources */,
+				160F6A28277B7FD500EBEE26 /* ControlsView.swift in Sources */,
+				160F69FA277B7FD500EBEE26 /* ActivityEPGList.swift in Sources */,
+				160F69F1277B7FD500EBEE26 /* AVStateDelegate.swift in Sources */,
+				160F6A3F277B7FD500EBEE26 /* Api.swift in Sources */,
+				160F6A34277B7FD500EBEE26 /* Importable.swift in Sources */,
+				160F6A08277B7FD500EBEE26 /* SearchView.swift in Sources */,
+				160F6A0F277B7FD500EBEE26 /* ControlSFSymbol.swift in Sources */,
+				160F6A32277B7FD500EBEE26 /* AbstractEntity.swift in Sources */,
+				160F6A2F277B7FD500EBEE26 /* v1Stream.swift in Sources */,
+				160F6A1A277B7FD500EBEE26 /* ThemeColor.swift in Sources */,
+				160F69F6277B7FD500EBEE26 /* LivescoreStorage.swift in Sources */,
+				160F6A03277B7FD500EBEE26 /* EPGLiveList.swift in Sources */,
+				160F6A1F277B7FD500EBEE26 /* LoadingView.swift in Sources */,
+				160F6A33277B7FD500EBEE26 /* Validity.swift in Sources */,
+				160F6A2C277B7FD500EBEE26 /* v1Livescore.swift in Sources */,
+				160F69FE277B7FD500EBEE26 /* QuickStream.swift in Sources */,
+				160F6A06277B7FD500EBEE26 /* Providers.swift in Sources */,
+				160F6A3B277B7FD500EBEE26 /* Schema.swift in Sources */,
+				160F6A41277B7FD500EBEE26 /* Fraction.swift in Sources */,
+				160F6A3D277B7FD500EBEE26 /* ApiResponse.swift in Sources */,
+				160F69EF277B7FD500EBEE26 /* Apple.swift in Sources */,
+				160F6A46277B7FD500EBEE26 /* Double.swift in Sources */,
+				160F6A0B277B7FD500EBEE26 /* Icon.swift in Sources */,
+				160F6A20277B7FD500EBEE26 /* CategoryView.swift in Sources */,
+				160F6A02277B7FD500EBEE26 /* EPGGuide.swift in Sources */,
+				160F6A18277B7FD500EBEE26 /* ThemeColorFont.swift in Sources */,
+				160F69FF277B7FD500EBEE26 /* RecentStream.swift in Sources */,
+				160F69FB277B7FD500EBEE26 /* StreamSearch.swift in Sources */,
+				160F69EA277B7FD500EBEE26 /* Player.swift in Sources */,
+				160F6A0C277B7FD500EBEE26 /* ContentHeader.swift in Sources */,
+				160F6A00277B7FD500EBEE26 /* LeagueList.swift in Sources */,
+				160F6A1B277B7FD500EBEE26 /* ThemeFont.swift in Sources */,
+				160F6A29277B7FD500EBEE26 /* ToggleViews.swift in Sources */,
+				160F6A2B277B7FD500EBEE26 /* v1League.swift in Sources */,
+				160F6A15277B7FD500EBEE26 /* ListActions.swift in Sources */,
+				160F6A19277B7FD500EBEE26 /* ThemeColorBackground.swift in Sources */,
+				160F6A37277B7FD500EBEE26 /* ActivityEPG.swift in Sources */,
+				160F69F4277B7FD500EBEE26 /* ScheduleStorage.swift in Sources */,
+				160F69F0277B7FD500EBEE26 /* AVMetadataLoader.swift in Sources */,
+				160F6A38277B7FD500EBEE26 /* Teams.swift in Sources */,
+				160F6A04277B7FD500EBEE26 /* EPGStorage.swift in Sources */,
+				160F69F5277B7FD500EBEE26 /* LivescoreScrollGenerator.swift in Sources */,
+				160F6A17277B7FD500EBEE26 /* LiveBackground.swift in Sources */,
+				160F6A43277B7FD500EBEE26 /* Int64.swift in Sources */,
+				160F6A45277B7FD500EBEE26 /* String.swift in Sources */,
+				160F69F9277B7FD500EBEE26 /* ActivityStorage.swift in Sources */,
+				160F6A1D277B7FD500EBEE26 /* Theme.swift in Sources */,
+				160F6A44277B7FD500EBEE26 /* Int.swift in Sources */,
+				16BBBDA827823DFE00292CCF /* UIpdatable.swift in Sources */,
+				160F6A3A277B7FD500EBEE26 /* LivescoreTicker.swift in Sources */,
+				160F6A21277B7FD500EBEE26 /* TitleView.swift in Sources */,
+				160F69ED277B7FD500EBEE26 /* FFMpegPlayerView.swift in Sources */,
+				160F6A31277B7FD500EBEE26 /* v1Activity.swift in Sources */,
+				160F6A40277B7FD500EBEE26 /* Date.swift in Sources */,
+				160F6A0E277B7FD500EBEE26 /* ProgressIndicator.swift in Sources */,
+				160F69EC277B7FD500EBEE26 /* FFMpeg.swift in Sources */,
+				160F6A2D277B7FD500EBEE26 /* v1Schedule.swift in Sources */,
+				160F6A0A277B7FD500EBEE26 /* StreamTitle.swift in Sources */,
+				160F6A14277B7FD500EBEE26 /* NavigateAction.swift in Sources */,
+				160F69F7277B7FD500EBEE26 /* LivescoreEvents.swift in Sources */,
+				160F69E9277B7FD500EBEE26 /* PlayerInterface.swift in Sources */,
+				160F6A10277B7FD500EBEE26 /* ApiLoadingView.swift in Sources */,
+				160F69EE277B7FD500EBEE26 /* FFMpegStateDelegate.swift in Sources */,
+				160F69FC277B7FD500EBEE26 /* Streams.swift in Sources */,
+				160F6A12277B7FD500EBEE26 /* ScoreChangeAction.swift in Sources */,
+				160F6A2A277B7FD500EBEE26 /* ErrorView.swift in Sources */,
+				160F6A26277B7FD500EBEE26 /* LivescoreView.swift in Sources */,
+				160F6A42277B7FD500EBEE26 /* Size.swift in Sources */,
+				160F6A24277B7FD500EBEE26 /* EPGContentView.swift in Sources */,
+				160F69F3277B7FD500EBEE26 /* ScheduleEvents.swift in Sources */,
+				160F69F8277B7FD500EBEE26 /* Generator.swift in Sources */,
+				160F6A3E277B7FD500EBEE26 /* ApiUrl.swift in Sources */,
+				160F6A30277B7FD500EBEE26 /* v1EPG.swift in Sources */,
+				160F69EB277B7FD500EBEE26 /* AbstractPlayer.swift in Sources */,
+				160F6A27277B7FD500EBEE26 /* LivescoreTickerView.swift in Sources */,
+				160F6A23277B7FD500EBEE26 /* BookmarkView.swift in Sources */,
+				160F6A39277B7FD500EBEE26 /* StreamActivity.swift in Sources */,
+				160F6A25277B7FD500EBEE26 /* ScheduleView.swift in Sources */,
+				160F6A3C277B7FD500EBEE26 /* Notification.swift in Sources */,
+				160F6958277B7F8B00EBEE26 /* ontv_iosApp.swift in Sources */,
+				160F6A01277B7FD500EBEE26 /* LeagueStorage.swift in Sources */,
+				160F6A22277B7FD500EBEE26 /* EPGView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		160F6960277B7F8C00EBEE26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		160F6961277B7F8C00EBEE26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		160F6963277B7F8C00EBEE26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBD123D892EF5C8ABF926B8D /* Pods-ontv-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 16;
+				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
+				DEVELOPMENT_TEAM = SPBF9BNRG3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ontv-ios/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash2;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.cacko.ontv-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		160F6964277B7F8C00EBEE26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE569CDC83B90E5A196BA865 /* Pods-ontv-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 16;
+				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
+				DEVELOPMENT_TEAM = SPBF9BNRG3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ontv-ios/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash2;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.cacko.ontv-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		160F694F277B7F8B00EBEE26 /* Build configuration list for PBXProject "ontv-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				160F6960277B7F8C00EBEE26 /* Debug */,
+				160F6961277B7F8C00EBEE26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		160F6962277B7F8C00EBEE26 /* Build configuration list for PBXNativeTarget "ontv-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				160F6963277B7F8C00EBEE26 /* Debug */,
+				160F6964277B7F8C00EBEE26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		166BD8FF277B844A00A597BE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
+		166BD902277B846000A597BE /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		166BD905277B847900A597BE /* XCRemoteSwiftPackageReference "CoreStore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnEstropia/CoreStore";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		166BD908277B849100A597BE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cacko/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		166BD90B277B84A600A597BE /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cacko/SwiftDate";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		166BD900277B844A00A597BE /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 166BD8FF277B844A00A597BE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+		166BD903277B846000A597BE /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 166BD902277B846000A597BE /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+		166BD906277B847900A597BE /* CoreStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 166BD905277B847900A597BE /* XCRemoteSwiftPackageReference "CoreStore" */;
+			productName = CoreStore;
+		};
+		166BD909277B849100A597BE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 166BD908277B849100A597BE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		166BD90C277B84A600A597BE /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 166BD90B277B84A600A597BE /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 160F694C277B7F8B00EBEE26 /* Project object */;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsForMedia</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>maria-db.co</key>
+			<dict>
+				<key>NSAllowsArbitraryLoads</key>
+				<true/>
+				<key>NSAllowsArbitraryLoadsForMedia</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSRequiresCertificateTransparency</key>
+				<false/>
+			</dict>
+			<key>rd-media.xyz</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSRequiresCertificateTransparency</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AtamiStencil.otf</string>
+		<string>AtamiStencilBold.otf</string>
+		<string>Teko-Bold.ttf</string>
+		<string>Teko-Light.ttf</string>
+		<string>Teko-Medium.ttf</string>
+		<string>Teko-Regular.ttf</string>
+		<string>Teko-SemiBold.ttf</string>
+		<string>MajorMonoDisplay-Regular.ttf.</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>fetch</string>
+		<string>processing</string>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.video</string>
+	<key>LSMultipleInstancesProhibited</key>
+	<true/>
+</dict>
+</plist>

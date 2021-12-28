@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "splash.jpg",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "splash-1.jpg",
+      "idiom" : "ipad",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "original"
+  }
+}

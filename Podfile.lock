@@ -1,0 +1,73 @@
+PODS:
+  - FFmpeg (4.4):
+    - FFmpeg/FFmpeg (= 4.4)
+  - FFmpeg/FFmpeg (4.4):
+    - OpenSSL
+  - KSPlayer (1.0):
+    - KSPlayer/Audio (= 1.0)
+    - KSPlayer/AVPlayer (= 1.0)
+    - KSPlayer/Basic (= 1.0)
+    - KSPlayer/Core (= 1.0)
+    - KSPlayer/MEPlayer (= 1.0)
+    - KSPlayer/Metal (= 1.0)
+    - KSPlayer/Subtitle (= 1.0)
+    - KSPlayer/UXKit (= 1.0)
+    - KSPlayer/Video (= 1.0)
+  - KSPlayer/Audio (1.0):
+    - KSPlayer/Core
+  - KSPlayer/AVPlayer (1.0):
+    - KSPlayer/Basic
+  - KSPlayer/Basic (1.0):
+    - KSPlayer/UXKit
+  - KSPlayer/Core (1.0):
+    - KSPlayer/AVPlayer
+  - KSPlayer/MEPlayer (1.0):
+    - FFmpeg
+    - KSPlayer/AVPlayer
+    - KSPlayer/Metal
+    - KSPlayer/Subtitle
+  - KSPlayer/Metal (1.0)
+  - KSPlayer/Subtitle (1.0)
+  - KSPlayer/UXKit (1.0)
+  - KSPlayer/Video (1.0):
+    - KSPlayer/Core
+    - KSPlayer/Subtitle
+  - OpenSSL (3.0.0):
+    - OpenSSL/OpenSSL (= 3.0.0)
+  - OpenSSL/OpenSSL (3.0.0)
+
+DEPENDENCIES:
+  - FFmpeg (from `https://github.com/kingslay/KSPlayer.git`, branch `develop`)
+  - KSPlayer (from `https://github.com/kingslay/KSPlayer.git`, branch `develop`)
+  - OpenSSL (from `https://github.com/kingslay/KSPlayer.git`, branch `develop`)
+
+EXTERNAL SOURCES:
+  FFmpeg:
+    :branch: develop
+    :git: https://github.com/kingslay/KSPlayer.git
+  KSPlayer:
+    :branch: develop
+    :git: https://github.com/kingslay/KSPlayer.git
+  OpenSSL:
+    :branch: develop
+    :git: https://github.com/kingslay/KSPlayer.git
+
+CHECKOUT OPTIONS:
+  FFmpeg:
+    :commit: ba76dce4b03805fd256a539c21ad87aaa0d43e21
+    :git: https://github.com/kingslay/KSPlayer.git
+  KSPlayer:
+    :commit: ba76dce4b03805fd256a539c21ad87aaa0d43e21
+    :git: https://github.com/kingslay/KSPlayer.git
+  OpenSSL:
+    :commit: ba76dce4b03805fd256a539c21ad87aaa0d43e21
+    :git: https://github.com/kingslay/KSPlayer.git
+
+SPEC CHECKSUMS:
+  FFmpeg: b9554306bf619b593bd7077cea2bc552b259997f
+  KSPlayer: a6ea8483d44447d4b7282e3723ebed9101efb3ad
+  OpenSSL: 162e16d36b4bf6efcaedde98752037911af31f1d
+
+PODFILE CHECKSUM: 3286d3e1c432e4b5c02b0e4e0b41bc803d0589bd
+
+COCOAPODS: 1.11.2
