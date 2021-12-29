@@ -42,12 +42,20 @@ enum API {
 
   class ApiAdapter: NSObject, ObservableObject {
     @Published var error: API.Exception? = nil
-    @Published var state: API.State = .loading
     @Published var loading: API.LoadingItem = .loaded
     @Published var epgState: ProviderState = .notavail
     @Published var user: UserInfo? = nil
     @Published var expires: String = ""
     @Published var livescoreState: LivescoreState = .ready
+
+    @Published var state: API.State = .loading {
+      didSet {
+        guard self.state == .error else {
+          return
+        }
+        Player.instance.controlsState = .visible
+      }
+    }
 
     var server_info: ServerInfo = ServerInfo(
       url: Defaults[.server_host],

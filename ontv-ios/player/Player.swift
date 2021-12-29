@@ -27,7 +27,6 @@ enum Audio {
 }
 
 class Player: NSObject, PlayerProtocol, ObservableObject {
-
   @Published var screenSize: CGSize = CGSize(width: 1080, height: 1920)
   @Published var error = PlayerError(id: .null, msg: "")
   @Published var resolution = CGSize(width: 1920, height: 1080)
@@ -82,6 +81,8 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
       self._contentToggle = newValue == self._contentToggle ? nil : newValue
       if ToggleViews.hideControls.contains(self._contentToggle ?? .none) {
         controlsState = .hidden
+      } else if (self.stream == nil) {
+        controlsState = .always
       }
       objectWillChange.send()
     }
@@ -157,6 +158,9 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
     self.epgId = stream.epg_channel_id
     self.category = Category.get(stream.category_id)
     self.vendorPlayer.play(stream)
+    if (controlsState == .always) {
+      controlsState = .hidden
+    }
   }
 
   func retry() {
@@ -174,6 +178,23 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
     self.vendorPlayer.stop()
     self.display = false
   }
+  
+  func pause() {
+    guard self.state == .playing else {
+      return
+    }
+    self.state = .paused
+    self.vendorPlayer.pause()
+  }
+  
+  func resume() {
+    guard self.state == .paused else {
+      return
+    }
+    self.state = .playing
+    self.vendorPlayer.resume()
+  }
+  
 
   func next() async {
     guard self.stream != nil else {

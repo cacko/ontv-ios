@@ -52,5 +52,13 @@ class AbstractPlayer: NSObject, PlayerVendorProtocol {
   func stop() {
     fatalError("Not implemented")
   }
+  
+  func pause() {
+    fatalError("to the left")
+  }
+  
+  func resume() {
+    fatalError("to the left")
+  }
 
 }

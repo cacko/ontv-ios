@@ -40,7 +40,7 @@ extension Notification.Name {
 
 extension AppDelegate {
 
-  func observe() {
+  func observe(_ app: UIApplication) {
     let center = NotificationCenter.default
     let mainQueue = OperationQueue.main
 
@@ -187,7 +187,7 @@ extension AppDelegate {
       EPGStorage.active = nil
     }
   }
-
+  
   func restartApp() {
     //    if let path = Bundle.main.resourceURL?.deletingLastPathComponent()
     //        .deletingLastPathComponent().absoluteString

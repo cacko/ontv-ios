@@ -92,5 +92,9 @@ struct ContentView: View {
         }
       })
     }.colorScheme(.dark)
+      .background(
+        Image("mbappe").resizable().aspectRatio(contentMode: .fill).opacity( (player.stream != nil) ?0: 0.5)
+      )      .background(.black)
+
   }
 }

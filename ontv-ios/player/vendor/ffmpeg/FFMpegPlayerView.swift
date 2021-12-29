@@ -27,8 +27,8 @@ class FFMpegPlayerView: IOSVideoPlayerView {
     tapGesture.addTarget(self, action: #selector(tapGestureAction(_:)))
     tapGesture.numberOfTapsRequired = 1
     addGestureRecognizer(tapGesture)
-//    panGesture.addTarget(self, action: #selector(panGestureAction(_:)))
-//    addGestureRecognizer(panGesture)
+    //    panGesture.addTarget(self, action: #selector(panGestureAction(_:)))
+    //    addGestureRecognizer(panGesture)
     doubleTapGesture.addTarget(self, action: #selector(doubleTapGestureAction))
     doubleTapGesture.numberOfTapsRequired = 2
     tapGesture.require(toFail: doubleTapGesture)
@@ -45,30 +45,27 @@ class FFMpegPlayerView: IOSVideoPlayerView {
     replayButton.isHidden = true
     replayButton.removeFromSuperview()
   }
-  
-  
-  
+
   var hideCursorTask: DispatchWorkItem!
-  
-   func onTapProcess() {
-    
-    
+
+  func onTapProcess() {
+
     guard self.controller.controlsState != .always else {
       return
     }
-    
+
     if ToggleViews.hideControls.contains(self.controller.contentToggle ?? .none) == false {
       self.controller.controlsState = .visible
     }
-    
+
     let task = self.getHideCursorTask()
-    
+
     guard controller.controlsState == .visible else {
       return
     }
     DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: task)
   }
-  
+
   private func getHideCursorTask() -> DispatchWorkItem {
     if self.hideCursorTask != nil {
       self.hideCursorTask.cancel()
@@ -78,22 +75,18 @@ class FFMpegPlayerView: IOSVideoPlayerView {
         return
       }
       self.controller.controlsState = .hidden
-      
     }
     return self.hideCursorTask
   }
-  
-//  @objc open override func doubleTapGestureAction() {
-//    NotificationCenter.default.post(name: .onTap, object: nil)
-//    isMaskShow = false
-//  }
-  
-  @objc open override func tapGestureAction(_: UITapGestureRecognizer) {
+
+  @objc open override func doubleTapGestureAction() {
     self.onTapProcess()
-//    isMaskShow = false
   }
 
-  
+  @objc open override func tapGestureAction(_: UITapGestureRecognizer) {
+    self.onTapProcess()
+  }
+
   override func player(layer _: KSPlayerLayer, finish error: Error?) {
     guard let error = error as Error? else {
       return

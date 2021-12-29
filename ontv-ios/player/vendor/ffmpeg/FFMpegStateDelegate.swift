@@ -24,26 +24,31 @@ extension PlayerFFMpeg {
         self.controller.state = .buffering
       }
       break
+    case .paused:
+      DispatchQueue.main.async {
+        self.controller.state = .paused
+      }
+      break
     default: break
     }
   }
-  
+
   func playerController(currentTime: TimeInterval, totalTime: TimeInterval) {
-    
+
   }
-  
+
   func playerController(finish error: Error?) {
-    
+
   }
-  
+
   func playerController(maskShow: Bool) {
-    
+
   }
-  
+
   func playerController(action: PlayerButtonType) {
   }
-  
+
   func playerController(bufferedCount: Int, consumeTime: TimeInterval) {
-    
+
   }
 }

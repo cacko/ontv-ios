@@ -42,10 +42,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let screenSize: CGRect = UIScreen.main.bounds
     player.screenSize = CGSize(width: screenSize.height, height: screenSize.width)
     player.iconSize = CGSize(width: screenSize.height / 14, height: screenSize.height / 14)
-    observe()
+    observe(app)
     Task.init {
       await API.Adapter.login()
     }
     return true
+  }
+
+  func applicationWillEnterForeground(_ application: UIApplication) {
+    guard player.state == .paused else {
+      return
+    }
+    player.pause()
+  }
+
+  func applicationDidEnterBackground(_ application: UIApplication) {
+    guard player.state == .playing else {
+      player.stop()
+      return
+    }
+    player.resume()
   }
 }

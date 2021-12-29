@@ -176,30 +176,33 @@ extension ToggleViews {
 
   struct ControlsView: View {
     @ObservedObject var player = Player.instance
+
     var body: some View {
-      VStack {
-        Spacer()
-        HStack(alignment: .center, spacing: 2) {
+      if player.controlsState != .hidden {
+        VStack {
           Spacer()
-          HStack {
-            AlwaysOnControlsView()
-            EPGControlsView()
-            StreamControlsView()
-            PlayerControlsView()
+
+          HStack(alignment: .center, spacing: 2) {
+            Spacer()
+            HStack {
+              AlwaysOnControlsView()
+              EPGControlsView()
+              StreamControlsView()
+              PlayerControlsView()
+            }
+            .padding()
+            .background(player.controlsState == .always ? .clear : Theme.Color.Background.controls)
+            .cornerRadius(10)
+            Spacer()
+          }.background(
+            player.controlsState == .always
+              ? Theme.Color.Background.header
+              : .linearGradient(colors: [.clear], startPoint: .top, endPoint: .bottom)
+          ).padding()
+
+          if player.controlsState == .always {
+            Spacer()
           }
-          .padding()
-          .background(player.controlsState == .always ? .clear : Theme.Color.Background.controls)
-          .cornerRadius(10)
-          Spacer()
-        }
-        .background(
-          player.controlsState == .always
-            ? Theme.Color.Background.header
-            : .linearGradient(colors: [.clear], startPoint: .top, endPoint: .bottom)
-        )
-        .padding()
-        if player.controlsState == .always {
-          Spacer()
         }
       }
     }

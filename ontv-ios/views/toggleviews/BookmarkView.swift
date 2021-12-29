@@ -35,54 +35,55 @@ extension ToggleViews {
     }
 
     var body: some View {
-      VStack {
-        Spacer()
+      if player.contentToggle == .bookmarks {
         VStack {
-          Text("Click to open or save if empty slot")
-            .font(Theme.Font.programme)
-            .shadow(color: .black, radius: 1, x: 1, y: 1)
-            .textCase(.uppercase)
-          HStack {
-            Spacer()
-            ForEach(quickStreams.streams, id: \.idx) { qs in
-              Button(action: { onPress(qs) }) {
-                ZStack {
-                  Text(String(qs.idx))
-                    .foregroundColor(qs.isValid ? .gray : .primary)
-                    .shadow(color: .black, radius: 1, x: 1, y: 1)
-                  if let icon = qs.icon {
-                    KFImage(icon)
-                      .cacheOriginalImage()
-                      .setProcessor(
-                        DownsamplingImageProcessor(
-                          size: .init(width: 80, height: 40)
-                        )
-                      ).opacity(0.5)
+          Spacer()
+          VStack {
+            Text("Click to open or save if empty slot")
+              .font(Theme.Font.programme)
+              .shadow(color: .black, radius: 1, x: 1, y: 1)
+              .textCase(.uppercase)
+            HStack {
+              Spacer()
+              ForEach(quickStreams.streams, id: \.idx) { qs in
+                Button(action: { onPress(qs) }) {
+                  ZStack {
+                    Text(String(qs.idx))
+                      .foregroundColor(qs.isValid ? .gray : .primary)
+                      .shadow(color: .black, radius: 1, x: 1, y: 1)
+                    if let icon = qs.icon {
+                      KFImage(icon)
+                        .cacheOriginalImage()
+                        .setProcessor(
+                          DownsamplingImageProcessor(
+                            size: .init(width: 80, height: 40)
+                          )
+                        ).opacity(0.5)
+                    }
                   }
+                  .padding()
                 }
-                .padding()
+                .highPriorityGesture(
+                  TapGesture(count: 2)
+                    .onEnded({ _ in
+                      bookmark(qs)
+                    })
+                )
+                .buttonStyle(CustomButtonStyle(Theme.Font.Bookmark.button))
+                .cornerRadius(10)
               }
-              .highPriorityGesture(
-                TapGesture(count: 2)
-                  .onEnded({ _ in
-                    bookmark(qs)
-                  })
-              )
-              .buttonStyle(CustomButtonStyle(Theme.Font.Bookmark.button))
-              .cornerRadius(10)
+              Spacer()
             }
-            Spacer()
+            Text("Double click to save on any slot")
+              .font(Theme.Font.programme)
+              .shadow(color: .black, radius: 1, x: 1, y: 1)
+              .textCase(.uppercase)
           }
-          Text("Double click to save on any slot")
-            .font(Theme.Font.programme)
-            .shadow(color: .black, radius: 1, x: 1, y: 1)
-            .textCase(.uppercase)
+          .padding()
+          .background(Theme.Color.Background.header)
+          Spacer()
         }
-        .padding()
-        .background(Theme.Color.Background.header)
-        Spacer()
       }
     }
   }
-
 }

@@ -15,6 +15,7 @@ enum ToggleViews {
 struct ToggleView: View {
 
   @ObservedObject var player = Player.instance
+  @ObservedObject var apoi = API.Adapter
 
   var body: some View {
     GeometryReader { geo in
@@ -43,17 +44,11 @@ struct ToggleView: View {
             Spacer()
           }
         }
-        if player.contentToggle == .schedule {
-          ToggleViews.ScheduleView()
-            .frame(width: geo.size.width, height: geo.size.height)
-            .background(.black.opacity(0.8))
-        }
-        if player.controlsState != .hidden {
-          ToggleViews.ControlsView()
-        }
-        if player.contentToggle == .bookmarks {
-          ToggleViews.BookmarkView()
-        }
+        ToggleViews.ScheduleView()
+          .frame(width: geo.size.width, height: geo.size.height)
+          .background(.black.opacity(0.8))
+        ToggleViews.ControlsView()
+        ToggleViews.BookmarkView()
         if player.contentToggle == .livescores {
           HStack {
             ToggleViews.LivescoreView()

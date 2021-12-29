@@ -211,23 +211,25 @@ extension ToggleViews {
     private var buttonFont: Font = .system(size: 20, weight: .heavy, design: .monospaced)
 
     var body: some View {
-      VStack(alignment: .trailing) {
-        ContentHeaderView(title: "SportsDB Schedule", icon: ContentToggleIcon.schedule)
-        ScrollingView {
-          ListReader(scheduleProvider.list) { snapshot in
-            ForEach(sectionIn: snapshot) { section in
-              if liverscoreProvider.timestampInList((section.first?.object!.timestamp)!) {
-                HStack(alignment: .center, spacing: 0) {
-                  Section(header: ScheduleTime(section: section)) {
-                    LazyVStack(alignment: .leading, spacing: 0) {
-                      ForEach(objectIn: section) { schedule in
-                        LazyVStack(alignment: .leading, spacing: 0) {
-                          if liverscoreProvider.eventInList(schedule.$event_id ?? 0) {
-                            Section(header: ScheduleHeader(schedule: schedule)) {
-                              ScheduleStreams(schedule: schedule)
+      if player.contentToggle == .schedule {
+        VStack(alignment: .trailing) {
+          ContentHeaderView(title: "SportsDB Schedule", icon: ContentToggleIcon.schedule)
+          ScrollingView {
+            ListReader(scheduleProvider.list) { snapshot in
+              ForEach(sectionIn: snapshot) { section in
+                if liverscoreProvider.timestampInList((section.first?.object!.timestamp)!) {
+                  HStack(alignment: .center, spacing: 0) {
+                    Section(header: ScheduleTime(section: section)) {
+                      LazyVStack(alignment: .leading, spacing: 0) {
+                        ForEach(objectIn: section) { schedule in
+                          LazyVStack(alignment: .leading, spacing: 0) {
+                            if liverscoreProvider.eventInList(schedule.$event_id ?? 0) {
+                              Section(header: ScheduleHeader(schedule: schedule)) {
+                                ScheduleStreams(schedule: schedule)
+                              }
                             }
-                          }
-                        }.background(Theme.Color.Background.header)
+                          }.background(Theme.Color.Background.header)
+                        }
                       }
                     }
                   }
@@ -235,14 +237,14 @@ extension ToggleViews {
               }
             }
           }
-        }
-      }.onAppear {
-        scheduleProvider.active = true
-        LivescoreStorage.enable(.schedule)
-      }.onDisappear(perform: {
-        scheduleProvider.active = false
-        LivescoreStorage.disable(.schedule)
-      })
+        }.onAppear {
+          scheduleProvider.active = true
+          LivescoreStorage.enable(.schedule)
+        }.onDisappear(perform: {
+          scheduleProvider.active = false
+          LivescoreStorage.disable(.schedule)
+        })
+      }
     }
   }
 }

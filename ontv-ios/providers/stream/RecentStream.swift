@@ -130,7 +130,7 @@ extension Provider.Stream {
         return res + [stream]
       }
       
-      self.autoPlay = self.streams.first
+//      self.autoPlay = self.streams.first
       
     }
     

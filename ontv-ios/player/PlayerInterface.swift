@@ -14,7 +14,7 @@ enum Sorting {
 }
 
 enum PlayerState {
-  case opening, playing, stopped, error, retry, buffering, none
+  case opening, playing, stopped, error, retry, buffering, none, paused
 }
 
 enum MetadataState {
@@ -65,6 +65,8 @@ protocol PlayerVendorProtocol {
   init(_ controller: Player)
   func play(_ stream: Stream)
   func stop()
+  func pause()
+  func resume()
   func initView(_ view: VideoView)
   func sizeView(_ newSize: CGSize)
   func deInitView()
@@ -121,6 +123,8 @@ protocol PlayerProtocol: ObservableObject {
   func play(_ stream: Stream)
   func retry()
   func stop()
+  func pause()
+  func resume()
   func prev() async
   func next() async
   func onStartPlaying()

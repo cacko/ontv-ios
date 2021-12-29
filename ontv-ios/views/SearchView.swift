@@ -187,6 +187,8 @@ struct SearchView: View {
           }
         }
       }
+    }.onDisappear{
+      Player.instance.contentToggle = .search
     }
   }
 }

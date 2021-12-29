@@ -12,20 +12,20 @@ import KSPlayer
 import SwiftUI
 
 class PlayerFFMpeg: AbstractPlayer, PlayerControllerDelegate {
-  
+
   let controller: Player
-  
+
   var playerView: FFMpegPlayerView!
-  
+
   var player: MediaPlayerProtocol!
-  
+
   var media: KSPlayerResource!
-  
+
   let center = NotificationCenter.default
   let mainQueue = OperationQueue.main
-  
+
   var playerItemContext = 0
-  
+
   override var isMuted: Bool {
     get {
       self.player?.isMuted ?? false
@@ -34,7 +34,7 @@ class PlayerFFMpeg: AbstractPlayer, PlayerControllerDelegate {
       self.playerView?.playerLayer.player?.isMuted.toggle()
     }
   }
-  
+
   override var volume: Float {
     get {
       return (self.player?.playbackVolume ?? 0) * 100
@@ -43,9 +43,9 @@ class PlayerFFMpeg: AbstractPlayer, PlayerControllerDelegate {
       self.playerView?.playerLayer.player?.playbackVolume = max(0, min(newValue / 100, 1))
     }
   }
-  
+
   private var initialised: Bool = false
-  
+
   override class var vendor: VendorInfo {
     get {
       VendorInfo(
@@ -57,7 +57,7 @@ class PlayerFFMpeg: AbstractPlayer, PlayerControllerDelegate {
     }
     set {}
   }
-  
+
   required init(
     _ controller: Player
   ) {
@@ -74,7 +74,7 @@ class PlayerFFMpeg: AbstractPlayer, PlayerControllerDelegate {
     KSPlayerManager.animateDelayTimeInterval = TimeInterval(5)
     super.init(controller)
   }
-  
+
   override func initView(_ view: VideoView) {
     playerView = FFMpegPlayerView(controller)
     view.addSubview(playerView)
@@ -86,14 +86,14 @@ class PlayerFFMpeg: AbstractPlayer, PlayerControllerDelegate {
       playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
     ])
   }
-  
+
   override func deInitView() {
     self.playerView.pause()
     self.playerView.resetPlayer()
     self.playerView.removeFromSuperview()
     self.playerView = nil
   }
-  
+
   var options: KSOptions {
     let header = ["User-Agent": "ontv/\(Bundle.main.buildVersionNumber)"]
     let options = KSOptions()
@@ -104,7 +104,7 @@ class PlayerFFMpeg: AbstractPlayer, PlayerControllerDelegate {
     options.subtitleDisable = true
     return options
   }
-  
+
   private func definition(_ stream: Stream) -> KSPlayerResourceDefinition {
     KSPlayerResourceDefinition(
       url: stream.url,
@@ -112,16 +112,16 @@ class PlayerFFMpeg: AbstractPlayer, PlayerControllerDelegate {
       options: options
     )
   }
-  
+
   override func play(_ stream: Stream) {
     media = KSPlayerResource(definitions: [self.definition(stream)])
     playerView.set(resource: media)
     playerView.delegate = self
     playerView.play()
   }
-  
+
   override func stop() {
-    
+
   }
-  
+
 }

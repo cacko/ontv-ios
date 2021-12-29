@@ -13,13 +13,13 @@ extension Theme.Font {
 
   enum Size {
     static let base = UIScreen.main.nativeBounds.height / 75
-    static let large = Size.base + Size.base / 10
-    static let larger = Size.large + Size.large / 10
-    static let small = Size.base - Size.base / 10
-    static let smaller = Size.small - Size.small / 10
-    static let smallest = Size.smaller - Size.smaller / 10
-    static let big = Size.base * 2
-    static let superbig = Size.base * 4
+    static let large = Size.base + Size.base * 0.05
+    static let larger = Size.large + Size.large  * 0.05
+    static let small = Size.base - Size.base  * 0.05
+    static let smaller = Size.small - Size.small  * 0.05
+    static let smallest = Size.smaller - Size.smaller  * 0.05
+    static let big = Size.base * 1.5
+    static let superbig = Size.base * 3.5
   }
 
   static let channel: SwiftUI.Font = Font.custom(
