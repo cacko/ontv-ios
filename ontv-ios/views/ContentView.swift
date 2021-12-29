@@ -64,17 +64,14 @@ struct ContentView: View {
           .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
           .aspectRatio(player.size.aspectSize, contentMode: .fill)
           .opacity(player.display ? 1 : 0)
-          .background(.black).gesture(
+          .gesture(
             TapGesture(count: 1)
               .onEnded({ _ in
                 NotificationCenter.default.post(name: .onTap, object: nil)
               })
-          )
-        //          .sheet(isPresented: showSearch) {
-        //            SearchView()
-        //              .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
-        //              .cornerRadius(player.isFullscreen ? 0 : 5)
-        //          }
+          ).sheet(isPresented: showSearch) {
+            SearchView()
+          }.colorScheme(.dark)
         if [PlayerState.opening, PlayerState.buffering].contains(player.state) {
           LoadingView()
         }
