@@ -230,37 +230,37 @@ extension ToggleViews {
     }
 
     var body: some View {
-      VStack(alignment: .leading, spacing: 0) {
-        ContentHeaderView(
-          title: player.contentToggle == .epglist ? "TV guide" : "Recent TV guide",
-          icon: player.contentToggle == .epglist ? .epglist : .activityepg
-        )
-        ZStack {
-          if player.contentToggle == .activityepg {
-            EPGViews.Activity()
-          }
-
-          if player.contentToggle == .epglist {
-            EPGViews.EPG()
-          }
-        }
-
-        if epgLive.state == .loading {
-          VStack {
-            Spacer()
-            HStack(alignment: .center, spacing: 10) {
-              Spacer()
-              HStack(alignment: .center, spacing: 10) {
-                Text("LOADING").font(Theme.Font.title)
-                ProgressIndicator()
+      if [.epglist, .activityepg].contains(player.contentToggle) {
+          VStack(alignment: .leading, spacing: 0) {
+            ContentHeaderView(
+              title: player.contentToggle == .epglist ? "TV guide" : "Recent TV guide",
+              icon: player.contentToggle == .epglist ? .epglist : .activityepg
+            )
+            ZStack {
+              if player.contentToggle == .activityepg {
+                EPGViews.Activity()
               }
-              Spacer()
+
+              if player.contentToggle == .epglist {
+                EPGViews.EPG()
+              }
             }
-            Spacer()
-          }
+            if epgLive.state == .loading {
+              VStack {
+                Spacer()
+                HStack(alignment: .center, spacing: 10) {
+                  Spacer()
+                  HStack(alignment: .center, spacing: 10) {
+                    Text("LOADING").font(Theme.Font.title)
+                    ProgressIndicator()
+                  }
+                  Spacer()
+                }
+                Spacer()
+              }
+            }
         }
       }
     }
   }
-
 }

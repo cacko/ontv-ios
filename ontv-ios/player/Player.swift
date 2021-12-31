@@ -30,7 +30,17 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
   @Published var screenSize: CGSize = CGSize(width: 1080, height: 1920)
   @Published var error = PlayerError(id: .null, msg: "")
   @Published var resolution = CGSize(width: 1920, height: 1080)
-  @Published var state: PlayerState = .none
+  @Published var state: PlayerState = .none {
+    didSet {
+      guard self.state == .error else {
+        return
+      }
+      self.controlsState = .always
+      if self.stream == nil {
+        controlsPosition = .center
+      }
+    }
+  }
   @Published var onTop: Bool = true
   @Published var isFullscreen: Bool = false
   @Published var display: Bool = false
@@ -39,7 +49,8 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
   @Published var category: Category? = nil
   @Published var icon: String = ""
   @Published var hint: String = ""
-  @Published var controlsState: PlayerControlsState = .hidden
+  @Published var controlsState: PlayerControlsState = .always
+  @Published var controlsPosition: PlayerControlsPosition = .bottom
   @Published var volumeStage: Int = 1
   @Published var iconSize: CGSize = CGSize(width: 25, height: 25)
   @Published var size: CGSize = CGSize(width: 12.0, height: 9.0) {
@@ -79,11 +90,13 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
     }
     set {
       self._contentToggle = newValue == self._contentToggle ? nil : newValue
-      if ToggleViews.hideControls.contains(self._contentToggle ?? .none) {
-        controlsState = .hidden
-      } else if (self.stream == nil) {
-        controlsState = .always
-      }
+//      if ToggleViews.hideControls.contains(self._contentToggle ?? .none) {
+//        controlsState = .hidden
+//      }
+//      else if self.stream == nil {
+//        controlsState = .always
+//        controlsPosition = .center
+//      }
       objectWillChange.send()
     }
   }
@@ -158,9 +171,10 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
     self.epgId = stream.epg_channel_id
     self.category = Category.get(stream.category_id)
     self.vendorPlayer.play(stream)
-    if (controlsState == .always) {
+    if controlsState == .always {
       controlsState = .hidden
     }
+    controlsPosition = .bottom
   }
 
   func retry() {
@@ -178,7 +192,7 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
     self.vendorPlayer.stop()
     self.display = false
   }
-  
+
   func pause() {
     guard self.state == .playing else {
       return
@@ -186,7 +200,7 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
     self.state = .paused
     self.vendorPlayer.pause()
   }
-  
+
   func resume() {
     guard self.state == .paused else {
       return
@@ -194,7 +208,6 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
     self.state = .playing
     self.vendorPlayer.resume()
   }
-  
 
   func next() async {
     guard self.stream != nil else {

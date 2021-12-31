@@ -138,6 +138,7 @@ class EPGStorageAbstract: NSObject, ObservableObject, StorageProvider {
       }
       DispatchQueue.main.async {
         do {
+          logger.debug(">> epg search starts")
           try self.list.refetch(
             From<EPG>()
               .sectionBy("channel")
@@ -145,10 +146,11 @@ class EPGStorageAbstract: NSObject, ObservableObject, StorageProvider {
               .orderBy(self.order),
             sourceIdentifier: nil
           )
+          logger.debug(">> epg search results \(self.list.snapshot.count)")
           self.state = .loaded
         }
         catch {
-          logger.error("\(error.localizedDescription)")
+          logger.error(">> epg search error \(error.localizedDescription)")
         }
       }
     }

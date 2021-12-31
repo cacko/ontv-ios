@@ -207,6 +207,7 @@ extension ToggleViews {
     @ObservedObject var scheduleProvider = ScheduleStorage.events
     @ObservedObject var liverscoreProvider = LivescoreStorage.events
     @ObservedObject var player = Player.instance
+    @ObservedObject var api = API.Adapter
 
     private var buttonFont: Font = .system(size: 20, weight: .heavy, design: .monospaced)
 
@@ -214,6 +215,12 @@ extension ToggleViews {
       if player.contentToggle == .schedule {
         VStack(alignment: .trailing) {
           ContentHeaderView(title: "SportsDB Schedule", icon: ContentToggleIcon.schedule)
+          if api.scheduleState == .loading {
+            HStack(alignment: .center, spacing: 10) {
+              Text("LOADING").font(Theme.Font.title)
+              ProgressIndicator()
+            }
+          }
           ScrollingView {
             ListReader(scheduleProvider.list) { snapshot in
               ForEach(sectionIn: snapshot) { section in

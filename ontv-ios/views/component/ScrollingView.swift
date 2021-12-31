@@ -48,31 +48,28 @@ struct ScrollingView<Content: View>: View {
 
   var body: some View {
     ScrollView(direction, showsIndicators: false) {
-      VStack(alignment: .center, spacing: 0) {
-        if direction == .vertical {
+      if direction == .vertical {
+        if columns != nil {
+          LazyVGrid(columns: self.columns, spacing: self.spacing) {
+            content
+          }
+        }
+        else {
           if columns != nil {
-            LazyVGrid(columns: self.columns, spacing: self.spacing) {
+            LazyHGrid(rows: self.columns, spacing: self.spacing) {
               content
             }
           }
           else {
-            if columns != nil {
-              LazyHGrid(rows: self.columns, spacing: self.spacing) {
-                content
-              }
-            }
-            else {
-              LazyVStack {
-                content
-              }
+            LazyVStack {
+              content
             }
           }
-
         }
-        else {
-          LazyHStack {
-            content
-          }
+      }
+      else {
+        LazyHStack {
+          content
         }
       }
     }

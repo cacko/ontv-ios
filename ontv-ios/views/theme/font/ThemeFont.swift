@@ -32,7 +32,7 @@ extension Theme.Font {
   static let title: SwiftUI.Font = Font.custom("Atami Stencil Bold", size: Size.larger)
   static let desc: SwiftUI.Font = Font.custom("Teko Light", size: Size.small)
   static let time: SwiftUI.Font = Font.system(size: Size.small, weight: .bold, design: .monospaced)
-  static let searchTime: SwiftUI.Font = Font.system(size: Size.smallest, design: .monospaced)
+  static let searchTime: SwiftUI.Font = Font.custom("Teko Light", size: Size.smallest)
   static let hint: SwiftUI.Font = Font.custom("Teko Light", size: Size.small)
   static let status: SwiftUI.Font = Font.custom("Teko Light", size: Size.small)
   static let score: SwiftUI.Font = Font.custom("Atami Stencil Bold", size: Size.large)

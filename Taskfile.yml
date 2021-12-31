@@ -1,0 +1,42 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  push:
+    desc: push code
+    cmds:
+      - git add .
+      - git commit -am "$(curl -s https://commit.cacko.net/index.txt)"
+      - git push
+
+  init:
+    desc: install pods
+    cmds:
+      - gem install cocoapods
+      - pod install
+
+  archive:
+    desc: build application
+    cmds:
+      - echo "increment build number"
+      - agvtool next-version -all
+      - echo "building app"
+      - xcodebuild clean
+      - xcodebuild archive -workspace ontv-ios.xcworkspace -sdk iphoneos15.2 -scheme ontv-ios -configuration Release DSTROOT="/Users/jago/Code/ontv-ios"
+
+  install:
+    desc: install it on the ipad
+    cmds:
+      - ios-deploy -i $IPAD_UUID -b Applications/ontv-ios.app 
+
+  release:
+    desc: archive, dmg and upload package
+    cmds:
+      - task: archive
+      # - task: ipa
+      # - task: publish
+      - task: install

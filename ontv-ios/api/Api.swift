@@ -10,6 +10,7 @@ import CoreStore
 import Defaults
 import Foundation
 import ObjectiveC
+import SwiftUI
 
 extension Defaults.Keys {
   static let userinfo = Key<API.UserInfo>("userinfo", default: .init(username: "", password: ""))
@@ -46,7 +47,10 @@ enum API {
     @Published var epgState: ProviderState = .notavail
     @Published var user: UserInfo? = nil
     @Published var expires: String = ""
-    @Published var livescoreState: LivescoreState = .ready
+    @Published var livescoreState: API.State = .loading
+    @Published var scheduleState: API.State = .loading
+    @Published var streamsState: API.State = .loading
+    @Published var leaguesState: API.State = .loading
 
     @Published var state: API.State = .loading {
       didSet {
@@ -116,15 +120,15 @@ enum API {
           try await updateStreams()
         }
         else {
-          DispatchQueue.main.async {
-            self.state = .ready
-          }
+          self.state = .ready
+          self.streamsState = .ready
           NotificationCenter.default.post(name: .updatestreams, object: nil)
         }
         if Schedule.needUpdate() {
           try await updateSchedule()
         }
         else {
+          scheduleState = .ready
           NotificationCenter.default.post(name: .updateschedule, object: nil)
         }
         NotificationCenter.default.post(name: .loaded, object: nil)
@@ -206,8 +210,11 @@ enum API {
     }
 
     func updateSchedule() async throws {
+      guard self.scheduleState != .loading else {
+        return
+      }
       DispatchQueue.main.async {
-        self.loading = .schedule
+        self.scheduleState = .loading
       }
       try await Schedule.fetch(url: Endpoint.Schedule) { _ in
         DispatchQueue.main.async {
@@ -220,19 +227,26 @@ enum API {
             }
           }
           Defaults[.scheduleUpdated] = Date()
-          self.loading = .loaded
+          self.scheduleState = .ready
           NotificationCenter.default.post(name: .updateschedule, object: nil)
         }
       }
     }
 
     func updateStreams() async throws {
+      
+      guard streamsState != .loading else {
+        return
+      }
+      
       DispatchQueue.main.async {
         self.loading = .category
+        self.streamsState = .loading
       }
       try await Category.fetch(url: Endpoint.Categories) { _ in
         DispatchQueue.main.async {
           self.state = .ready
+          self.streamsState = .ready
         }
         DispatchQueue.main.async {
           Task.detached {
@@ -260,15 +274,26 @@ enum API {
           Defaults[.streamsUpdated] = Date()
           NotificationCenter.default.post(name: .updatestreams, object: nil)
           self.loading = .loaded
+          self.scheduleState = .ready
         }
       }
     }
 
     func updateEPG() async throws {
+      logger.debug(">> update EPG called")
+
+      guard self.epgState != .loading else {
+        logger.debug(">> update EPG is already loading, discard")
+        return
+      }
+
       DispatchQueue.main.async {
         self.loading = .epg
         self.epgState = .loading
       }
+
+      logger.debug(">> update EPG start")
+
       try await EPG.fetch(url: Endpoint.EPG) { _ in
         Task.detached {
           do {
@@ -282,23 +307,27 @@ enum API {
             self.epgState = .loaded
             self.loading = .loaded
           }
+          logger.debug(">> update EPG End")
           NotificationCenter.default.post(name: .updateepg, object: nil)
         }
       }
     }
 
     func updateLivescore() async throws {
-      guard state == .ready else {
+      logger.debug(">> update livescore called")
+      guard livescoreState != .loading else {
         return
       }
       DispatchQueue.main.async {
         self.livescoreState = .loading
       }
+      logger.debug(">> update livescore start")
       try await Livescore.fetch(url: Endpoint.Livescores) { _ in
         Task.detached {
           do {
             self.updateLeagues()
             try await Livescore.delete(Livescore.clearQuery)
+            logger.debug(">> update livescore end")
             DispatchQueue.main.async {
               self.livescoreState = .ready
             }
@@ -313,6 +342,7 @@ enum API {
 
     func updateLeagues() {
       DispatchQueue.main.async {
+        self.leaguesState = .loading
         let livescores = Livescore.getAll()
         let leagues: [String: Any] = livescores.reduce(
           into: [:],
@@ -330,7 +360,7 @@ enum API {
           do {
             try await League.doImport(
               json: leagues.map { ["id": $0, "idLeague": $0.int64, "strLeague": $1] }
-            ) { _ in }
+            ) { _ in self.leaguesState = .ready }
           }
           catch {}
         }

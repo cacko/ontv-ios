@@ -64,14 +64,12 @@ struct ContentView: View {
           .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
           .aspectRatio(player.size.aspectSize, contentMode: .fill)
           .opacity(player.display ? 1 : 0)
-          .gesture(
-            TapGesture(count: 1)
-              .onEnded({ _ in
-                NotificationCenter.default.post(name: .onTap, object: nil)
-              })
-          ).sheet(isPresented: showSearch) {
+          .onTapGesture(perform: {
+            NotificationCenter.default.post(name: .onTap, object: nil)
+          })
+          .sheet(isPresented: showSearch) {
             SearchView()
-          }.colorScheme(.dark)
+          }
         if [PlayerState.opening, PlayerState.buffering].contains(player.state) {
           LoadingView()
         }
@@ -86,15 +84,11 @@ struct ContentView: View {
         }
         ToggleView()
       }
-      .onTapGesture(perform: {
-        if [ContentToggle.guide, ContentToggle.category].contains(player.contentToggle) {
-          NotificationCenter.default.post(name: .onTap, object: nil)
-        }
-      })
-    }.colorScheme(.dark)
-      .background(
-        Image("mbappe").resizable().aspectRatio(contentMode: .fill).opacity( (player.stream != nil) ?0: 0.5)
-      )      .background(.black)
-
+    }
+    .background(
+      Image("splash").resizable().aspectRatio(contentMode: .fill).opacity(
+        (player.stream != nil) ? 0 : 0.5
+      )
+    ).background(.black)
   }
 }

@@ -60,10 +60,10 @@ struct ontv_iosApp: App {
   init() {
     Schema.addStorageAndWait()
   }
-
+  
   var body: some Scene {
     WindowGroup {
-      ContentView().statusBar(hidden: true).colorScheme(.dark)
+      ContentView().statusBar(hidden: true)
     }
   }
 }

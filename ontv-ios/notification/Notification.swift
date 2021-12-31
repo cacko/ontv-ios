@@ -8,6 +8,7 @@
 import Defaults
 import Foundation
 import KSPlayer
+import UIKit
 
 extension Notification.Name {
   static let openWindow = NSNotification.Name("open_window")
@@ -130,13 +131,13 @@ extension AppDelegate {
     }
 
     center.addObserver(forName: .onTap, object: nil, queue: mainQueue) { _ in
-      if self.player.contentToggle != nil {
-        self.player.contentToggle = nil
-        self.fadeTask?.cancel()
+      if self.player.contentToggle != ContentToggle.none {
+        self.player.contentToggle = ContentToggle.none
       }
-      if self.player.controlsState != .always {
-        self.player.controlsState = .hidden
+      guard self.player.controlsState != .always else {
+        return
       }
+      self.player.controlsState = self.player.controlsState != .hidden ? .hidden : .visible
     }
 
     center.addObserver(forName: .bookmark, object: nil, queue: mainQueue) { _ in
@@ -167,19 +168,6 @@ extension AppDelegate {
     }
   }
 
-  private func getFadeTak(_ toggle: ContentToggle) -> DispatchWorkItem {
-    if self.fadeTask?.isCancelled != nil {
-      self.fadeTask.cancel()
-    }
-    self.fadeTask = DispatchWorkItem {
-      guard self.player.contentToggle == toggle else {
-        return
-      }
-      NotificationCenter.default.post(name: .contentToggle, object: toggle)
-    }
-    return self.fadeTask
-  }
-
   func openStream(_ stream: Stream) {
     DispatchQueue.main.async {
       self.player.contentToggle = nil
@@ -187,7 +175,7 @@ extension AppDelegate {
       EPGStorage.active = nil
     }
   }
-  
+
   func restartApp() {
     //    if let path = Bundle.main.resourceURL?.deletingLastPathComponent()
     //        .deletingLastPathComponent().absoluteString

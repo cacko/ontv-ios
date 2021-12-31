@@ -9,6 +9,7 @@ import CoreStore
 import Defaults
 import Foundation
 import SwiftUI
+import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -48,7 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     return true
   }
-
+  
+  func applicationWillResignActive(_ application: UIApplication) {
+    logger.debug(">>> will resign active")
+  }
+  
+  func applicationWillTerminate(_ application: UIApplication) {
+    logger.debug(">> will lterminate")
+  }
+  
   func applicationWillEnterForeground(_ application: UIApplication) {
     guard player.state == .paused else {
       return

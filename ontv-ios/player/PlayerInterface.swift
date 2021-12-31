@@ -96,6 +96,10 @@ enum PlayerControlsState {
   case hidden, visible, hovered, always
 }
 
+enum PlayerControlsPosition {
+  case top, bottom, center
+}
+
 
 protocol PlayerProtocol: ObservableObject {
   var error: PlayerError { get set }
@@ -113,6 +117,7 @@ protocol PlayerProtocol: ObservableObject {
   var contentToggle: ContentToggle? { get set }
   var volume: Float { get set }
   var controlsState: PlayerControlsState { get set }
+  var controlsPosition: PlayerControlsPosition { get set }
   var icon: String { get set }
   var hint: String { get set }
   var metadata: StreamInfo.Metadata { get set }

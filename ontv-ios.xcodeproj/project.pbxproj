@@ -112,12 +112,12 @@
 		160F6A4E277B7FD500EBEE26 /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E6277B7FD500EBEE26 /* Teko-Regular.ttf */; };
 		160F6A4F277B7FD500EBEE26 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E7277B7FD500EBEE26 /* Teko-Light.ttf */; };
 		160F6A50277B7FD500EBEE26 /* AtamiStencil.otf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E8277B7FD500EBEE26 /* AtamiStencil.otf */; };
+		161E5E85277EC037007504BE /* Splash2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161E5E84277EC037007504BE /* Splash2.storyboard */; };
 		166BD901277B844A00A597BE /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD900277B844A00A597BE /* Introspect */; };
 		166BD904277B846000A597BE /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD903277B846000A597BE /* Defaults */; };
 		166BD907277B847900A597BE /* CoreStore in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD906277B847900A597BE /* CoreStore */; };
 		166BD90A277B849100A597BE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD909277B849100A597BE /* Kingfisher */; };
 		166BD90D277B84A600A597BE /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD90C277B84A600A597BE /* SwiftDate */; };
-		166BD90F277C1C1600A597BE /* splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 166BD90E277C1C1600A597BE /* splash.storyboard */; };
 		166BD911277C23DD00A597BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166BD910277C23DD00A597BE /* Assets.xcassets */; };
 		166BD914277C498D00A597BE /* InAppSettingsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD913277C498D00A597BE /* InAppSettingsKit */; };
 		166BD916277C49EC00A597BE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 166BD915277C49EC00A597BE /* Settings.bundle */; };
@@ -233,7 +233,7 @@
 		160F69E7277B7FD500EBEE26 /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
 		160F69E8277B7FD500EBEE26 /* AtamiStencil.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AtamiStencil.otf; sourceTree = "<group>"; };
 		160F6A51277B814A00EBEE26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		166BD90E277C1C1600A597BE /* splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = splash.storyboard; sourceTree = "<group>"; };
+		161E5E84277EC037007504BE /* Splash2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash2.storyboard; sourceTree = "<group>"; };
 		166BD910277C23DD00A597BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		166BD915277C49EC00A597BE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BBD123D892EF5C8ABF926B8D /* Pods-ontv-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontv-ios.debug.xcconfig"; path = "Target Support Files/Pods-ontv-ios/Pods-ontv-ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +280,7 @@
 		160F6956277B7F8B00EBEE26 /* ontv-ios */ = {
 			isa = PBXGroup;
 			children = (
+				161E5E84277EC037007504BE /* Splash2.storyboard */,
 				166BD910277C23DD00A597BE /* Assets.xcassets */,
 				160F6A51277B814A00EBEE26 /* Info.plist */,
 				160F69D2277B7FD400EBEE26 /* api */,
@@ -292,7 +293,6 @@
 				160F698E277B7FD400EBEE26 /* views */,
 				160F6957277B7F8B00EBEE26 /* ontv_iosApp.swift */,
 				160F6972277B7FD400EBEE26 /* AppDelegate.swift */,
-				166BD90E277C1C1600A597BE /* splash.storyboard */,
 			);
 			path = "ontv-ios";
 			sourceTree = "<group>";
@@ -670,9 +670,6 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				KnownAssetTags = (
-					splash,
-				);
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
@@ -714,13 +711,13 @@
 			files = (
 				160F6A4F277B7FD500EBEE26 /* Teko-Light.ttf in Resources */,
 				160F6A4D277B7FD500EBEE26 /* AtamiStencilBold.otf in Resources */,
+				161E5E85277EC037007504BE /* Splash2.storyboard in Resources */,
 				160F6A4C277B7FD500EBEE26 /* Teko-SemiBold.ttf in Resources */,
 				160F6A4B277B7FD500EBEE26 /* Teko-Medium.ttf in Resources */,
 				166BD911277C23DD00A597BE /* Assets.xcassets in Resources */,
 				160F6A4A277B7FD500EBEE26 /* Teko-Bold.ttf in Resources */,
 				160F6A4E277B7FD500EBEE26 /* Teko-Regular.ttf in Resources */,
 				160F6A49277B7FD500EBEE26 /* MajorMonoDisplay-Regular.ttf in Resources */,
-				166BD90F277C1C1600A597BE /* splash.storyboard in Resources */,
 				166BD916277C49EC00A597BE /* Settings.bundle in Resources */,
 				160F6A50277B7FD500EBEE26 /* AtamiStencil.otf in Resources */,
 			);
@@ -1002,20 +999,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ontv-ios/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = splash;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash2;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1037,20 +1036,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ontv-ios/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = splash;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash2;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

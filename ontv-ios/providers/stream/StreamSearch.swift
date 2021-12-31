@@ -62,6 +62,7 @@ extension StreamStorage {
 
     func update() {
       guard search.count > 2 else {
+        logger.debug(">> stream search ignore")
         self.state = .notavail
         return
       }
@@ -73,8 +74,28 @@ extension StreamStorage {
           subpredicates: terms.map { NSPredicate(format: "name CONTAINS[c] %@", $0 as CVarArg) }
         )
       )
-      self.fetch()
+      logger.debug(">> stream search start")
+//      DispatchQueue.main.async {
+        self.state = .loading
+        do {
+          logger.debug(">> stream fetch")
+          
+          try self.list.refetch(
+            From<Stream>()
+              .where(self.query)
+              .orderBy(self.order),
+            sourceIdentifier: nil
+          )
+  
+          logger.debug(">> stream search done \(self.list.snapshot.count)")
+        }
+        catch {
+          logger.error("\(error.localizedDescription)")
+        }
+        self.state = .loaded
+//      }
     }
+    
 
     func onNavigate(_ notification: Notification) {
       logger.error("kira mi janko")

@@ -158,7 +158,10 @@ extension V1 {
     }
     
     static func needUpdate() -> Bool {
-      !Date().isSameDay(Defaults[.scheduleUpdated])
+      let updated = Defaults[.scheduleUpdated]
+      let res = !updated.isCloseTo(precision: 2.hours.timeInterval)
+      logger.debug(">> streams needs update \(res) \(updated)")
+      return res
     }
     
   }

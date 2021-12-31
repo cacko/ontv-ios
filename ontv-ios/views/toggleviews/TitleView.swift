@@ -13,19 +13,21 @@ extension ToggleViews {
     @ObservedObject var player = Player.instance
 
     var body: some View {
-      VStack {
-        HStack(alignment: .center) {
-          Spacer()
-          if let stream = player.stream {
-            StreamTitleView.IconView(stream.icon)
-            Text(stream.title)
-              .font(Theme.Font.title)
+      if player.contentToggle == .title {
+        VStack {
+          HStack(alignment: .center) {
+            Spacer()
+            if let stream = player.stream {
+              StreamTitleView.IconView(stream.icon)
+              Text(stream.title)
+                .font(Theme.Font.title)
+            }
+            Spacer()
           }
+          .padding()
+          .background(Theme.Color.Background.header)
           Spacer()
         }
-        .padding()
-        .background(Theme.Color.Background.header)
-        Spacer()
       }
     }
   }

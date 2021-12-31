@@ -16,10 +16,6 @@ enum LivescoreStatus {
   static let notstarted = "NS"
 }
 
-enum LivescoreState {
-  case loading, ready
-}
-
 extension V1 {
   class Livescore: CoreStoreObject, AbstractEntity, ImportableUniqueObject, ImportableModel {
     

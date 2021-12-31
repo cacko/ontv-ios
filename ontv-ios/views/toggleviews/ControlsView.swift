@@ -176,12 +176,10 @@ extension ToggleViews {
 
   struct ControlsView: View {
     @ObservedObject var player = Player.instance
-
     var body: some View {
       if player.controlsState != .hidden {
         VStack {
           Spacer()
-
           HStack(alignment: .center, spacing: 2) {
             Spacer()
             HStack {
@@ -191,16 +189,18 @@ extension ToggleViews {
               PlayerControlsView()
             }
             .padding()
-            .background(player.controlsState == .always ? .clear : Theme.Color.Background.controls)
+            .background(
+              player.controlsPosition == .center ? .clear : Theme.Color.Background.controls
+            )
             .cornerRadius(10)
             Spacer()
           }.background(
-            player.controlsState == .always
+            player.controlsPosition == .center
               ? Theme.Color.Background.header
               : .linearGradient(colors: [.clear], startPoint: .top, endPoint: .bottom)
           ).padding()
 
-          if player.controlsState == .always {
+          if player.controlsPosition == .center {
             Spacer()
           }
         }

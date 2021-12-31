@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftDate
 
 extension Date {
   
@@ -17,6 +18,11 @@ extension Date {
     else {
       return false
     }
+  }
+  
+  func isCloseTo(precision: TimeInterval = 300) -> Bool {
+    
+    return Date().compareCloseTo(self, precision: precision)
   }
   
   var HHMM: String {

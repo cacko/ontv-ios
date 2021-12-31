@@ -27,8 +27,6 @@ class FFMpegPlayerView: IOSVideoPlayerView {
     tapGesture.addTarget(self, action: #selector(tapGestureAction(_:)))
     tapGesture.numberOfTapsRequired = 1
     addGestureRecognizer(tapGesture)
-    //    panGesture.addTarget(self, action: #selector(panGestureAction(_:)))
-    //    addGestureRecognizer(panGesture)
     doubleTapGesture.addTarget(self, action: #selector(doubleTapGestureAction))
     doubleTapGesture.numberOfTapsRequired = 2
     tapGesture.require(toFail: doubleTapGesture)
@@ -46,45 +44,19 @@ class FFMpegPlayerView: IOSVideoPlayerView {
     replayButton.removeFromSuperview()
   }
 
-  var hideCursorTask: DispatchWorkItem!
-
-  func onTapProcess() {
-
-    guard self.controller.controlsState != .always else {
-      return
-    }
-
-    if ToggleViews.hideControls.contains(self.controller.contentToggle ?? .none) == false {
-      self.controller.controlsState = .visible
-    }
-
-    let task = self.getHideCursorTask()
-
-    guard controller.controlsState == .visible else {
-      return
-    }
-    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: task)
-  }
-
-  private func getHideCursorTask() -> DispatchWorkItem {
-    if self.hideCursorTask != nil {
-      self.hideCursorTask.cancel()
-    }
-    self.hideCursorTask = DispatchWorkItem {
-      guard self.controller.contentToggle != .search else {
-        return
-      }
-      self.controller.controlsState = .hidden
-    }
-    return self.hideCursorTask
-  }
-
   @objc open override func doubleTapGestureAction() {
-    self.onTapProcess()
+    guard controller.controlsState == .always else {
+      return
+    }
+    controller.controlsState = controller.controlsState != .hidden ? .hidden : .visible
   }
 
   @objc open override func tapGestureAction(_: UITapGestureRecognizer) {
-    self.onTapProcess()
+    guard controller.controlsState == .always else {
+      return
+    }
+    controller.controlsState = controller.controlsState != .hidden ? .hidden : .visible
+    logger.debug(">> tap on videp")
   }
 
   override func player(layer _: KSPlayerLayer, finish error: Error?) {

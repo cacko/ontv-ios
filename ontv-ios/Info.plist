@@ -51,16 +51,13 @@
 		<string>Teko-SemiBold.ttf</string>
 		<string>MajorMonoDisplay-Regular.ttf.</string>
 	</array>
-	<key>UIApplicationSceneManifest</key>
-	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-	</dict>
+	<key>UIApplicationExitsOnSuspend</key>
+	<false/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
+		<string>fetch</string>
+		<string>processing</string>
 	</array>
-	<key>UIStatusBarHidden~ipad</key>
-	<true/>
 </dict>
 </plist>

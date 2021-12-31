@@ -16,7 +16,7 @@ struct ContentHeaderView: View {
   var body: some View {
     HStack(alignment: .center, spacing: 0) {
       ControlSFSymbolView(icon: icon, width: Theme.Font.Size.larger)
-        .padding()
+        .padding().contentShape(Rectangle())
         .onTapGesture(perform: {
           NotificationCenter.default.post(
             name: .contentToggle,

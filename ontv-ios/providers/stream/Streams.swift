@@ -87,12 +87,15 @@ extension StorageProvider where EntityType == Stream {
     DispatchQueue.main.async {
       self.state = .loading
       do {
+        logger.debug(">> stream fetch")
+
         try self.list.refetch(
           From<Stream>()
             .where(self.query)
             .orderBy(self.order),
           sourceIdentifier: nil
         )
+        
       }
       catch {
         logger.error("\(error.localizedDescription)")

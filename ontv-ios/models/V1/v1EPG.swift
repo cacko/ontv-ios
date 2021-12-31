@@ -12,45 +12,45 @@ import SwiftUI
 
 extension V1 {
   class EPG: CoreStoreObject, AbstractEntity, ImportableObject, ImportableModel {
-    
+
     typealias EntityType = EPG
-    
+
     class var primaryKey: String {
       "id"
     }
-    
+
     static var clearQuery: Where<EntityType> {
       Where<EntityType>(NSPredicate(format: "stop < %@", Date() as NSDate))
     }
-    
+
     @Field.Stored("id")
     var id: String = ""
-    
+
     @Field.Stored("channel")
     var channel: String = ""
-    
+
     @Field.Stored("title")
     var title: String = ""
-    
+
     @Field.Stored("start")
     var start = Date()
-    
+
     @Field.Stored("stop")
     var stop = Date()
-    
+
     @Field.Stored("desc")
     var desc: String = ""
-    
+
     @Field.Relationship("activity")
     var activity: Activity?
-    
+
     var hashId: Int {
       var hasher = Hasher()
       hasher.combine(self.channel)
       hasher.combine("\(self.title).\(self.start).\(self.stop)")
       return hasher.finalize()
     }
-    
+
     func loadData(from source: [String: Any]) {
       channel = Self.asString(data: source, key: "channel")
       title = Self.asString(data: source, key: "title")
@@ -59,10 +59,10 @@ extension V1 {
       stop = Self.asDate(data: source, key: "stop")
       id = hashId.string
     }
-    
+
     private static var activities: [Activity]!
     private static var activityChannels: [String]!
-    
+
     private func getActivity(tr: BaseDataTransaction, channel: String) -> Activity? {
       if Self.activities == nil {
         do {
@@ -72,18 +72,18 @@ extension V1 {
         catch {
           Self.activities = []
         }
-        
+
       }
       guard Self.activityChannels.contains(channel) else {
         return nil
       }
       return Self.activities.first { $0.stream?.epg_channel_id == channel }
     }
-    
+
     func didInsert(from data: [String: Any], in transaction: BaseDataTransaction) throws {
       self.loadData(from: data)
     }
-    
+
     class func doImport(
       json: [[String: Any]],
       onComplete: @escaping (AsynchronousDataTransaction.Result<Void>) -> Void
@@ -137,20 +137,23 @@ extension V1 {
         }
       )
     }
-    
+
     static func needUpdate() -> Bool {
-      !Date().isSameDay(Defaults[.epgUpdated])
+      let updated = Defaults[.epgUpdated]
+      let res = !updated.isCloseTo(precision: 2.hours.timeInterval)
+      logger.debug(">> EPG needs update \(res) \(updated)")
+      return res
     }
-    
+
     var isLive: Bool {
       let now = Date()
       return start.compare(now) == .orderedAscending && stop.compare(now) == .orderedDescending
     }
-    
+
     var isPlaying: Bool {
       Player.instance.stream == self.stream
     }
-    
+
     class var orderBy: OrderBy<EPG> {
       OrderBy([
         NSSortDescriptor(key: "start", ascending: true),
@@ -161,9 +164,9 @@ extension V1 {
         ),
       ])
     }
-    
+
     private var _stream: Stream?
-    
+
     var stream: Stream? {
       guard self._stream != nil else {
         if let obj = Stream.findOne(Where<Stream>("epg_channel_id = %s", self.channel)) {
@@ -173,13 +176,13 @@ extension V1 {
       }
       return self._stream
     }
-    
+
     var showTime: String {
       let formatter = DateFormatter()
       formatter.dateFormat = "HH:mm"
       return "\(formatter.string(from: start))\n\(formatter.string(from: stop))"
     }
-    
+
     var startTime: String {
       let formatter = DateFormatter()
       formatter.dateFormat = "HH:mm"

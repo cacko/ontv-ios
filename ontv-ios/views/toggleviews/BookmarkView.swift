@@ -42,7 +42,7 @@ extension ToggleViews {
             Text("Click to open or save if empty slot")
               .font(Theme.Font.programme)
               .shadow(color: .black, radius: 1, x: 1, y: 1)
-              .textCase(.uppercase)
+              .textCase(.uppercase).onTapGesture(perform: {})
             HStack {
               Spacer()
               ForEach(quickStreams.streams, id: \.idx) { qs in
@@ -62,7 +62,7 @@ extension ToggleViews {
                     }
                   }
                   .padding()
-                }
+                }.onTapGesture(perform: {})
                 .highPriorityGesture(
                   TapGesture(count: 2)
                     .onEnded({ _ in
@@ -78,11 +78,13 @@ extension ToggleViews {
               .font(Theme.Font.programme)
               .shadow(color: .black, radius: 1, x: 1, y: 1)
               .textCase(.uppercase)
-          }
+          }.contentShape(Rectangle()).onTapGesture(perform: {})
           .padding()
           .background(Theme.Color.Background.header)
           Spacer()
-        }
+        }.contentShape(Rectangle()).onTapGesture(perform: {
+          player.contentToggle = ContentToggle.none
+        })
       }
     }
   }

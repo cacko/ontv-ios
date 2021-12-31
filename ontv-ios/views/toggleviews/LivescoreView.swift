@@ -109,6 +109,7 @@ extension ToggleViews {
 
     @ObservedObject var liverscoreProvider = LivescoreStorage.events
     @ObservedObject var player = Player.instance
+    @ObservedObject var api = API.Adapter
 
     private var buttonFont: Font = .system(size: 20, weight: .heavy, design: .monospaced)
 
@@ -120,30 +121,47 @@ extension ToggleViews {
     }
 
     var body: some View {
-      VStack(alignment: .leading) {
-        ContentHeaderView(title: "Livescores", icon: ContentToggleIcon.livescores)
-        if liverscoreProvider.list.snapshot.count == 0 {
-          Text("No scores for the selected leagues")
-            .font(Theme.Font.programme)
-            .padding()
-        }
-        ScrollingView {
-          ListReader(liverscoreProvider.list) { snapshot in
-            ForEach(objectIn: snapshot) { livescore in
-              LivescoreItem(livescore)
-                .padding()
-                .pressAction {
-                  onTapItem(livescore)
+      if player.contentToggle == .livescores {
+        GeometryReader { geo in
+          HStack {
+            VStack(alignment: .leading) {
+              ContentHeaderView(title: "Livescores", icon: ContentToggleIcon.livescores)
+              if liverscoreProvider.list.snapshot.count == 0 {
+                Text("No scores for the selected leagues")
+                  .font(Theme.Font.programme)
+                  .padding()
+              }
+              if api.livescoreState == .loading {
+                HStack(alignment: .center, spacing: 10) {
+                  Text("LOADING").font(Theme.Font.title)
+                  ProgressIndicator()
                 }
-                .onTicker(state: livescore.$in_ticker ?? 0 > 0)
-                .onScoreChange(state: livescore.$score_changed ?? 0 > 0)
-            }
-          }
-        }.onAppear {
-          LivescoreStorage.enable(.livescores)
-        }.onDisappear(perform: {
-          LivescoreStorage.disable(.livescores)
-        })
+              }
+              ScrollingView {
+                ListReader(liverscoreProvider.list) { snapshot in
+                  ForEach(objectIn: snapshot) { livescore in
+                    LivescoreItem(livescore)
+                      .padding()
+                      .pressAction {
+                        onTapItem(livescore)
+                      }
+                      .onTicker(state: livescore.$in_ticker ?? 0 > 0)
+                      .onScoreChange(state: livescore.$score_changed ?? 0 > 0)
+                  }
+                }
+              }.onAppear {
+                LivescoreStorage.enable(.livescores)
+              }.onDisappear(perform: {
+                LivescoreStorage.disable(.livescores)
+              })
+            }.onTapGesture(perform: {
+            })
+            .background(.black.opacity(0.8))
+            Spacer(minLength: geo.size.width * 0.5)
+          }.contentShape(Rectangle()).onTapGesture(perform: {
+            player.contentToggle = ContentToggle.none
+          })
+        }
       }
     }
   }

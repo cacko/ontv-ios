@@ -84,20 +84,21 @@ struct SearchBar: View {
   let epgSearch = EPGStorage.search
 
   func getDelaySearchTask() -> DispatchWorkItem {
+    logger.debug(">> search delay invoked \(text)")
+
     if self.delaySearchTask != nil {
+      logger.debug(">> search cancelled \(text)")
+
       self.delaySearchTask.cancel()
     }
     self.delaySearchTask = DispatchWorkItem {
-      guard text.count == 0 else {
-        DispatchQueue.main.async {
-          streamProvider.search = text
-          epgProvider.search = text
-          logger.debug(">> search fired \(text)")
-        }
-
+      logger.debug(">> get delayed task")
+      guard text.count > 2 else {
         return
       }
-      NotificationCenter.default.post(name: .contentToggle, object: ContentToggle.search)
+      streamProvider.search = text
+      epgProvider.search = text
+      logger.debug(">> search fired \(text)")
     }
     return self.delaySearchTask
   }
@@ -110,16 +111,12 @@ struct SearchBar: View {
 
   var body: some View {
     HStack {
-      TextField("Search ...", text: $text.onChange(textChanged))
+      TextField("search ...", text: $text.onChange(textChanged))
         .padding(7)
-        //        .padding(.horizontal, 25)
         .background(.background)
         .foregroundColor(.primary)
-        //        .cornerRadius(8)
-        //        .padding(.horizontal, 10)
-        //        .fixedSize(horizontal: true, vertical: true)
-        //        .border(.red, width: 1)
         .font(Theme.Font.searchInput)
+        .textCase(.lowercase)
         .onTapGesture {
           self.isEditing = true
         }
@@ -142,53 +139,44 @@ struct SearchView: View {
   @ObservedObject var streamProvider = StreamStorage.search
   @ObservedObject var epgProvider = EPGStorage.search
   @ObservedObject var api = API.Adapter
+  @ObservedObject var player = Player.instance
 
   @State private var search: String = ""
 
-  var listproxy: ScrollViewProxy? = nil
-
   func onStreamClick(_ stream: ObjectPublisher<Stream>) {
     NotificationCenter.default.post(name: .selectStream, object: stream.object)
-  }
-
-  func navigate(proxy: ScrollViewProxy) {
   }
 
   var body: some View {
     VStack {
       SearchBar(text: $search)
       ScrollingView {
-        VStack(alignment: .leading, spacing: 5) {
-          if api.epgState == .loaded {
-            ListReader(epgProvider.list) { listSnapshot in
-              ForEach(objectIn: listSnapshot) { obj in
-                EPGResult(obj)
-                  .contentShape(Rectangle())
-                  .id(obj.id)
-              }
-            }
-          }
-          ListReader(streamProvider.list) { streamSnapshot in
-            ForEach(objectIn: streamSnapshot) { stream in
-              Button(action: { onStreamClick(stream) }) {
-                HStack {
-                  Image(systemName: "tv").foregroundColor(.gray)
-                  Text(stream.title!)
-                    .lineLimit(1)
-                    .truncationMode(.tail)
-                  Spacer()
-                  StreamTitleView.IconView(stream.icon!)
-
-                }.padding()
-              }
-              .buttonStyle(CustomButtonStyle(Theme.Font.result))
+        ListReader(epgProvider.list) { listSnapshot in
+          ForEach(objectIn: listSnapshot) { obj in
+            EPGResult(obj)
               .contentShape(Rectangle())
+              .id(obj.id)
+          }
+        }
+        ListReader(streamProvider.list) { streamSnapshot in
+          ForEach(objectIn: streamSnapshot) { stream in
+            Button(action: { onStreamClick(stream) }) {
+              HStack {
+                Image(systemName: "tv").foregroundColor(.gray)
+                Text(stream.title!)
+                  .lineLimit(1)
+                  .truncationMode(.tail)
+                Spacer()
+                StreamTitleView.IconView(stream.icon!)
+              }.padding()
             }
+            .buttonStyle(CustomButtonStyle(Theme.Font.result))
+            .contentShape(Rectangle())
           }
         }
       }
-    }.onDisappear{
-      Player.instance.contentToggle = .search
+    }.onDisappear {
+      player.contentToggle = ContentToggle.none
     }
   }
 }

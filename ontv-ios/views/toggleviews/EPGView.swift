@@ -39,51 +39,69 @@ struct EPGRow: View {
 extension ToggleViews {
   struct EPGView: View {
     @ObservedObject var epgStorage = EPGStorage.guide
-
+    @ObservedObject var api = API.Adapter
     @ObservedObject var player = Player.instance
 
     private var buttonFont: Font = .system(size: 20, weight: .heavy, design: .monospaced)
 
     var body: some View {
-      VStack(alignment: .leading, spacing: 0) {
-        HStack {
-          Spacer()
-          if let stream = player.stream {
-            StreamTitleView.IconView(stream.icon)
-            Text("\(stream.title)")
-              .font(Theme.Font.title)
-              .lineLimit(1)
-              .textCase(.uppercase)
-              .fixedSize(horizontal: false, vertical: false)
-              .opacity(1)
-              .padding()
-          }
-        }
-        .background(Theme.Color.Background.header)
-        if epgStorage.state == .notavail {
-          VStack(alignment: .trailing) {
-            Spacer()
-            Text("EPG is not available").font(Theme.Font.result)
-            Spacer()
-          }
-        }
-        else {
-          ScrollingView {
-            ListReader(epgStorage.list) { listSnapshot in
-              ForEach(objectIn: listSnapshot) { epg in
-                EPGRow(item: epg)
-                  .id(epg.id)
+      if player.contentToggle == .guide {
+        GeometryReader { geo in
+          HStack {
+            Spacer(minLength: geo.size.width * 0.5)
+            VStack(alignment: .leading, spacing: 0) {
+              HStack {
+                Spacer()
+                if let stream = player.stream {
+                  StreamTitleView.IconView(stream.icon)
+                  Text("\(stream.title)")
+                    .font(Theme.Font.title)
+                    .lineLimit(1)
+                    .textCase(.uppercase)
+                    .fixedSize(horizontal: false, vertical: false)
+                    .opacity(1)
+                    .padding()
+                }
+              }
+              .background(Theme.Color.Background.header)
+              if epgStorage.state == .notavail {
+                VStack(alignment: .trailing) {
+                  Spacer()
+                  Text("EPG is not available").font(Theme.Font.result)
+                  Spacer()
+                }
+              }
+              if api.epgState == .loading {
+                  HStack(alignment: .center, spacing: 10) {
+                    Text("LOADING").font(Theme.Font.title)
+                    ProgressIndicator()
+                  }
+              }
+              else {
+                ScrollingView {
+                  ListReader(epgStorage.list) { listSnapshot in
+                    ForEach(objectIn: listSnapshot) { epg in
+                      EPGRow(item: epg)
+                        .id(epg.id)
+                    }
+                  }
+                }
               }
             }
-          }
+            .onTapGesture(perform: {})
+            .background(.black.opacity(0.8))
+              .onAppear(perform: {
+                epgStorage.search = player.stream!.epg_channel_id
+              })
+              .onChange(
+                of: player.stream.epg_channel_id,
+                perform: { newid in epgStorage.search = newid }
+              )
+          }.contentShape(Rectangle()).onTapGesture(perform: {
+            player.contentToggle = ContentToggle.none
+          })
         }
-      }.onAppear(perform: {
-        epgStorage.search = player.stream!.epg_channel_id
-      })
-      .onChange(
-        of: player.stream.epg_channel_id,
-        perform: { newid in epgStorage.search = newid }
-      )
+      }
     }
   }
 }
