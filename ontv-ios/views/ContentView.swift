@@ -119,8 +119,8 @@ struct ContentView: View {
       if player.state == .error || api.state == .error || player.state == .retry {
         ErrorView()
       }
-      if api.streamsState != .ready {
-        ApiLoadingView()
+      if api.inProgress {
+        ApiInitProgress()
       }
       if ticker.tickerVisible {
         ToggleViews.LivescoreTickerView()

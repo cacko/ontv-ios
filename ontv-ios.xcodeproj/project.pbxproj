@@ -47,7 +47,7 @@
 		160F6A0D277B7FD500EBEE26 /* ScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6997277B7FD400EBEE26 /* ScrollingView.swift */; };
 		160F6A0E277B7FD500EBEE26 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6998277B7FD400EBEE26 /* ProgressIndicator.swift */; };
 		160F6A0F277B7FD500EBEE26 /* ControlSFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6999277B7FD400EBEE26 /* ControlSFSymbol.swift */; };
-		160F6A10277B7FD500EBEE26 /* ApiLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F699A277B7FD400EBEE26 /* ApiLoadingView.swift */; };
+		160F6A10277B7FD500EBEE26 /* ApiInitProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F699A277B7FD400EBEE26 /* ApiInitProgress.swift */; };
 		160F6A11277B7FD500EBEE26 /* ListNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F699C277B7FD400EBEE26 /* ListNavigator.swift */; };
 		160F6A12277B7FD500EBEE26 /* ScoreChangeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F699D277B7FD400EBEE26 /* ScoreChangeAction.swift */; };
 		160F6A13277B7FD500EBEE26 /* TickerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F699E277B7FD400EBEE26 /* TickerAction.swift */; };
@@ -167,7 +167,7 @@
 		160F6997277B7FD400EBEE26 /* ScrollingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingView.swift; sourceTree = "<group>"; };
 		160F6998277B7FD400EBEE26 /* ProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		160F6999277B7FD400EBEE26 /* ControlSFSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlSFSymbol.swift; sourceTree = "<group>"; };
-		160F699A277B7FD400EBEE26 /* ApiLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiLoadingView.swift; sourceTree = "<group>"; };
+		160F699A277B7FD400EBEE26 /* ApiInitProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiInitProgress.swift; sourceTree = "<group>"; };
 		160F699C277B7FD400EBEE26 /* ListNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNavigator.swift; sourceTree = "<group>"; };
 		160F699D277B7FD400EBEE26 /* ScoreChangeAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreChangeAction.swift; sourceTree = "<group>"; };
 		160F699E277B7FD400EBEE26 /* TickerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerAction.swift; sourceTree = "<group>"; };
@@ -422,7 +422,7 @@
 				160F69AF277B7FD400EBEE26 /* toggleviews */,
 				160F6991277B7FD400EBEE26 /* SearchView.swift */,
 				160F6992277B7FD400EBEE26 /* VideoView.swift */,
-				160F699A277B7FD400EBEE26 /* ApiLoadingView.swift */,
+				160F699A277B7FD400EBEE26 /* ApiInitProgress.swift */,
 				160F69AD277B7FD400EBEE26 /* ContentView.swift */,
 				160F69AE277B7FD400EBEE26 /* LoadingView.swift */,
 				160F69BA277B7FD400EBEE26 /* ErrorView.swift */,
@@ -840,7 +840,7 @@
 				160F6A14277B7FD500EBEE26 /* NavigateAction.swift in Sources */,
 				160F69F7277B7FD500EBEE26 /* LivescoreEvents.swift in Sources */,
 				160F69E9277B7FD500EBEE26 /* PlayerInterface.swift in Sources */,
-				160F6A10277B7FD500EBEE26 /* ApiLoadingView.swift in Sources */,
+				160F6A10277B7FD500EBEE26 /* ApiInitProgress.swift in Sources */,
 				160F69EE277B7FD500EBEE26 /* FFMpegStateDelegate.swift in Sources */,
 				160F69FC277B7FD500EBEE26 /* Streams.swift in Sources */,
 				160F6A12277B7FD500EBEE26 /* ScoreChangeAction.swift in Sources */,
@@ -991,7 +991,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
@@ -1028,7 +1028,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
