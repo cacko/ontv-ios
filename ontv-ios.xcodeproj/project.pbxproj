@@ -989,7 +989,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
@@ -1026,7 +1026,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;

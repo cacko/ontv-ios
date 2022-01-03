@@ -9,24 +9,24 @@ import AVFoundation
 import AVKit
 import Combine
 import Defaults
-import SwiftUI
 import KSPlayer
+import SwiftUI
 
 class PlayerAV: AbstractPlayer {
-  
+
   let controller: Player
-  
+
   var player: AVPlayer!
-  
+
   var playerLayer: AVPlayerLayer!
-  
+
   var media: AVPlayerItem!
-  
+
   let center = NotificationCenter.default
   let mainQueue = OperationQueue.main
-  
+
   var playerItemContext = 0
-  
+
   override var isMuted: Bool {
     get {
       self.player.isMuted
@@ -35,7 +35,7 @@ class PlayerAV: AbstractPlayer {
       self.player.isMuted.toggle()
     }
   }
-  
+
   override var volume: Float {
     get {
       self.player.volume * 100
@@ -44,9 +44,9 @@ class PlayerAV: AbstractPlayer {
       self.player?.volume = max(0, min(newValue / 100, 1))
     }
   }
-  
+
   private var initialised: Bool = false
-  
+
   override class var vendor: VendorInfo {
     get {
       VendorInfo(
@@ -58,39 +58,38 @@ class PlayerAV: AbstractPlayer {
     }
     set {}
   }
-  
+
   let requiredAssetKeys = [
     "playable",
     "availableMetadataFormats",
     "metadata",
     "tracks",
   ]
-  
+
   required init(
     _ controller: Player
   ) {
     self.controller = controller
     super.init(controller)
   }
-  
+
   override func initView(_ view: VideoView) {
     player = AVPlayer()
     playerLayer = AVPlayerLayer(player: player)
     playerLayer.frame = view.bounds
-//    playerLayer.contentsGravity = .bottom
+    //    playerLayer.contentsGravity = .bottom
     playerLayer.videoGravity = .resizeAspect
     view.layer.addSublayer(playerLayer)
 
-
   }
-  
+
   override func deInitView() {
     player.pause()
     player.replaceCurrentItem(with: nil)
     player = nil
     playerLayer.removeFromSuperlayer()
   }
-  
+
   override func play(_ stream: Stream) {
     guard let media = getMedia(stream) else {
       return self.onError(PlayerError(id: .trackFailed, msg: "Cannot play track"))
@@ -98,9 +97,9 @@ class PlayerAV: AbstractPlayer {
     self.media = media
     self.player.replaceCurrentItem(with: self.media)
     self.player.play()
-    
+
   }
-  
+
   private func getMedia(_ stream: Stream) -> AVPlayerItem? {
     try? self.resetMedia()
     let media = AVPlayerItem(
@@ -115,8 +114,7 @@ class PlayerAV: AbstractPlayer {
     )
     return media
   }
-  
-  
+
   private func resetMedia() throws {
     guard self.media != nil else {
       throw PlayerError(id: .null, msg: "alabala")
@@ -124,19 +122,19 @@ class PlayerAV: AbstractPlayer {
     self.media.removeObserver(self, forKeyPath: #keyPath(AVPlayerItem.status))
     self.media = nil
   }
-  
+
   override func stop() {
     self.player.pause()
     try? self.resetMedia()
     self.controller.onStopPlaying()
   }
-  
+
   override func pause() {
-    self.player.pause()
+    self.stop()
   }
-  
+
   override func resume() {
-    self.player.play()
+    self.play(self.controller.stream)
   }
-  
+
 }

@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       object: nil,
       queue: mainQueue
     ) { _ in
+    
       guard self.player.state == .playing else {
         self.player.stop()
         return
@@ -64,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       object: nil,
       queue: mainQueue
     ) { _ in
+      
       guard self.player.state == .paused else {
         return
       }

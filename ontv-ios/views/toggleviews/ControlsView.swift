@@ -18,6 +18,7 @@ struct ControlItemView: View {
   private let icon: ContentToggleIcon!
   private let image: String!
   private var hint: String!
+  private var size: Double = 0
 
   func onClick() {
     guard note != nil else {
@@ -31,25 +32,29 @@ struct ControlItemView: View {
     icon: ContentToggleIcon,
     note: Notification.Name,
     obj: Any? = nil,
-    hint: String? = ""
+    hint: String? = "",
+    size: Double? = nil
   ) {
     self.note = note
     object = obj
     self.icon = icon
     self.hint = hint
     self.image = nil
+    self.size = size ?? player.iconSize.width
   }
 
   init(
     image: String,
     note: Notification.Name,
     obj: Any? = nil,
-    hint: String = ""
+    hint: String = "",
+    size: Double? = nil
   ) {
     self.image = image
     self.hint = hint
     self.icon = nil
     self.note = note
+    self.size = size ?? player.iconSize.width + 10
     object = obj
   }
 
@@ -58,14 +63,14 @@ struct ControlItemView: View {
       onClick()
     }) {
       if icon != nil {
-        ControlSFSymbolView(icon: icon, width: player.iconSize.width)
+        ControlSFSymbolView(icon: icon, width: size)
       }
       else {
         Image(image)
           .resizable()
           .frame(
-            width: player.iconSize.width + 10,
-            height: player.iconSize.height + 10,
+            width: CGFloat(size),
+            height: CGFloat(size),
             alignment: .center
           )
       }
@@ -159,13 +164,15 @@ extension ToggleViews {
         icon: player.isMuted
           ? ContentToggleIcon.isMutedOn : volumeStage(stage: player.volumeStage),
         note: Notification.Name.toggleAudio,
-        hint: "Toggle audio"
+        hint: "Toggle audio",
+        size: Theme.Font.Size.base
       )
       ControlItemView(
         icon: .settings,
         note: Notification.Name.contentToggle,
         obj: ContentToggle.settings,
-        hint: "Toggle audio"
+        hint: "Toggle audio",
+        size: Theme.Font.Size.base
       )
     }
   }
@@ -215,6 +222,10 @@ extension ToggleViews {
     var body: some View {
       if player.controlsState != .hidden && api.inProgress == false {
         VStack {
+          HStack {
+            Spacer()
+            PlayerControlsView()
+          }.padding().opacity(0.6)
           Spacer()
           HStack(alignment: .center, spacing: 2) {
             Spacer()
@@ -222,7 +233,6 @@ extension ToggleViews {
               AlwaysOnControlsView()
               EPGControlsView()
               StreamControlsView()
-              PlayerControlsView()
             }
             .padding()
             .background(

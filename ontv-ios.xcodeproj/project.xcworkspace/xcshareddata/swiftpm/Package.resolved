@@ -20,15 +20,6 @@
         }
       },
       {
-        "package": "InAppSettingsKit",
-        "repositoryURL": "https://github.com/futuretap/InAppSettingsKit.git",
-        "state": {
-          "branch": "master",
-          "revision": "d57649ee916af6283e2c6576e569b01ece4e3d70",
-          "version": null
-        }
-      },
-      {
         "package": "Kingfisher",
         "repositoryURL": "https://github.com/cacko/Kingfisher",
         "state": {
