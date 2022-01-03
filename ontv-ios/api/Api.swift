@@ -175,6 +175,7 @@ enum API {
             let formatter = RelativeDateTimeFormatter()
             formatter.unitsStyle = .full
             self.expires = formatter.localizedString(for: dt, relativeTo: Date())
+            Defaults[.account_status] = "Connected. \(self.expires) left"
             if self.user!.isSubscriptionExpired() {
               self.state = .error
               self.error = API.Exception.subscriptionExpired(self.expires)
@@ -194,6 +195,7 @@ enum API {
         }
 
         guard storedUser.username != "" && storedServer.url != "" else {
+          Defaults[.account_status] = "Not connected"
           throw error
         }
 

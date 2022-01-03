@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Title</key>
-	<string>Settings</string>
-	<key>StringsTable</key>
-	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
@@ -23,8 +19,6 @@
 			<string>server_host</string>
 			<key>DefaultValue</key>
 			<string>rd-media.xyz</string>
-			<key>IsSecure</key>
-			<false/>
 			<key>KeyboardType</key>
 			<string>URL</string>
 			<key>AutocapitalizationType</key>
@@ -41,8 +35,6 @@
 			<string>server_port</string>
 			<key>DefaultValue</key>
 			<string>8080</string>
-			<key>IsSecure</key>
-			<false/>
 			<key>KeyboardType</key>
 			<string>NumberPad</string>
 			<key>AutocapitalizationType</key>
@@ -59,8 +51,6 @@
 			<string>server_protocol</string>
 			<key>DefaultValue</key>
 			<string>http</string>
-			<key>IsSecure</key>
-			<false/>
 			<key>KeyboardType</key>
 			<string>Alphabet</string>
 			<key>AutocapitalizationType</key>
@@ -77,8 +67,6 @@
 			<string>server_secure_port</string>
 			<key>DefaultValue</key>
 			<string>25463</string>
-			<key>IsSecure</key>
-			<false/>
 			<key>KeyboardType</key>
 			<string>NumberPad</string>
 			<key>AutocapitalizationType</key>
@@ -93,10 +81,6 @@
 			<string>Username</string>
 			<key>Key</key>
 			<string>username</string>
-			<key>DefaultValue</key>
-			<string></string>
-			<key>IsSecure</key>
-			<false/>
 			<key>KeyboardType</key>
 			<string>Alphabet</string>
 			<key>AutocapitalizationType</key>
@@ -105,14 +89,10 @@
 			<string>No</string>
 		</dict>
 		<dict>
-			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>Password</string>
 			<key>Key</key>
 			<string>password</string>
-			<key>DefaultValue</key>
-			<string></string>
 			<key>IsSecure</key>
 			<true/>
 			<key>KeyboardType</key>
@@ -121,6 +101,30 @@
 			<string>None</string>
 			<key>AutocorrectionType</key>
 			<string>No</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+		</dict>
+		<dict>
+			<key>Key</key>
+			<string>account_status</string>
+			<key>Title</key>
+			<string>Status</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+		</dict>
+		<dict>
+			<key>Key</key>
+			<string>ButtonTestConnect</string>
+			<key>Title</key>
+			<string>Test Connection</string>
+			<key>Type</key>
+			<string>IASKButtonSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Interface</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -131,5 +135,7 @@
 			<string>Livescores</string>
 		</dict>
 	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
 </dict>
 </plist>

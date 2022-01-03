@@ -19,6 +19,7 @@ extension Defaults.Keys {
   static let server_secure_port = Key<String>("server_secure_port", default: "25463")
   static let username = Key<String>("username", default: "")
   static let password = Key<String>("password", default: "")
+  static let account_status = Key<String>("account_status", default: "Not connected")
   static let streamsUpdated = Key<Date>("streamsUpdated", default: Date(timeIntervalSince1970: 0))
   static let scheduleUpdated = Key<Date>("scheduleUpdated", default: Date(timeIntervalSince1970: 0))
   static let epgUpdated = Key<Date>("epgUpdated", default: Date(timeIntervalSince1970: 0))
