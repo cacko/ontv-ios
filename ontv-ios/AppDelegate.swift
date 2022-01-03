@@ -66,11 +66,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       object: nil,
       queue: mainQueue
     ) { _ in
-
       guard self.player.state == .paused else {
         return
       }
       self.player.resume()
+    }
+    
+    center.addObserver(
+      forName: UIApplication.willTerminateNotification,
+      object: nil,
+      queue: mainQueue
+    ) { _ in
+      self.player.stop()
+      self.player.deinitView()
     }
 
     center.addObserver(

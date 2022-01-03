@@ -116,7 +116,7 @@ struct ContentView: View {
       if player.state == .error || api.state == .error || player.state == .retry {
         ErrorView()
       }
-      if api.loading != .loaded {
+      if api.streamsState != .ready {
         ApiLoadingView()
       }
       if ticker.tickerVisible {

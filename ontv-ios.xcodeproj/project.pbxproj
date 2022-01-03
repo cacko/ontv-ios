@@ -236,7 +236,6 @@
 		166BD910277C23DD00A597BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		166BD915277C49EC00A597BE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		16BBBDA727823DFE00292CCF /* UIpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIpdatable.swift; sourceTree = "<group>"; };
-		16BBBDAB27827B1F00292CCF /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
 		BBD123D892EF5C8ABF926B8D /* Pods-ontv-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontv-ios.debug.xcconfig"; path = "Target Support Files/Pods-ontv-ios/Pods-ontv-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		EE569CDC83B90E5A196BA865 /* Pods-ontv-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontv-ios.release.xcconfig"; path = "Target Support Files/Pods-ontv-ios/Pods-ontv-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -621,7 +620,6 @@
 		E0756FC9A729692E3A93F0E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				16BBBDAB27827B1F00292CCF /* CryptoKit.framework */,
 				06519CAA938E92E538F37EB7 /* Pods_ontv_ios.framework */,
 			);
 			name = Frameworks;
@@ -993,7 +991,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
@@ -1030,7 +1028,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;

@@ -83,7 +83,7 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
       Defaults[.volume] = self.volume
       objectWillChange.send()
     }
-  }
+  }
 
   var contentToggle: ContentToggle {
     get {
@@ -288,7 +288,7 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
   }
 
   func deinitView() {
-    fatalError()
+    self.vendorPlayer.deInitView()
   }
 
   func onMetadataLoaded() {
