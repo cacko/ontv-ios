@@ -39,7 +39,6 @@ struct AbstractEPGChannel<Content: View>: View {
               .symbolRenderingMode(.hierarchical)
               .font(Theme.Font.title.bold())
           }
-
         }
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(alignment: .top) {
@@ -101,9 +100,7 @@ enum EPGContents {
 
   enum Row {
     struct Live: View {
-
       var epg: ObjectPublisher<EPG>
-
       var body: some View {
         HStack {
           Text(epg.startTime!).font(Theme.Font.searchTime).rotationEffect(.degrees(-90))
@@ -116,14 +113,12 @@ enum EPGContents {
               .truncationMode(.tail)
               .multilineTextAlignment(.leading)
           }
-        }.contentShape(Rectangle())
+        }
       }
     }
 
     struct LiveStatic: View {
-
       var epg: EPG!
-
       var body: some View {
         HStack {
           Text(epg.startTime).font(Theme.Font.searchTime).rotationEffect(.degrees(-90))
@@ -136,7 +131,7 @@ enum EPGContents {
               .truncationMode(.tail)
               .multilineTextAlignment(.leading)
           }
-        }.contentShape(Rectangle())
+        }
       }
     }
   }
@@ -210,7 +205,7 @@ enum EPGViews {
           ForEach(objectIn: snapshot) { activity in
             ActivityEPGChannel(stream: activity.stream!!) {
               OrderedEpgs(activity.epgs! as Set<V1.EPG>)
-            }.contentShape(Rectangle())
+            }
           }
         }
       }

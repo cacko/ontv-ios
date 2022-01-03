@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
       self.player.resume()
     }
-    
+
     center.addObserver(
       forName: UIApplication.willTerminateNotification,
       object: nil,
@@ -91,6 +91,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return
       }
 
+      let prefValue = note.userInfo?[prefKey]
+
+      switch prefKey {
+      case Defaults.Keys.username.name:
+        Defaults[.username] = prefValue as! String
+        break
+      case Defaults.Keys.password.name:
+        Defaults[.password] = prefValue as! String
+        break
+      case Defaults.Keys.server_host.name:
+        Defaults[.server_host] = prefValue as! String
+        break
+      case Defaults.Keys.server_port.name:
+        Defaults[.server_port] = prefValue as! String
+        break
+      default: break
+      }
+
       guard prefKey.starts(with: "livescores_league_") else {
         return
       }
@@ -99,7 +117,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         prefKey.replacingOccurrences(of: "livescores_league_", with: "")
       ) {
         var leagues = Defaults[.leagues]
-        if note.userInfo?[prefKey] as! Int == 1 {
+        if prefValue as! Int == 1 {
           leagues.insert(id)
         }
         else {

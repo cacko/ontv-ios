@@ -166,14 +166,14 @@ extension ToggleViews {
         note: Notification.Name.toggleAudio,
         hint: "Toggle audio",
         size: Theme.Font.Size.base
-      ).contentShape(Rectangle())
+      )
       ControlItemView(
         icon: .settings,
         note: Notification.Name.contentToggle,
         obj: ContentToggle.settings,
         hint: "Toggle audio",
         size: Theme.Font.Size.base
-      ).contentShape(Rectangle())
+      )
     }
   }
 

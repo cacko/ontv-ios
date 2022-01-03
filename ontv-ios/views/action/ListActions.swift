@@ -13,7 +13,7 @@ struct ListActions: ViewModifier {
   func body(content: Content) -> some View {
     content
       .simultaneousGesture(
-        DragGesture(minimumDistance: 1)
+        DragGesture(minimumDistance: 10)
           .onChanged { gesture in }
           .onEnded { gesture in }
           .exclusively(
@@ -23,7 +23,6 @@ struct ListActions: ViewModifier {
           )
       )
   }
-
   var onPress: () -> Void
 }
 

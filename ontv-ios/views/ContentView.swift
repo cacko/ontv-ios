@@ -47,11 +47,14 @@ enum ContentToggleIcon: String {
 
 class AppSettingsViewController: IASKAppSettingsViewController, IASKSettingsDelegate {
   func settingsViewControllerDidEnd(_ settingsViewController: IASKAppSettingsViewController) {
-    
+
   }
-  
-  func settingsViewController(_ settingsViewController: IASKAppSettingsViewController, buttonTappedFor specifier: IASKSpecifier) {
-    
+
+  func settingsViewController(
+    _ settingsViewController: IASKAppSettingsViewController,
+    buttonTappedFor specifier: IASKSpecifier
+  ) {
+
   }
 }
 
@@ -61,7 +64,7 @@ struct SettingsView: UIViewControllerRepresentable {
   func makeUIViewController(
     context: UIViewControllerRepresentableContext<SettingsView>
   ) -> AppSettingsViewController {
-    let controller =  AppSettingsViewController()
+    let controller = AppSettingsViewController()
     controller.showCreditsFooter = false
     controller.delegate = controller
     return controller
@@ -127,8 +130,8 @@ struct ContentView: View {
     .sheet(isPresented: showSettings) {
       NavigationView {
         SettingsView()
-      }.navigationTitle("Settings")
-        .navigationViewStyle(.stack)
+          .navigationBarTitle(Text("Settings"), displayMode: .inline)
+      }
     }
     .background(
       Image("splash").resizable().aspectRatio(contentMode: .fill).opacity(
