@@ -112,6 +112,7 @@
 		160F6A4F277B7FD500EBEE26 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E7277B7FD500EBEE26 /* Teko-Light.ttf */; };
 		160F6A50277B7FD500EBEE26 /* AtamiStencil.otf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E8277B7FD500EBEE26 /* AtamiStencil.otf */; };
 		161E5E85277EC037007504BE /* Splash2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161E5E84277EC037007504BE /* Splash2.storyboard */; };
+		164A87D72782941F00904E5B /* InAppSettingsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 164A87D62782941F00904E5B /* InAppSettingsKit */; };
 		166BD901277B844A00A597BE /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD900277B844A00A597BE /* Introspect */; };
 		166BD904277B846000A597BE /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD903277B846000A597BE /* Defaults */; };
 		166BD907277B847900A597BE /* CoreStore in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD906277B847900A597BE /* CoreStore */; };
@@ -245,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				164A87D72782941F00904E5B /* InAppSettingsKit in Frameworks */,
 				166BD904277B846000A597BE /* Defaults in Frameworks */,
 				EA61EEFC4FA834BE2F812F45 /* Pods_ontv_ios.framework in Frameworks */,
 				166BD90D277B84A600A597BE /* SwiftDate in Frameworks */,
@@ -649,6 +651,7 @@
 				166BD906277B847900A597BE /* CoreStore */,
 				166BD909277B849100A597BE /* Kingfisher */,
 				166BD90C277B84A600A597BE /* SwiftDate */,
+				164A87D62782941F00904E5B /* InAppSettingsKit */,
 			);
 			productName = "ontv-ios";
 			productReference = 160F6954277B7F8B00EBEE26 /* ontv-ios.app */;
@@ -684,6 +687,7 @@
 				166BD905277B847900A597BE /* XCRemoteSwiftPackageReference "CoreStore" */,
 				166BD908277B849100A597BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				166BD90B277B84A600A597BE /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				164A87D52782941F00904E5B /* XCRemoteSwiftPackageReference "InAppSettingsKit" */,
 			);
 			productRefGroup = 160F6955277B7F8B00EBEE26 /* Products */;
 			projectDirPath = "";
@@ -989,7 +993,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
@@ -1026,7 +1030,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
@@ -1079,6 +1083,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		164A87D52782941F00904E5B /* XCRemoteSwiftPackageReference "InAppSettingsKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/futuretap/InAppSettingsKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		166BD8FF277B844A00A597BE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
@@ -1122,6 +1134,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		164A87D62782941F00904E5B /* InAppSettingsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 164A87D52782941F00904E5B /* XCRemoteSwiftPackageReference "InAppSettingsKit" */;
+			productName = InAppSettingsKit;
+		};
 		166BD900277B844A00A597BE /* Introspect */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 166BD8FF277B844A00A597BE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Livescores</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Leagues</string>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>UEFA: Super CUP</string>
+			<key>Key</key>
+			<string>livescores_league_556</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>UEFA: Nations League</string>
+			<key>Key</key>
+			<string>livescores_league_2077</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>UEFA: Euro</string>
+			<key>Key</key>
+			<string>livescores_league_626</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>UEFA: Champions League</string>
+			<key>Key</key>
+			<string>livescores_league_147</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>UEFA: Europe League</string>
+			<key>Key</key>
+			<string>livescores_league_195</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>England: Premier League</string>
+			<key>Key</key>
+			<string>livescores_league_43</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>England: FA CUP</string>
+			<key>Key</key>
+			<string>livescores_league_84</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>England: League Cup</string>
+			<key>Key</key>
+			<string>livescores_league_248</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Spain: La Liga</string>
+			<key>Key</key>
+			<string>livescores_league_44</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Spain: CUP</string>
+			<key>Key</key>
+			<string>livescores_league_247</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Spain: SperCUP</string>
+			<key>Key</key>
+			<string>livescores_league_558</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Germany: Bunderliga</string>
+			<key>Key</key>
+			<string>livescores_league_39</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Germany: CUP</string>
+			<key>Key</key>
+			<string>livescores_league_458</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Italy: Serie A</string>
+			<key>Key</key>
+			<string>livescores_league_45</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Italy: CUP</string>
+			<key>Key</key>
+			<string>livescores_league_172</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>FIFA: World Cup Qualification - Europe</string>
+			<key>Key</key>
+			<string>livescores_league_31</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>FIFA: World Cup</string>
+			<key>Key</key>
+			<string>livescores_league_908</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>

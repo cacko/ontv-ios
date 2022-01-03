@@ -37,7 +37,6 @@ extension Notification.Name {
   static let audioCommand = Notification.Name("audio_command")
   static let audioCommandResult = Notification.Name("audio_command_result")
   static let list_navigate = Notification.Name("list_navigate")
-  static let opensettings = Notification.Name("open_settings")
 }
 
 extension AppDelegate {
@@ -168,9 +167,9 @@ extension AppDelegate {
 
   func openStream(_ stream: Stream) {
     DispatchQueue.main.async {
-      self.player.contentToggle = nil
+      self.player.contentToggle = .none
       self.player.play(stream)
-      EPGStorage.active = nil
+      EPGStorage.active = .none
     }
   }
 

@@ -8,6 +8,7 @@
 import CoreStore
 import Defaults
 import Foundation
+import InAppSettingsKit
 import SwiftUI
 import UIKit
 
@@ -22,13 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   override init() {
     player = Player.instance
     player.volume = Defaults[.volume]
-    Task.init {
-      await API.Adapter.login()
-    }
     super.init()
   }
-  
-  func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+
+  func application(
+    _ application: UIApplication,
+    supportedInterfaceOrientationsFor window: UIWindow?
+  ) -> UIInterfaceOrientationMask {
     return UIInterfaceOrientationMask.landscape
   }
 
@@ -52,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       object: nil,
       queue: mainQueue
     ) { _ in
-    
+
       guard self.player.state == .playing else {
         self.player.stop()
         return
@@ -65,13 +66,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       object: nil,
       queue: mainQueue
     ) { _ in
-      
+
       guard self.player.state == .paused else {
         return
       }
       self.player.resume()
     }
 
+    center.addObserver(
+      forName: NSNotification.Name.IASKSettingChanged,
+      object: nil,
+      queue: mainQueue
+    ) { (note: Notification) in
+
+      guard let prefKey = (note.userInfo?.keys.first)! as? String else {
+        return
+      }
+
+      guard prefKey.starts(with: "livescores_league_") else {
+        return
+      }
+
+      if let id = Int(
+        prefKey.replacingOccurrences(of: "livescores_league_", with: "")
+      ) {
+        var leagues = Defaults[.leagues]
+        if note.userInfo?[prefKey] as! Int == 1 {
+          leagues.insert(id)
+        }
+        else {
+          leagues.remove(id)
+        }
+        Defaults[.leagues] = leagues
+      }
+    }
     return true
   }
 }

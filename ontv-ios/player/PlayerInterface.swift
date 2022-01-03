@@ -122,7 +122,7 @@ protocol PlayerProtocol: ObservableObject {
   var isMuted: Bool { get set }
   var epgId: String { get set }
   var category: Category? { get set }
-  var contentToggle: ContentToggle? { get set }
+  var contentToggle: ContentToggle { get set }
   var volume: Float { get set }
   var controlsState: PlayerControlsState { get set }
   var controlsPosition: PlayerControlsPosition { get set }

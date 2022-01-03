@@ -16,16 +16,16 @@ enum ActivityListToggleType {
 
 class ActivityStorage {
   
-  private static var _active: ContentToggle?
+  private static var _active: ContentToggle = .none
   
   static let activityepg = ActivityEPGList()
   
-  static var active: ContentToggle? {
+  static var active: ContentToggle {
     get {
-      Self._active ?? nil
+      Self._active
     }
     set {
-      Self._active = Self._active == newValue ? nil : newValue
+      Self._active = Self._active == newValue ? .none : newValue
       Player.instance.contentToggle = self._active
     }
   }

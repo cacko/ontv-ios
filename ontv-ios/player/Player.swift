@@ -83,19 +83,19 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
       Defaults[.volume] = self.volume
       objectWillChange.send()
     }
-  }
+  }
 
-  var contentToggle: ContentToggle? {
+  var contentToggle: ContentToggle {
     get {
       self._contentToggle
     }
     set {
-      self._contentToggle = newValue == self._contentToggle ? nil : newValue
+      self._contentToggle = newValue == self._contentToggle ? .none : newValue
       objectWillChange.send()
     }
   }
 
-  private var _contentToggle: ContentToggle?
+  private var _contentToggle: ContentToggle = .none
 
   var retries: Int = 0
   var retryTask: DispatchWorkItem!

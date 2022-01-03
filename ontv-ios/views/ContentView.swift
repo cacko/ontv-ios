@@ -6,9 +6,10 @@
 //
 
 import Defaults
+import InAppSettingsKit
 import SwiftUI
 
-enum ContentToggle {
+enum ContentToggle: Int, DefaultsSerializable {
   case guide, category, epglist, search, title, loading, controls, errror, activityepg, bookmarks,
     metadata, schedule, livescores, livescoresticker, none, settings
 }
@@ -42,15 +43,42 @@ enum ContentToggleIcon: String {
   case bookmark = "bookmark"
   case update = "network"
   case settings = "gear"
+}
 
+class AppSettingsViewController: IASKAppSettingsViewController, IASKSettingsDelegate {
+  func settingsViewControllerDidEnd(_ settingsViewController: IASKAppSettingsViewController) {
+    
+  }
+  
+  func settingsViewController(_ settingsViewController: IASKAppSettingsViewController, buttonTappedFor specifier: IASKSpecifier) {
+    
+  }
+}
+
+struct SettingsView: UIViewControllerRepresentable {
+  typealias UIViewControllerType = AppSettingsViewController
+
+  func makeUIViewController(
+    context: UIViewControllerRepresentableContext<SettingsView>
+  ) -> AppSettingsViewController {
+    let controller =  AppSettingsViewController()
+    controller.showCreditsFooter = false
+    controller.delegate = controller
+    return controller
+  }
+
+  func updateUIViewController(
+    _ uiViewController: AppSettingsViewController,
+    context: UIViewControllerRepresentableContext<SettingsView>
+  ) {
+
+  }
 }
 
 struct ContentView: View {
   @ObservedObject var player = Player.instance
   @ObservedObject var api = API.Adapter
   @ObservedObject var ticker = LivescoreStorage.events
-  @Environment(\.openURL) var openURL
-  @State private var hasBorder = false
 
   let showSearch = Binding<Bool>(
     get: {
@@ -60,9 +88,13 @@ struct ContentView: View {
     }
   )
 
-  private func openSettings() {
-    openURL(URL(string: UIApplication.openSettingsURLString)!)
-  }
+  let showSettings = Binding<Bool>(
+    get: {
+      Player.instance.contentToggle == .settings
+    },
+    set: { _ in
+    }
+  )
 
   var body: some View {
     ZStack(alignment: .center) {
@@ -92,15 +124,12 @@ struct ContentView: View {
       }
       ToggleView()
     }
-    .onChange(
-      of: player.contentToggle,
-      perform: { toggle in
-        guard toggle == .settings else {
-          return
-        }
-        openSettings()
-      }
-    )
+    .sheet(isPresented: showSettings) {
+      NavigationView {
+        SettingsView()
+      }.navigationTitle("Settings")
+        .navigationViewStyle(.stack)
+    }
     .background(
       Image("splash").resizable().aspectRatio(contentMode: .fill).opacity(
         (player.stream != nil) ? 0 : 0.5

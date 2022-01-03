@@ -11,7 +11,7 @@ import Foundation
 import SwiftDate
 import SwiftUI
 
-enum TickerPosition: Int {
+enum TickerPosition: Int, DefaultsSerializable {
   case top = 0
   case bottom = 1
 }

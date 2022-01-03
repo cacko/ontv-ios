@@ -100,9 +100,6 @@ enum API {
     }
 
     func login() async {
-      DispatchQueue.main.async {
-        self.state = .loading
-      }
       if username.count == 0 || password.count == 0 {
         DispatchQueue.main.async {
           self.state = .error
@@ -112,6 +109,9 @@ enum API {
         return
       }
       do {
+        DispatchQueue.main.async {
+          self.state = .loading
+        }
         _ = try await self.updateUser()
 
         if Stream.isLoaded {
