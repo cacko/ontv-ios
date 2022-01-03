@@ -19,7 +19,8 @@ struct ContentHeaderView: View {
   var body: some View {
     HStack(alignment: .center, spacing: 0) {
       ControlSFSymbolView(icon: icon, width: Theme.Font.Size.big)
-        .padding().contentShape(Rectangle())
+        .padding()
+        .contentShape(Rectangle())
         .onTapGesture(perform: {
           NotificationCenter.default.post(
             name: .contentToggle,
@@ -32,7 +33,8 @@ struct ContentHeaderView: View {
         }
         else {
           ControlSFSymbolView(icon: .update, width: Theme.Font.Size.big)
-            .padding().contentShape(Rectangle())
+            .padding()
+            .contentShape(Rectangle())
             .onTapGesture(perform: {
               NotificationCenter.default.post(
                 name: .fetch,

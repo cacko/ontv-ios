@@ -163,7 +163,6 @@ struct SearchView: View {
         ListReader(epgProvider.list) { listSnapshot in
           ForEach(objectIn: listSnapshot) { obj in
             EPGResult(obj)
-              .contentShape(Rectangle())
               .id(obj.id)
           }
         }
@@ -180,7 +179,6 @@ struct SearchView: View {
               }.padding()
             }
             .buttonStyle(CustomButtonStyle(Theme.Font.result))
-            .contentShape(Rectangle())
           }
         }
       }

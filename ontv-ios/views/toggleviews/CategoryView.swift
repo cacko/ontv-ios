@@ -57,7 +57,6 @@ extension ToggleViews {
                       ForEach(objectIn: section) { stream in
                         CategoryRow(stream: stream)
                           .id(stream.id)
-                          .contentShape(Rectangle())
                           .listHighlight(
                             selectedId: $categoryProvider.selectedId,
                             itemId: stream.id!,
@@ -76,7 +75,8 @@ extension ToggleViews {
               }
             }
             Spacer(minLength: geo.size.width * 0.5)
-          }.contentShape(Rectangle()).onTapGesture(perform: {
+          }.contentShape(Rectangle())
+            .onTapGesture(perform: {
             player.contentToggle = ContentToggle.none
           })
         }

@@ -63,14 +63,14 @@ extension ToggleViews {
                   }
                   .padding()
                 }.onTapGesture(perform: {})
-                .highPriorityGesture(
-                  TapGesture(count: 2)
-                    .onEnded({ _ in
-                      bookmark(qs)
-                    })
-                )
-                .buttonStyle(CustomButtonStyle(Theme.Font.Bookmark.button))
-                .cornerRadius(10)
+                  .highPriorityGesture(
+                    TapGesture(count: 2)
+                      .onEnded({ _ in
+                        bookmark(qs)
+                      })
+                  )
+                  .buttonStyle(CustomButtonStyle(Theme.Font.Bookmark.button))
+                  .cornerRadius(10)
               }
               Spacer()
             }
@@ -78,13 +78,15 @@ extension ToggleViews {
               .font(Theme.Font.programme)
               .shadow(color: .black, radius: 1, x: 1, y: 1)
               .textCase(.uppercase)
-          }.contentShape(Rectangle()).onTapGesture(perform: {})
-          .padding()
-          .background(Theme.Color.Background.header)
+          }.contentShape(Rectangle())
+            .onTapGesture(perform: {})
+            .padding()
+            .background(Theme.Color.Background.header)
           Spacer()
-        }.contentShape(Rectangle()).onTapGesture(perform: {
-          player.contentToggle = ContentToggle.none
-        })
+        }.contentShape(Rectangle())
+          .onTapGesture(perform: {
+            player.contentToggle = ContentToggle.none
+          })
       }
     }
   }

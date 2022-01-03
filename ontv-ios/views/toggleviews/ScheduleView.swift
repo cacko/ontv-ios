@@ -195,7 +195,7 @@ extension ToggleViews {
             ForEach(streams, id: \.id) {
               stream in
               ScheduleStream(stream: stream)
-                .id(stream.id).contentShape(Rectangle())
+                .id(stream.id)
             }
           }
         }
@@ -232,7 +232,7 @@ extension ToggleViews {
                             if liverscoreProvider.eventInList(schedule.$event_id ?? 0) {
                               Section(header: ScheduleHeader(schedule: schedule)) {
                                 ScheduleStreams(schedule: schedule)
-                              }.contentShape(Rectangle())
+                              }
                             }
                           }.background(Theme.Color.Background.header)
                         }

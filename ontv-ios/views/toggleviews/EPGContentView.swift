@@ -159,7 +159,7 @@ enum EPGViews {
                     .cornerRadius(10)
                     .liveStateBackground(state: epg.isLive ?? false)
                 }
-              }.contentShape(Rectangle())
+              }
             }
           }
         }

@@ -97,7 +97,8 @@ extension ToggleViews {
                 of: player.stream.epg_channel_id,
                 perform: { newid in epgStorage.search = newid }
               )
-          }.contentShape(Rectangle()).onTapGesture(perform: {
+          }.contentShape(Rectangle())
+            .onTapGesture(perform: {
             player.contentToggle = ContentToggle.none
           })
         }
