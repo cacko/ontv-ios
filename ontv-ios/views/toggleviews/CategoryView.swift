@@ -57,6 +57,7 @@ extension ToggleViews {
                       ForEach(objectIn: section) { stream in
                         CategoryRow(stream: stream)
                           .id(stream.id)
+                          .contentShape(Rectangle())
                           .listHighlight(
                             selectedId: $categoryProvider.selectedId,
                             itemId: stream.id!,

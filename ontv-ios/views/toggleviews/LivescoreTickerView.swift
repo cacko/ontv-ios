@@ -134,6 +134,7 @@ extension ToggleViews {
                   if livescore.$in_ticker?.bool ?? false {
                     LivescoreItem(livescore)
                       .id(livescore.$id)
+                      .contentShape(Rectangle())
                       .onTapGesture(count: 2) { toggle(livescore) }
                       .hideView(state: forRemoval?.id == livescore.$id)
                       .onScoreChange(state: livescore.$score_changed ?? 0 > 0)

@@ -139,6 +139,7 @@ extension ToggleViews {
                 ListReader(liverscoreProvider.list) { snapshot in
                   ForEach(objectIn: snapshot) { livescore in
                     LivescoreItem(livescore)
+                      .contentShape(Rectangle())
                       .padding()
                       .pressAction {
                         onTapItem(livescore)

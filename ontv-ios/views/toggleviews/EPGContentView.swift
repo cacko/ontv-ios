@@ -116,7 +116,7 @@ enum EPGContents {
               .truncationMode(.tail)
               .multilineTextAlignment(.leading)
           }
-        }
+        }.contentShape(Rectangle())
       }
     }
 
@@ -136,7 +136,7 @@ enum EPGContents {
               .truncationMode(.tail)
               .multilineTextAlignment(.leading)
           }
-        }
+        }.contentShape(Rectangle())
       }
     }
   }
@@ -164,7 +164,7 @@ enum EPGViews {
                     .cornerRadius(10)
                     .liveStateBackground(state: epg.isLive ?? false)
                 }
-              }
+              }.contentShape(Rectangle())
             }
           }
         }
@@ -210,7 +210,7 @@ enum EPGViews {
           ForEach(objectIn: snapshot) { activity in
             ActivityEPGChannel(stream: activity.stream!!) {
               OrderedEpgs(activity.epgs! as Set<V1.EPG>)
-            }
+            }.contentShape(Rectangle())
           }
         }
       }
