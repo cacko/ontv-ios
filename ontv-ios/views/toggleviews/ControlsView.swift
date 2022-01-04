@@ -6,7 +6,6 @@
 //
 
 import CoreStore
-import Introspect
 import SwiftUI
 
 struct ControlItemView: View {
@@ -220,7 +219,7 @@ extension ToggleViews {
     @ObservedObject var player = Player.instance
     @ObservedObject var api = API.Adapter
     var body: some View {
-      if player.controlsState != .hidden && api.inProgress == false {
+      if player.controlsState != .hidden && api.inProgress == false && api.loggedIn {
         VStack {
           HStack {
             Spacer()

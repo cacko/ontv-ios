@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Introspect
 import SwiftUI
 
 struct ListActions: ViewModifier {

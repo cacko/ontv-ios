@@ -113,7 +113,6 @@
 		160F6A50277B7FD500EBEE26 /* AtamiStencil.otf in Resources */ = {isa = PBXBuildFile; fileRef = 160F69E8277B7FD500EBEE26 /* AtamiStencil.otf */; };
 		161E5E85277EC037007504BE /* Splash2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161E5E84277EC037007504BE /* Splash2.storyboard */; };
 		164A87D72782941F00904E5B /* InAppSettingsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 164A87D62782941F00904E5B /* InAppSettingsKit */; };
-		166BD901277B844A00A597BE /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD900277B844A00A597BE /* Introspect */; };
 		166BD904277B846000A597BE /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD903277B846000A597BE /* Defaults */; };
 		166BD907277B847900A597BE /* CoreStore in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD906277B847900A597BE /* CoreStore */; };
 		166BD90A277B849100A597BE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 166BD909277B849100A597BE /* Kingfisher */; };
@@ -249,7 +248,6 @@
 				166BD904277B846000A597BE /* Defaults in Frameworks */,
 				EA61EEFC4FA834BE2F812F45 /* Pods_ontv_ios.framework in Frameworks */,
 				166BD90D277B84A600A597BE /* SwiftDate in Frameworks */,
-				166BD901277B844A00A597BE /* Introspect in Frameworks */,
 				166BD907277B847900A597BE /* CoreStore in Frameworks */,
 				166BD90A277B849100A597BE /* Kingfisher in Frameworks */,
 			);
@@ -644,7 +642,6 @@
 			);
 			name = "ontv-ios";
 			packageProductDependencies = (
-				166BD900277B844A00A597BE /* Introspect */,
 				166BD903277B846000A597BE /* Defaults */,
 				166BD906277B847900A597BE /* CoreStore */,
 				166BD909277B849100A597BE /* Kingfisher */,
@@ -680,7 +677,6 @@
 			);
 			mainGroup = 160F694B277B7F8B00EBEE26;
 			packageReferences = (
-				166BD8FF277B844A00A597BE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 				166BD902277B846000A597BE /* XCRemoteSwiftPackageReference "Defaults" */,
 				166BD905277B847900A597BE /* XCRemoteSwiftPackageReference "CoreStore" */,
 				166BD908277B849100A597BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
@@ -902,6 +898,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_ON_DEMAND_RESOURCES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -964,6 +961,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_ON_DEMAND_RESOURCES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -991,7 +989,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
@@ -1003,7 +1001,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = Splash2;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -1016,7 +1014,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1028,7 +1026,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
@@ -1040,7 +1038,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = Splash2;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -1053,7 +1051,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1087,14 +1085,6 @@
 			requirement = {
 				branch = master;
 				kind = branch;
-			};
-		};
-		166BD8FF277B844A00A597BE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.3;
 			};
 		};
 		166BD902277B846000A597BE /* XCRemoteSwiftPackageReference "Defaults" */ = {
@@ -1136,11 +1126,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 164A87D52782941F00904E5B /* XCRemoteSwiftPackageReference "InAppSettingsKit" */;
 			productName = InAppSettingsKit;
-		};
-		166BD900277B844A00A597BE /* Introspect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 166BD8FF277B844A00A597BE /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = Introspect;
 		};
 		166BD903277B846000A597BE /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;

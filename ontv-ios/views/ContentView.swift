@@ -54,7 +54,9 @@ class AppSettingsViewController: IASKAppSettingsViewController, IASKSettingsDele
     _ settingsViewController: IASKAppSettingsViewController,
     buttonTappedFor specifier: IASKSpecifier
   ) {
-
+    Task.init {
+      await API.Adapter.login(username: Defaults[.username], password: Defaults[.password])
+    }
   }
 }
 
@@ -93,7 +95,7 @@ struct ContentView: View {
 
   let showSettings = Binding<Bool>(
     get: {
-      Player.instance.contentToggle == .settings
+      Player.instance.contentToggle == .settings && API.Adapter.state != .boot
     },
     set: { _ in
     }
@@ -105,7 +107,7 @@ struct ContentView: View {
         VideoViewRep()
           .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
           .aspectRatio(player.size.aspectSize, contentMode: .fit)
-          .opacity(player.display ? 1 : 0)
+          .opacity(player.display && api.loggedIn ? 1 : 0)
           .onTapGesture(perform: {
             NotificationCenter.default.post(name: .onTap, object: nil)
           })
@@ -113,14 +115,14 @@ struct ContentView: View {
             SearchView()
           }
       }
+      if api.inProgress {
+        ApiInitProgress()
+      }
       if [PlayerState.opening, PlayerState.buffering].contains(player.state) {
         LoadingView()
       }
       if player.state == .error || api.state == .error || player.state == .retry {
         ErrorView()
-      }
-      if api.inProgress {
-        ApiInitProgress()
       }
       if ticker.tickerVisible {
         ToggleViews.LivescoreTickerView()
@@ -131,7 +133,7 @@ struct ContentView: View {
       NavigationView {
         SettingsView()
           .navigationBarTitle(Text("Settings"), displayMode: .inline)
-      }
+      }.interactiveDismissDisabled(!api.loggedIn)
     }
     .background(
       Image("splash").resizable().aspectRatio(contentMode: .fill).opacity(

@@ -80,6 +80,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       self.player.stop()
       self.player.deinitView()
     }
+    
+    center.addObserver(forName: NSNotification.Name.IASKSettingChanged, object:nil, queue: mainQueue) { (note: Notification) in
+      
+      print(note)
+    }
 
     center.addObserver(
       forName: NSNotification.Name.IASKSettingChanged,

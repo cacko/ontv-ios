@@ -23,7 +23,7 @@ extension Defaults.Keys {
 enum API {
 
   enum State {
-    case loading, ready, error, loggedin, idle
+    case loading, ready, error, loggedin, idle, boot
   }
 
   enum FetchType {
@@ -52,10 +52,11 @@ enum API {
     @Published var streamsState: API.State = .idle
     @Published var leaguesState: API.State = .idle
     @Published var fetchType: API.FetchType = .idle
-    @Published var state: API.State = .idle
+    @Published var state: API.State = .boot
     @Published var inProgress: Bool = false
     @Published var progressTotal: Double = 0
     @Published var progressValue: Double = 0
+    @Published var loggedIn: Bool = false
 
     var server_info: ServerInfo = ServerInfo(
       url: Defaults[.server_host],
@@ -104,6 +105,7 @@ enum API {
         DispatchQueue.main.async {
           self.state = .error
           self.error = API.Exception.invalidLogin("new app")
+          Defaults[.account_status] = "Not connected"
           NotificationCenter.default.post(name: .contentToggle, object: ContentToggle.settings)
         }
         return
@@ -184,6 +186,7 @@ enum API {
           }
           NotificationCenter.default.post(name: .loggedin, object: nil)
           self.state = .loggedin
+          self.loggedIn = true
         }
       }
       catch let error {
@@ -214,6 +217,7 @@ enum API {
             }
           }
           self.state = .loggedin
+          self.loggedIn = true
           NotificationCenter.default.post(name: .loggedin, object: nil)
         }
       }
