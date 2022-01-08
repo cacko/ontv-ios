@@ -77,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       object: nil,
       queue: mainQueue
     ) { _ in
+//      self.api.clean()
       self.player.stop()
       self.player.deinitView()
     }

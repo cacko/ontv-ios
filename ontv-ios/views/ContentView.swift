@@ -43,6 +43,7 @@ enum ContentToggleIcon: String {
   case bookmark = "bookmark"
   case update = "network"
   case settings = "gear"
+  case history_arrow = "arrowshape.zigzag.forward"
 }
 
 class AppSettingsViewController: IASKAppSettingsViewController, IASKSettingsDelegate {

@@ -144,6 +144,32 @@ extension ToggleViews {
     }
   }
 
+  struct HistoryControlsView: View {
+    @ObservedObject var player = Player.instance
+    @ObservedObject var recent: Provider.Stream.RecentStreams = Provider.Stream.RecentItems
+
+    var body: some View {
+      if recent.canGoBack {
+        ControlItemView(
+          icon: .history_arrow,
+          note: Notification.Name.recent,
+          obj: AppNavigation.previous,
+          hint: "Previous stream",
+          size: Theme.Font.Size.base
+        ).rotationEffect(.degrees(180))
+      }
+      if recent.canGoForward {
+        ControlItemView(
+          icon: .history_arrow,
+          note: Notification.Name.recent,
+          obj: AppNavigation.next,
+          hint: "Next stream ",
+          size: Theme.Font.Size.base
+        )
+      }
+    }
+  }
+
   struct PlayerControlsView: View {
     @ObservedObject var player = Player.instance
 
@@ -222,6 +248,7 @@ extension ToggleViews {
       if player.controlsState != .hidden && api.inProgress == false && api.loggedIn {
         VStack {
           HStack {
+            HistoryControlsView()
             Spacer()
             PlayerControlsView()
           }.padding().opacity(0.6)

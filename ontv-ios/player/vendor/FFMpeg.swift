@@ -121,7 +121,16 @@ class PlayerFFMpeg: AbstractPlayer, PlayerControllerDelegate {
   }
 
   override func stop() {
-
+    playerView.pause()
+    player.shutdown()
+  }
+  
+  override func pause() {
+    playerView.pause()
+  }
+  
+  override func resume() {
+    playerView.play()
   }
 
 }

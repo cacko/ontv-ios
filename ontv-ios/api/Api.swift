@@ -73,10 +73,19 @@ enum API {
 
     var password: String = Defaults[.password]
 
+    private var tasks: [Sendable] = []
+
     func login(username: String, password: String) async {
       self.username = username
       self.password = password
       await login()
+    }
+
+    func clean() {
+      guard tasks.count > 0 else {
+        return
+      }
+//      tasks.forEach { $0.cancel() }
     }
 
     func fetch(_ type: API.FetchType) {
@@ -232,7 +241,7 @@ enum API {
         self.fetchType = .schedule
       }
       try await Schedule.fetch(url: Endpoint.Schedule) { _ in
-        Task.detached {
+        let tc = Task.init {
           do {
             try await Schedule.delete(Schedule.clearQuery)
             Defaults[.scheduleUpdated] = Date()
@@ -240,7 +249,7 @@ enum API {
               self.scheduleState = .ready
               self.fetchType = .idle
             }
-
+//            self.tasks.remove(tc)
             NotificationCenter.default.post(name: .updateschedule, object: nil)
           }
           catch let error {
@@ -248,9 +257,11 @@ enum API {
               self.scheduleState = .ready
               self.fetchType = .idle
             }
+//            self.tasks.remove(tc)
             logger.error("\(error.localizedDescription)")
           }
         }
+        self.tasks.append(tc)
       }
     }
 
@@ -265,11 +276,12 @@ enum API {
         self.fetchType = .streams
       }
       try await Category.fetch(url: Endpoint.Categories) { _ in
-        Task.detached {
+        let tc = Task.init {
           do {
             try await Category.delete(Category.clearQuery)
+//            self.tasks(tc)
             try await Stream.fetch(url: Endpoint.Streams) { _ in
-              Task.detached {
+              let ts = Task.init {
                 do {
                   try await Stream.delete(Stream.clearQuery)
                   Defaults[.streamsUpdated] = Date()
@@ -280,6 +292,7 @@ enum API {
                     self.streamsState = .ready
                     self.inProgress = false
                   }
+//                  self.tasks.remove(ts)
                 }
                 catch let error {
                   DispatchQueue.main.async {
@@ -287,16 +300,18 @@ enum API {
                     self.fetchType = .idle
                     self.streamsState = .ready
                   }
+//                  self.tasks.remove(ts)
                   logger.error(">>> \(error.localizedDescription)")
                 }
               }
+              self.tasks.append(ts)
             }
           }
           catch let error {
             logger.error("??? \(error.localizedDescription)")
           }
-
         }
+        self.tasks.append(tc)
       }
     }
 
@@ -312,7 +327,7 @@ enum API {
       }
 
       try await EPG.fetch(url: Endpoint.EPG) { _ in
-        Task.detached {
+        let te = Task.detached {
           do {
             try await EPG.delete(EPG.clearQuery)
             Defaults[.epgUpdated] = Date()
@@ -322,6 +337,7 @@ enum API {
               self.loading = .loaded
               self.fetchType = .idle
             }
+//            self.tasks.remove(te)
           }
           catch let error {
             DispatchQueue.main.async {
@@ -329,9 +345,11 @@ enum API {
               self.loading = .loaded
               self.fetchType = .idle
             }
+//            self.tasks.remove(te)
             logger.error("\(error.localizedDescription)")
           }
         }
+        self.tasks.append(te)
       }
     }
 

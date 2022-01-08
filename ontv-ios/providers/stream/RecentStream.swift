@@ -30,11 +30,31 @@ extension Provider.Stream {
 
   static let Recent = RecentActor()
 
-  class RecentStreams {
+  class RecentStreams: NSObject, ObservableObject {
 
-    var streams: [Stream] = []
+    @Published var streams: [Stream] = []
+    @Published var canGoBack: Bool = false {
+      didSet {
+        objectWillChange.send()
+      }
+    }
+    @Published var canGoForward: Bool = false {
+      didSet {
+        objectWillChange.send()
+      }
+    }
+    @Published var currentPosition: Int = 0 {
+      didSet {
+        DispatchQueue.main.async {
+          self.canGoBack = self.streams.count - self.currentPosition > 0
+          self.canGoForward = self.currentPosition > 0
+        }
+      }
+    }
 
-    init() {
+    override init() {
+
+      super.init()
 
       let center = NotificationCenter.default
       let mainQueue = OperationQueue.main
@@ -87,6 +107,7 @@ extension Provider.Stream {
             }
             self.streams.insert(obj, at: 0)
             self.streams.removeLast()
+            RecentItems.currentPosition += 1
             NotificationCenter.default.post(
               name: .refreshrecents,
               object: nil
@@ -129,7 +150,7 @@ extension Provider.Stream {
         return res + [stream]
       }
       self.autoPlay = self.streams.first
-      
+
     }
 
     private func onNavigation(_ navigation: AppNavigation) {
@@ -143,8 +164,10 @@ extension Provider.Stream {
       switch navigation {
       case .next:
         pos = self.streams.index(after: pos)
+        RecentItems.currentPosition += 1
       case .previous:
         pos = self.streams.index(before: pos)
+        RecentItems.currentPosition -= 1
       default:
         return
       }
