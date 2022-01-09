@@ -41,7 +41,7 @@ extension Notification.Name {
 }
 
 extension AppDelegate {
-
+  
   func observe(_ app: UIApplication) {
     let center = NotificationCenter.default
     let mainQueue = OperationQueue.main
@@ -51,6 +51,7 @@ extension AppDelegate {
     let recent = Provider.Stream.Recent
 
     let quickStreams = Provider.Stream.QuickStreams
+    
 
     center.addObserver(forName: .toggleAudio, object: nil, queue: mainQueue) { _ in
       DispatchQueue.main.async {

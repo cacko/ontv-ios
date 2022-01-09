@@ -407,7 +407,6 @@ enum API {
 
       try await League.fetch(url: Endpoint.Leagues) { _ in
         let te = Task.detached {
-          League.deleteAll()
           Defaults[.leaguesUpdated] = Date()
           NotificationCenter.default.post(name: .leagues_updates, object: nil)
           DispatchQueue.main.async {

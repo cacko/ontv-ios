@@ -149,24 +149,29 @@ extension ToggleViews {
     @ObservedObject var recent: Provider.Stream.RecentStreams = Provider.Stream.RecentItems
 
     var body: some View {
-      if recent.canGoBack {
-        ControlItemView(
-          icon: .history_arrow,
-          note: Notification.Name.recent,
-          obj: AppNavigation.previous,
-          hint: "Previous stream",
-          size: Theme.Font.Size.base
-        ).rotationEffect(.degrees(180))
-      }
-      if recent.canGoForward {
-        ControlItemView(
-          icon: .history_arrow,
-          note: Notification.Name.recent,
-          obj: AppNavigation.next,
-          hint: "Next stream ",
-          size: Theme.Font.Size.base
-        )
-      }
+      ControlItemView(
+        icon: .restart,
+        note: Notification.Name.reload,
+        size: Theme.Font.Size.base
+      )
+      //      if recent.canGoBack {
+      //        ControlItemView(
+      //          icon: .history_arrow,
+      //          note: Notification.Name.recent,
+      //          obj: AppNavigation.previous,
+      //          hint: "Previous stream",
+      //          size: Theme.Font.Size.base
+      //        ).rotationEffect(.degrees(180))
+      //      }
+      //      if recent.canGoForward {
+      //        ControlItemView(
+      //          icon: .history_arrow,
+      //          note: Notification.Name.recent,
+      //          obj: AppNavigation.next,
+      //          hint: "Next stream ",
+      //          size: Theme.Font.Size.base
+      //        )
+      //      }
     }
   }
 

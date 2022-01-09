@@ -49,7 +49,15 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
   @Published var category: Category? = nil
   @Published var icon: String = ""
   @Published var hint: String = ""
-  @Published var controlsState: PlayerControlsState = .always
+  @Published var controlsState: PlayerControlsState = .always {
+    didSet {
+      let task = self.getHideControlsTask()
+      guard self.controlsState == .visible else {
+        return
+      }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 60, execute: task)
+    }
+  }
   @Published var controlsPosition: PlayerControlsPosition = .center
   @Published var volumeStage: Int = 1
   @Published var iconSize: CGSize = CGSize(width: 25, height: 25)
@@ -73,6 +81,18 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
     audio: StreamInfo.Audio()
   )
   @Published var metadataState: MetadataState = .loading
+
+  var hideControlsTask: DispatchWorkItem!
+
+  private func getHideControlsTask() -> DispatchWorkItem {
+    if self.hideControlsTask != nil {
+      self.hideControlsTask.cancel()
+    }
+    self.hideControlsTask = DispatchWorkItem {
+      self.controlsState = .hidden
+    }
+    return self.hideControlsTask
+  }
 
   var volume: Float = 100.0 {
     didSet {
