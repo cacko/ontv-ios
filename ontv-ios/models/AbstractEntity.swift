@@ -75,7 +75,7 @@ extension AbstractEntity {
   }
   
   
-  static func delete(_ deleteClause: DeleteClause...) async throws {
+static func delete(_ deleteClause: DeleteClause...) async throws {
     CoreStoreDefaults.dataStack.perform(
       asynchronous: { transaction -> Void in
         try transaction.deleteAll(

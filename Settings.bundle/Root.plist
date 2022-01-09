@@ -168,196 +168,527 @@
 			<key>Title</key>
 			<string>Leagues</string>
 		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Bulgaria: CUP</string>
-			<key>Key</key>
-			<string>livescores_league_121</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Bulgaria: League 1</string>
-			<key>Key</key>
-			<string>livescores_league_256</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>England: FA CUP</string>
-			<key>Key</key>
-			<string>livescores_league_84</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>England: League Cup</string>
-			<key>Key</key>
-			<string>livescores_league_248</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>England: Premier League</string>
-			<key>Key</key>
-			<string>livescores_league_43</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>FIFA: World Cup</string>
-			<key>Key</key>
-			<string>livescores_league_908</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>FIFA: World Cup Qualification - Europe</string>
-			<key>Key</key>
-			<string>livescores_league_31</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Germany: Bunderliga</string>
-			<key>Key</key>
-			<string>livescores_league_39</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Germany: CUP</string>
-			<key>Key</key>
-			<string>livescores_league_458</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Italy: CUP</string>
-			<key>Key</key>
-			<string>livescores_league_172</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Italy: Serie A</string>
-			<key>Key</key>
-			<string>livescores_league_45</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Spain: CUP</string>
-			<key>Key</key>
-			<string>livescores_league_247</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Spain: La Liga</string>
-			<key>Key</key>
-			<string>livescores_league_44</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Spain: SperCUP</string>
-			<key>Key</key>
-			<string>livescores_league_558</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>UEFA: Champions League</string>
-			<key>Key</key>
-			<string>livescores_league_147</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>UEFA: Euro</string>
-			<key>Key</key>
-			<string>livescores_league_626</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>UEFA: Europe League</string>
-			<key>Key</key>
-			<string>livescores_league_195</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>UEFA: Nations League</string>
-			<key>Key</key>
-			<string>livescores_league_2077</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>UEFA: Super CUP</string>
-			<key>Key</key>
-			<string>livescores_league_556</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Africa - Africa Cup of Nations</string>
+          <key>Key</key>
+          <string>livescores_league_167</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Andorra - Super League</string>
+          <key>Key</key>
+          <string>livescores_league_407</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Australia - A-League</string>
+          <key>Key</key>
+          <string>livescores_league_151</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Brazil - Cearense</string>
+          <key>Key</key>
+          <string>livescores_league_5068</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Brazil - Potiguar</string>
+          <key>Key</key>
+          <string>livescores_league_6044</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Burundi - Primus League</string>
+          <key>Key</key>
+          <string>livescores_league_7346</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>China - Chinese FA Cup</string>
+          <key>Key</key>
+          <string>livescores_league_5510</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Cyprus - Division 1</string>
+          <key>Key</key>
+          <string>livescores_league_160</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Egypt - Second Division</string>
+          <key>Key</key>
+          <string>livescores_league_6994</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>England - FA Cup</string>
+          <key>Key</key>
+          <string>livescores_league_8</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>England - Premier League 2</string>
+          <key>Key</key>
+          <string>livescores_league_7623</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>England - Women Super League</string>
+          <key>Key</key>
+          <string>livescores_league_6216</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>France - Ligue 1</string>
+          <key>Key</key>
+          <string>livescores_league_35</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Germany - Bundesliga</string>
+          <key>Key</key>
+          <string>livescores_league_25</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Ghana - Premier League</string>
+          <key>Key</key>
+          <string>livescores_league_551</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Gibraltar - Premier Division</string>
+          <key>Key</key>
+          <string>livescores_league_5805</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Greece - Super League</string>
+          <key>Key</key>
+          <string>livescores_league_84</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Greece - Super League 2</string>
+          <key>Key</key>
+          <string>livescores_league_86</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>India - I-League</string>
+          <key>Key</key>
+          <string>livescores_league_5694</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>India - Indian Super League</string>
+          <key>Key</key>
+          <string>livescores_league_6172</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Indonesia - Liga 1</string>
+          <key>Key</key>
+          <string>livescores_league_5431</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>International - Club Friendlies</string>
+          <key>Key</key>
+          <string>livescores_league_321</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>International - Friendly International</string>
+          <key>Key</key>
+          <string>livescores_league_570</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Israel - Premier League</string>
+          <key>Key</key>
+          <string>livescores_league_42</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Italy - Primavera 1</string>
+          <key>Key</key>
+          <string>livescores_league_7635</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Italy - Serie A</string>
+          <key>Key</key>
+          <string>livescores_league_17</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Ivory Coast - Ligue 1</string>
+          <key>Key</key>
+          <string>livescores_league_7302</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Kenya - Premier League</string>
+          <key>Key</key>
+          <string>livescores_league_5575</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Kuwait - Premier Division</string>
+          <key>Key</key>
+          <string>livescores_league_5473</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Lebanon - Premier League</string>
+          <key>Key</key>
+          <string>livescores_league_566</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Libya - Premier League</string>
+          <key>Key</key>
+          <string>livescores_league_559</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Mexico - Liga MX</string>
+          <key>Key</key>
+          <string>livescores_league_141</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Mexico - Liga MX Femenil</string>
+          <key>Key</key>
+          <string>livescores_league_7143</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Mexico - Liga de Expansión MX</string>
+          <key>Key</key>
+          <string>livescores_league_5514</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Mexico - U20 League</string>
+          <key>Key</key>
+          <string>livescores_league_7309</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Netherlands - Eerste Divisie</string>
+          <key>Key</key>
+          <string>livescores_league_58</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Nigeria - NPFL</string>
+          <key>Key</key>
+          <string>livescores_league_405</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Portugal - Liga Portugal</string>
+          <key>Key</key>
+          <string>livescores_league_73</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Portugal - Liga Portugal 2</string>
+          <key>Key</key>
+          <string>livescores_league_74</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Portugal - Liga Revelacao U23</string>
+          <key>Key</key>
+          <string>livescores_league_7260</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Spain - LaLiga</string>
+          <key>Key</key>
+          <string>livescores_league_11</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Spain - LaLiga 2</string>
+          <key>Key</key>
+          <string>livescores_league_12</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Spain - Primera División Women</string>
+          <key>Key</key>
+          <string>livescores_league_6220</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Spain - Primera RFEF - Group 1</string>
+          <key>Key</key>
+          <string>livescores_league_7738</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Spain - Segunda RFEF </string>
+          <key>Key</key>
+          <string>livescores_league_7741</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Thailand - Premier League</string>
+          <key>Key</key>
+          <string>livescores_league_475</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Turkey - Super Lig</string>
+          <key>Key</key>
+          <string>livescores_league_78</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Turkey - TFF 1. League</string>
+          <key>Key</key>
+          <string>livescores_league_81</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>UAE - Arabian Gulf League</string>
+          <key>Key</key>
+          <string>livescores_league_549</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>UAE - Division 1</string>
+          <key>Key</key>
+          <string>livescores_league_5449</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Uganda - Premier League</string>
+          <key>Key</key>
+          <string>livescores_league_6995</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+        <dict>
+          <key>Type</key>
+          <string>PSToggleSwitchSpecifier</string>
+          <key>Title</key>
+          <string>Zambia - Premier Division</string>
+          <key>Key</key>
+          <string>livescores_league_6148</string>
+          <key>DefaultValue</key>
+          <false/>
+        </dict>
+
 	</array>
 </dict>
 </plist>

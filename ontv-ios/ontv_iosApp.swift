@@ -22,12 +22,13 @@ extension Defaults.Keys {
   static let account_status = Key<String>("account_status", default: "Not connected")
   static let streamsUpdated = Key<Date>("streamsUpdated", default: Date(timeIntervalSince1970: 0))
   static let scheduleUpdated = Key<Date>("scheduleUpdated", default: Date(timeIntervalSince1970: 0))
+  static let leaguesUpdated = Key<Date>("scheduleUpdated", default: Date(timeIntervalSince1970: 0))
   static let epgUpdated = Key<Date>("epgUpdated", default: Date(timeIntervalSince1970: 0))
   static let volume = Key<Float>("volume", default: 100)
   static let vendor = Key<PlayVendor>("vender", default: .avfoundation)
   static let leagues = Key<Set<Int>>(
     "livescoreLeague",
-    default: Set([43, 41, 44, 45, 39, 256, 84, 247, 558, 246, 147, 195, 2442, 625, 31, 908])
+    default: Set([8,35,25,570,17,6216,6994])
   )
   static let tickerPosition = Key<Int>("tickerPosition", default: TickerPosition.top.rawValue)
 }

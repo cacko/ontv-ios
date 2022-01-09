@@ -27,7 +27,7 @@ enum API {
   }
 
   enum FetchType {
-    case streams, schedule, epg, livescore, idle
+    case streams, schedule, epg, livescore, idle, leagues
   }
 
   enum LoadingItem: String, DefaultsSerializable {
@@ -37,6 +37,7 @@ enum API {
     case category = "Loading categories"
     case loaded = "Done"
     case livescore = "Loading livescores"
+    case leagues = "Loading leagues"
   }
 
   static let Adapter = ApiAdapter()
@@ -85,7 +86,7 @@ enum API {
       guard tasks.count > 0 else {
         return
       }
-//      tasks.forEach { $0.cancel() }
+      //      tasks.forEach { $0.cancel() }
     }
 
     func fetch(_ type: API.FetchType) {
@@ -102,6 +103,9 @@ enum API {
           break
         case .livescore:
           try await self.updateLivescore()
+          break
+        case .leagues:
+          try await self.updateLeagues()
           break
         case .idle:
           self.fetchType = .idle
@@ -136,6 +140,10 @@ enum API {
           DispatchQueue.main.async {
             self.inProgress = true
           }
+        }
+
+        if League.needsUpdate {
+          try await updateLeagues()
         }
 
         if Stream.needsUpdate {
@@ -249,7 +257,7 @@ enum API {
               self.scheduleState = .ready
               self.fetchType = .idle
             }
-//            self.tasks.remove(tc)
+            //            self.tasks.remove(tc)
             NotificationCenter.default.post(name: .updateschedule, object: nil)
           }
           catch let error {
@@ -257,7 +265,7 @@ enum API {
               self.scheduleState = .ready
               self.fetchType = .idle
             }
-//            self.tasks.remove(tc)
+            //            self.tasks.remove(tc)
             logger.error("\(error.localizedDescription)")
           }
         }
@@ -279,7 +287,7 @@ enum API {
         let tc = Task.init {
           do {
             try await Category.delete(Category.clearQuery)
-//            self.tasks(tc)
+            //            self.tasks(tc)
             try await Stream.fetch(url: Endpoint.Streams) { _ in
               let ts = Task.init {
                 do {
@@ -292,7 +300,7 @@ enum API {
                     self.streamsState = .ready
                     self.inProgress = false
                   }
-//                  self.tasks.remove(ts)
+                  //                  self.tasks.remove(ts)
                 }
                 catch let error {
                   DispatchQueue.main.async {
@@ -300,7 +308,7 @@ enum API {
                     self.fetchType = .idle
                     self.streamsState = .ready
                   }
-//                  self.tasks.remove(ts)
+                  //                  self.tasks.remove(ts)
                   logger.error(">>> \(error.localizedDescription)")
                 }
               }
@@ -337,7 +345,7 @@ enum API {
               self.loading = .loaded
               self.fetchType = .idle
             }
-//            self.tasks.remove(te)
+            //            self.tasks.remove(te)
           }
           catch let error {
             DispatchQueue.main.async {
@@ -345,7 +353,7 @@ enum API {
               self.loading = .loaded
               self.fetchType = .idle
             }
-//            self.tasks.remove(te)
+            //            self.tasks.remove(te)
             logger.error("\(error.localizedDescription)")
           }
         }
@@ -366,7 +374,6 @@ enum API {
         try await Livescore.fetch(url: Endpoint.Livescores) { _ in
           Task.detached {
             do {
-              self.updateLeagues()
               try await Livescore.delete(Livescore.clearQuery)
               DispatchQueue.main.async {
                 self.livescoreState = .ready
@@ -387,38 +394,29 @@ enum API {
       }
     }
 
-    func updateLeagues() {
+    func updateLeagues() async throws {
+      guard self.leaguesState != .loading else {
+        return
+      }
+
       DispatchQueue.main.async {
+        self.loading = .leagues
         self.leaguesState = .loading
-        let livescores = Livescore.getAll()
-        let leagues: [String: Any] = livescores.reduce(
-          into: [:],
-          { (res, livescore) in
-            guard (livescore.league_id as Any?) != nil else {
-              return
-            }
-            guard res.keys.contains(livescore.league_id?.string ?? "") else {
-              res[livescore.league_id?.string ?? ""] = livescore.league_name
-              return
-            }
+        self.fetchType = .leagues
+      }
+
+      try await League.fetch(url: Endpoint.Leagues) { _ in
+        let te = Task.detached {
+          League.deleteAll()
+          Defaults[.leaguesUpdated] = Date()
+          NotificationCenter.default.post(name: .leagues_updates, object: nil)
+          DispatchQueue.main.async {
+            self.leaguesState = .ready
+            self.fetchType = .idle
           }
-        )
-        Task.init {
-          do {
-            try await League.doImport(
-              json: leagues.map { ["id": $0, "idLeague": $0.int64, "strLeague": $1] }
-            ) { _ in
-              DispatchQueue.main.async {
-                self.leaguesState = .ready
-              }
-            }
-          }
-          catch {
-            DispatchQueue.main.async {
-              self.leaguesState = .ready
-            }
-          }
+          //            self.tasks.remove(te)
         }
+        self.tasks.append(te)
       }
     }
 

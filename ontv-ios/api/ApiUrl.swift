@@ -114,6 +114,10 @@ extension API {
     static var Livescores: URL {
       URL(string: "https://ontv.cacko.net/api/data/livescores.json") ?? URL(fileURLWithPath: "")
     }
+    
+    static var Leagues: URL {
+      URL(string: "https://ontv.cacko.net/api/data/leagues.json") ?? URL(fileURLWithPath: "")
+    }
   }
   
 }

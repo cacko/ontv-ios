@@ -17,7 +17,7 @@ extension Date {
 
   func isCloseTo(precision: TimeInterval = 300) -> Bool {
     return Date().compareCloseTo(self, precision: precision)
-  }
+}
 
   var HHMM: String {
     let formatter = DateFormatter()

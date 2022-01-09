@@ -3,7 +3,7 @@ from io import StringIO
 from pathlib import Path
 from dataclasses import asdict, dataclass, asdict
 
-DEFAULTS = [43, 41, 44, 45, 39, 256, 84, 247, 558, 246, 147, 195, 2442, 625, 31, 908]
+DEFAULTS = [8,35,25,570,17,6216,6994]
 
 TEMPLATE = """<dict>
 			<key>Type</key>
