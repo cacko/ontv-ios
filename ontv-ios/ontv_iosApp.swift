@@ -28,7 +28,9 @@ extension Defaults.Keys {
   static let vendor = Key<PlayVendor>("vender", default: .avfoundation)
   static let leagues = Key<Set<Int>>(
     "livescoreLeague",
-    default: Set([8, 35, 25, 570, 17, 6216, 6994])
+    default: Set([
+      167, 35, 25, 17, 11, 8, 570, 321, 58, 73, 9, 7,
+    ])
   )
   static let tickerPosition = Key<Int>("tickerPosition", default: TickerPosition.top.rawValue)
 }

@@ -37,7 +37,6 @@ enum API {
     case category = "Loading categories"
     case loaded = "Done"
     case livescore = "Loading livescores"
-    case leagues = "Loading leagues"
   }
 
   static let Adapter = ApiAdapter()
@@ -51,7 +50,6 @@ enum API {
     @Published var livescoreState: API.State = .idle
     @Published var scheduleState: API.State = .idle
     @Published var streamsState: API.State = .idle
-    @Published var leaguesState: API.State = .idle
     @Published var fetchType: API.FetchType = .idle
     @Published var state: API.State = .boot
     @Published var inProgress: Bool = false
@@ -141,11 +139,6 @@ enum API {
             self.inProgress = true
           }
         }
-
-        if League.needsUpdate {
-          try await updateLeagues()
-        }
-
         if Stream.needsUpdate {
           try await updateStreams()
         }
@@ -393,32 +386,6 @@ enum API {
         return
       }
     }
-
-    func updateLeagues() async throws {
-      guard self.leaguesState != .loading else {
-        return
-      }
-
-      DispatchQueue.main.async {
-        self.loading = .leagues
-        self.leaguesState = .loading
-        self.fetchType = .leagues
-      }
-
-      try await League.fetch(url: Endpoint.Leagues) { _ in
-        let te = Task.detached {
-          Defaults[.leaguesUpdated] = Date()
-          NotificationCenter.default.post(name: .leagues_updates, object: nil)
-          DispatchQueue.main.async {
-            self.leaguesState = .ready
-            self.fetchType = .idle
-          }
-          //            self.tasks.remove(te)
-        }
-        self.tasks.append(te)
-      }
-    }
-
     func fetchData(
       url: URL
     ) async throws -> [[String: Any]] {

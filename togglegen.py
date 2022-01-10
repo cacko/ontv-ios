@@ -3,7 +3,6 @@ from io import StringIO
 from pathlib import Path
 from dataclasses import asdict, dataclass, asdict
 
-DEFAULTS = [8,35,25,570,17,6216,6994]
 
 TEMPLATE = """<dict>
 			<key>Type</key>
@@ -27,7 +26,7 @@ class League:
 with csv_path.open("r") as f:
 	csv_reader = csv.reader(f)
 	leagues = sorted([
-		League(name=name, id=int(id), default="true" if id in DEFAULTS else "false") 
+		League(name=name, id=int(id), default="false") 
 		for (id,name) in csv_reader
 		], key=lambda x: x.name)
 	for league in leagues:
