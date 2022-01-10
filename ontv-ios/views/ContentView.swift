@@ -49,7 +49,7 @@ enum ContentToggleIcon: String {
 
 class AppSettingsViewController: IASKAppSettingsViewController, IASKSettingsDelegate {
   func settingsViewControllerDidEnd(_ settingsViewController: IASKAppSettingsViewController) {
-
+    print("test")
   }
 
   func settingsViewController(
@@ -80,6 +80,7 @@ struct SettingsView: UIViewControllerRepresentable {
   ) {
 
   }
+  
 }
 
 struct ContentView: View {
@@ -97,7 +98,7 @@ struct ContentView: View {
 
   let showSettings = Binding<Bool>(
     get: {
-      Player.instance.contentToggle == .settings && API.Adapter.state != .boot && !API.Adapter.inProgress
+      Player.instance.contentToggle == .settings && API.Adapter.state != .boot
     },
     set: { _ in
     }
@@ -131,7 +132,12 @@ struct ContentView: View {
       }
       ToggleView()
     }
-    .sheet(isPresented: showSettings) {
+    .sheet(isPresented: showSettings, onDismiss: {
+      guard self.player.contentToggle == .settings else {
+        return
+      }
+      self.player.contentToggle = .none
+    }) {
       NavigationView {
         SettingsView()
           .navigationBarTitle(Text("Settings"), displayMode: .inline)
