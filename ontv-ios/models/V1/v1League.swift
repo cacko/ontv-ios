@@ -19,7 +19,6 @@ extension V1 {
     class var primaryKey: String {
       "id"
     }
-    
 
     @Field.Stored("id")
     var id: String = ""
@@ -29,16 +28,16 @@ extension V1 {
 
     @Field.Stored("league_name")
     var league_name: String = ""
-    
+
     @Field.Stored("country_id")
     var country_id: Int64 = 0
-    
+
     @Field.Stored("country_name")
     var country_name: String = ""
-    
+
     @Field.Stored("sport_id")
     var sport_id: Int64 = 0
-    
+
     @Field.Stored("sport_name")
     var sport_name: String = ""
 
@@ -84,6 +83,7 @@ extension V1 {
 
     class var orderBy: OrderBy<EntityType> {
       OrderBy<EntityType>(
+        .ascending("count_name"),
         .ascending("league_name")
       )
     }

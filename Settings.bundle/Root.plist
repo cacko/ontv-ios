@@ -132,7 +132,7 @@
 			<key>Key</key>
 			<string>ButtonTestConnect</string>
 			<key>Title</key>
-			<string>Test Connection</string>
+			<string>Login</string>
 			<key>Type</key>
 			<string>IASKButtonSpecifier</string>
 		</dict>

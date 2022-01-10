@@ -97,7 +97,7 @@ struct ContentView: View {
 
   let showSettings = Binding<Bool>(
     get: {
-      Player.instance.contentToggle == .settings && API.Adapter.state != .boot
+      Player.instance.contentToggle == .settings && API.Adapter.state != .boot && !API.Adapter.inProgress
     },
     set: { _ in
     }
