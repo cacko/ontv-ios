@@ -207,7 +207,6 @@ enum API {
           DispatchQueue.main.async {
             switch value.operation {
             case .done:
-              print(">>> \(value.target) done")
               break
             case .notify:
               NotificationCenter.default.post(name: value.notification!, object: value.value)
@@ -234,10 +233,10 @@ enum API {
               case .none:
                 break
               case .loggedin:
+                self.error = nil
                 self.loggedIn = value.value as! API.State == .loggedin
               }
             }
-            print("update sink \(value)")
           }
 
         }
