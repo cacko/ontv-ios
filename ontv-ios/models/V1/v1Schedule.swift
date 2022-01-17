@@ -61,6 +61,12 @@ extension V1 {
     
     @Field.Stored("season")
     var season: String = ""
+ 
+    @Field.Stored("league_id")
+    var league_id: Int = 0
+    
+    @Field.Stored("league_name")
+    var league_name: String = ""
     
     static func uniqueID(
       from source: [String: Any],
@@ -81,6 +87,8 @@ extension V1 {
       sport = Self.asString(data: source, key: "sport")
       country = Self.asString(data: source, key: "country")
       season = Self.asString(data: source, key: "season")
+      league_id = Self.asInt(data: source, key: "league_id")
+      league_name = Self.asString(data: source, key: "league_name")
     }
     
     func update(from source: [String: Any], in transaction: BaseDataTransaction) throws {

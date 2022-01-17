@@ -27,24 +27,7 @@ struct ContentHeaderView: View {
             object: Player.instance.contentToggle
           )
         })
-      if apiType != nil {
-        if api.fetchType == apiType {
-          ProgressView()
-        }
-        else {
-          ControlSFSymbolView(icon: .update, width: Theme.Font.Size.big)
-            .padding()
-            .contentShape(Rectangle())
-            .onTapGesture(perform: {
-              NotificationCenter.default.post(
-                name: .fetch,
-                object: apiType
-              )
-            })
-        }
-      }
-
-      Spacer().background(.yellow)
+      Spacer()
       Text(title)
         .font(Theme.Font.title)
         .lineLimit(1)

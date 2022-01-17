@@ -54,7 +54,7 @@ enum API {
     func done(task: API.FetchType) {
       publisher.send(Update(operation: .done, target: task))
       switch task {
-        
+
       case .streams:
         self.state(destination: .streams, value: .ready)
       case .schedule:
@@ -70,7 +70,7 @@ enum API {
       case .user:
         self.state(destination: .api, value: .ready)
       }
-      
+
       guard queue.count > 0 else {
         return
       }
@@ -207,6 +207,7 @@ enum API {
           DispatchQueue.main.async {
             switch value.operation {
             case .done:
+              print(">>> \(value.target) done")
               break
             case .notify:
               NotificationCenter.default.post(name: value.notification!, object: value.value)
@@ -242,19 +243,13 @@ enum API {
         }
 
       do {
-//        DispatchQueue.main.async {
-//          self.state = .loading
-//        }
-
         updater.add(task: .user)
-
         if Stream.isLoaded {
           updater.state(destination: .streams, value: .ready)
         }
         else {
           updater.state(destination: .inprogress, value: .loading)
         }
-
         updater.add(task: .leagues)
         updater.add(task: .streams)
         updater.add(task: .schedule)
@@ -331,15 +326,12 @@ enum API {
       guard self.scheduleState != .loading else {
         return
       }
-
       guard Schedule.needsUpdate else {
         updater.notify(name: .updateschedule)
         self.updater.done(task: .schedule)
         return
       }
-
       updater.state(destination: .schedule, value: .loading)
-      
       try await Schedule.fetch(url: Endpoint.Schedule) { _ in
         Task.init {
           do {
@@ -368,7 +360,7 @@ enum API {
       }
 
       self.updater.state(destination: .streams, value: .loading)
-      
+
       try await Category.fetch(url: Endpoint.Categories) { _ in
         Task.init {
           do {
@@ -381,8 +373,7 @@ enum API {
                   self.updater.state(destination: .inprogress, value: .ready)
                   self.updater.done(task: .streams)
                   self.updater.notify(name: .loaded)
-
-                    Defaults[.streamsUpdated] = Date()
+                  Defaults[.streamsUpdated] = Date()
                 }
                 catch let error {
                   self.updater.done(task: .streams)
@@ -419,11 +410,11 @@ enum API {
           do {
             try await EPG.delete(EPG.clearQuery)
             Defaults[.epgUpdated] = Date()
-              self.updater.done(task: .epg)
+            self.updater.done(task: .epg)
             self.updater.notify(name: .updateepg)
           }
           catch let error {
-              self.updater.done(task: .epg)
+            self.updater.done(task: .epg)
             logger.error("\(error.localizedDescription)")
           }
         }

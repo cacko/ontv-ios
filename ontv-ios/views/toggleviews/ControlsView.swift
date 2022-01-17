@@ -149,11 +149,12 @@ extension ToggleViews {
     @ObservedObject var recent: Provider.Stream.RecentStreams = Provider.Stream.RecentItems
 
     var body: some View {
-      ControlItemView(
-        icon: .restart,
-        note: Notification.Name.reload,
-        size: Theme.Font.Size.base
-      )
+      if player.stream != nil {
+        ControlItemView(
+          icon: .restart,
+          note: Notification.Name.reload
+        )
+      }
       //      if recent.canGoBack {
       //        ControlItemView(
       //          icon: .history_arrow,
@@ -194,15 +195,13 @@ extension ToggleViews {
         icon: player.isMuted
           ? ContentToggleIcon.isMutedOn : volumeStage(stage: player.volumeStage),
         note: Notification.Name.toggleAudio,
-        hint: "Toggle audio",
-        size: Theme.Font.Size.base
+        hint: "Toggle audio"
       )
       ControlItemView(
         icon: .settings,
         note: Notification.Name.contentToggle,
         obj: ContentToggle.settings,
-        hint: "Toggle audio",
-        size: Theme.Font.Size.base
+        hint: "Toggle audio"
       )
     }
   }

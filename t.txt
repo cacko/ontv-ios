@@ -6,7 +6,7 @@
 			<key>Key</key>
 			<string>livescores_league_167</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -26,7 +26,7 @@
 			<key>Key</key>
 			<string>livescores_league_6265</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -106,7 +106,7 @@
 			<key>Key</key>
 			<string>livescores_league_163</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -116,7 +116,7 @@
 			<key>Key</key>
 			<string>livescores_league_5668</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -126,7 +126,7 @@
 			<key>Key</key>
 			<string>livescores_league_350</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -196,7 +196,7 @@
 			<key>Key</key>
 			<string>livescores_league_9</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -206,7 +206,7 @@
 			<key>Key</key>
 			<string>livescores_league_8</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -226,7 +226,7 @@
 			<key>Key</key>
 			<string>livescores_league_7</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -256,7 +256,7 @@
 			<key>Key</key>
 			<string>livescores_league_572</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -276,7 +276,7 @@
 			<key>Key</key>
 			<string>livescores_league_7685</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -286,7 +286,7 @@
 			<key>Key</key>
 			<string>livescores_league_573</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -306,7 +306,7 @@
 			<key>Key</key>
 			<string>livescores_league_7016</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -326,7 +326,7 @@
 			<key>Key</key>
 			<string>livescores_league_5421</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -366,7 +366,7 @@
 			<key>Key</key>
 			<string>livescores_league_25</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -456,7 +456,7 @@
 			<key>Key</key>
 			<string>livescores_league_20</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -466,7 +466,7 @@
 			<key>Key</key>
 			<string>livescores_league_17</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -636,7 +636,7 @@
 			<key>Key</key>
 			<string>livescores_league_13</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -646,7 +646,7 @@
 			<key>Key</key>
 			<string>livescores_league_11</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 <dict>
 			<key>Type</key>
@@ -656,5 +656,5 @@
 			<key>Key</key>
 			<string>livescores_league_15</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>

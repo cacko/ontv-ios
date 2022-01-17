@@ -56,8 +56,8 @@ class Schema {
               0x6633_f454_c158_e76b,
             ],
             "Schedule": [
-              0x1be_1e88_0d66_c07f, 0x8a2b_edac_42cd_65c0, 0x9021_a5d2_3f01_4601,
-              0x3a54_fa4c_4cfd_0874,
+              0x3ec1_4f39_e959_f268, 0xa178_3d69_130e_dbc9, 0x6959_4e69_7cc3_5388,
+              0xd285_35e2_6226_18d5,
             ],
             "Stream": [
               0x993_7e74_8575_a81d, 0xecf7_24f7_37fb_f606, 0xce7d_2e1d_7a2c_1981,
