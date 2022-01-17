@@ -14,7 +14,7 @@ extension StreamStorage {
 
     @Published var active: Bool = false
 
-    @Published var state: ProviderState = .notavail
+    @Published var state: API.State = .notavail
 
     typealias EntityType = Stream
 
@@ -86,7 +86,7 @@ extension StreamStorage {
         catch {
           logger.error("\(error.localizedDescription)")
         }
-        self.state = .loaded
+        self.state = .ready
       }
     }
     

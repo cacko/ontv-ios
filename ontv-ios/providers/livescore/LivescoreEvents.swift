@@ -40,7 +40,7 @@ extension LivescoreStorage {
     }
     var order: OrderBy<Livescore> = Livescore.orderBy
     var search: String = ""
-    var state: ProviderState = .notavail
+    var state: API.State = .notavail
     var scrollTimer: DispatchSourceTimer = DispatchSource.makeTimerSource()
     var scrollTimerState: TimerState = .none
     var leagueObserver: DefaultsObservation!
@@ -140,23 +140,6 @@ extension LivescoreStorage {
         return nil
       }
       return instance
-    }
-
-    func timestampInList(_ timestamp: Date) -> Bool {
-      guard self.list.snapshot.first(where: { $0.$start_time == timestamp }) != nil else {
-        return false
-      }
-      return true
-    }
-
-    func eventInList(_ event_id: Int) -> Bool {
-      guard event_id > 0 else {
-        return false
-      }
-      guard self.list.snapshot.first(where: { $0.$event_id == event_id.int64 }) != nil else {
-        return false
-      }
-      return true
     }
 
     func startScrollTimer() {

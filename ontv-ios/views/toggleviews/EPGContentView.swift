@@ -144,7 +144,7 @@ enum EPGViews {
     @ObservedObject var epgLive = EPGStorage.epglist
 
     var body: some View {
-      if epgLive.state == .loaded {
+      if epgLive.state == .ready {
         ScrollingView {
           ListReader(epgLive.list) { listSnapshot in
             ForEach(sectionIn: listSnapshot) { section in

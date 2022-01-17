@@ -32,7 +32,7 @@ class EPGGuide: EPGStorageAbstract {
       else {
         self.state = .loading
         self.search = stream.epg_channel_id
-        self.state = .loaded
+        self.state = .ready
       }
     }
   }

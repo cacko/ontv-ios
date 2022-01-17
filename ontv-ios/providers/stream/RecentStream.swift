@@ -67,9 +67,12 @@ extension Provider.Stream {
     }
 
     func load() {
-      Task.init {
-        self.streams = await Recent.streams
+      DispatchQueue.main.async {
+        Task.init {
+          self.streams = await Recent.streams
+        }
       }
+
     }
   }
 
@@ -107,7 +110,9 @@ extension Provider.Stream {
             }
             self.streams.insert(obj, at: 0)
             self.streams.removeLast()
-            RecentItems.currentPosition += 1
+            DispatchQueue.main.async {
+              RecentItems.currentPosition += 1
+            }
             NotificationCenter.default.post(
               name: .refreshrecents,
               object: nil
@@ -150,7 +155,6 @@ extension Provider.Stream {
         return res + [stream]
       }
       self.autoPlay = self.streams.first
-
     }
 
     private func onNavigation(_ navigation: AppNavigation) {

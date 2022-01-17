@@ -48,7 +48,7 @@ class ActivityStorageAbstract: NSObject, ObservableObject, AcitvityStorageProtoc
   
   @Published var list: ListPublisher<Activity>
   
-  @Published var state: ProviderState = .notavail
+  @Published var state: API.State = .notavail
   
   let dataStack = CoreStoreDefaults.dataStack
   
@@ -82,7 +82,7 @@ class ActivityStorageAbstract: NSObject, ObservableObject, AcitvityStorageProtoc
           .orderBy(self.order),
         sourceIdentifier: nil
       )
-      self.state = .loaded
+      self.state = .ready
     }
     catch {
       logger.error("\(error.localizedDescription)")
@@ -90,7 +90,7 @@ class ActivityStorageAbstract: NSObject, ObservableObject, AcitvityStorageProtoc
   }
   
   func update() {
-    self.state = .loaded
+    self.state = .ready
     self.fetch()
   }
 }

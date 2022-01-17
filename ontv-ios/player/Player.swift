@@ -112,6 +112,14 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
     set {
       self._contentToggle = newValue == self._contentToggle ? .none : newValue
       objectWillChange.send()
+      guard self._contentToggle == .none else {
+        self.controlsState = .hidden
+        return
+      }
+      guard self.stream == nil else {
+        return
+      }
+      self.controlsState = .always
     }
   }
 

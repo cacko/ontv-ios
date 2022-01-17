@@ -85,7 +85,7 @@ extension StorageProvider where EntityType == Stream {
   
   func fetch() {
     DispatchQueue.main.async {
-      self.state = .loading
+      self.state = API.State.loading
       do {
         try self.list.refetch(
           From<Stream>()
@@ -97,7 +97,7 @@ extension StorageProvider where EntityType == Stream {
       catch {
         logger.error("\(error.localizedDescription)")
       }
-      self.state = .loaded
+      self.state = API.State.ready
     }
   }
   

@@ -119,7 +119,7 @@ extension ToggleViews {
     @ObservedObject var api = API.Adapter
 
     var body: some View {
-      if api.epgState == .loaded {
+      if api.epgState == .ready {
         if player.epgId.count > 0 {
           ControlItemView(
             icon: .guide,

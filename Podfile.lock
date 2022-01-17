@@ -32,9 +32,9 @@ PODS:
   - KSPlayer/Video (1.0):
     - KSPlayer/Core
     - KSPlayer/Subtitle
-  - OpenSSL (3.0.0):
-    - OpenSSL/OpenSSL (= 3.0.0)
-  - OpenSSL/OpenSSL (3.0.0)
+  - OpenSSL (3.0.1):
+    - OpenSSL/OpenSSL (= 3.0.1)
+  - OpenSSL/OpenSSL (3.0.1)
 
 DEPENDENCIES:
   - FFmpeg (from `https://github.com/kingslay/KSPlayer.git`, branch `develop`)
@@ -54,19 +54,19 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   FFmpeg:
-    :commit: ba76dce4b03805fd256a539c21ad87aaa0d43e21
+    :commit: a2669972cdd4b2e8056b9565419ff2e46b8fb792
     :git: https://github.com/kingslay/KSPlayer.git
   KSPlayer:
-    :commit: ba76dce4b03805fd256a539c21ad87aaa0d43e21
+    :commit: a2669972cdd4b2e8056b9565419ff2e46b8fb792
     :git: https://github.com/kingslay/KSPlayer.git
   OpenSSL:
-    :commit: ba76dce4b03805fd256a539c21ad87aaa0d43e21
+    :commit: a2669972cdd4b2e8056b9565419ff2e46b8fb792
     :git: https://github.com/kingslay/KSPlayer.git
 
 SPEC CHECKSUMS:
   FFmpeg: b9554306bf619b593bd7077cea2bc552b259997f
   KSPlayer: a6ea8483d44447d4b7282e3723ebed9101efb3ad
-  OpenSSL: 162e16d36b4bf6efcaedde98752037911af31f1d
+  OpenSSL: a253b4b80f6c9512a45960472ddc5140342356bf
 
 PODFILE CHECKSUM: 3286d3e1c432e4b5c02b0e4e0b41bc803d0589bd
 

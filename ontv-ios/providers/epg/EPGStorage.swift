@@ -37,7 +37,7 @@ enum EPGStorage {
 class EPGStorageAbstract: NSObject, ObservableObject, StorageProvider {
 
   @Published var active: Bool = false
-  @Published var state: ProviderState = .notavail
+  @Published var state: API.State = .notavail
   @Published var selectedId: String = ""
 
   typealias EntityType = EPG
@@ -145,7 +145,7 @@ class EPGStorageAbstract: NSObject, ObservableObject, StorageProvider {
               .orderBy(self.order),
             sourceIdentifier: nil
           )
-          self.state = .loaded
+          self.state = .ready
         }
         catch {
           logger.error(">> epg search error \(error.localizedDescription)")

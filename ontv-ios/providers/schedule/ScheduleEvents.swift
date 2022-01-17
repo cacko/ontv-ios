@@ -15,7 +15,7 @@ extension ScheduleStorage {
     
     typealias EntityType = Schedule
     
-    @Published var state: ProviderState = .notavail
+    @Published var state: API.State = .notavail
     
     @Published var active: Bool = false
     

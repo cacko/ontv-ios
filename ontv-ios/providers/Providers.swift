@@ -13,9 +13,6 @@ enum TimerState {
   case none, active, suspended
 }
 
-enum ProviderState {
-  case notavail, loading, loaded
-}
 
 protocol StorageProvider: ObservableObject {
   
@@ -28,7 +25,7 @@ protocol StorageProvider: ObservableObject {
   var order: OrderBy<EntityType> { get set }
   var search: String { get set }
   var active: Bool { get set }
-  var state: ProviderState { get set }
+  var state: API.State { get set }
   
   func selectNext() throws
   func selectPrevious() throws

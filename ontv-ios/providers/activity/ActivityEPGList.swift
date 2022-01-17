@@ -41,7 +41,7 @@ class ActivityEPGList: ActivityStorageAbstract {
           .orderBy(order),
         sourceIdentifier: nil
       )
-      state = .loaded
+      state = API.State.ready
     }
     catch {
       logger.error("\(error.localizedDescription)")

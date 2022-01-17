@@ -31,7 +31,7 @@ extension LeagueStorage {
     
     var search: String = ""
     
-    var state: ProviderState = .notavail
+    var state: API.State = .notavail
     
     func selectNext() throws {}
     
