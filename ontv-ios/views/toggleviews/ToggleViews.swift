@@ -10,7 +10,7 @@ import SwiftUI
 
 enum ToggleViews {
   static let hideControls: [ContentToggle] = [
-    .activityepg, .epglist, .schedule, .search
+    .activityepg, .epglist, .schedule, .search,
   ]
 }
 struct ToggleView: View {
@@ -27,7 +27,9 @@ struct ToggleView: View {
           .background(.black.opacity(0.8))
         ToggleViews.EPGView()
         ToggleViews.CategoryView()
-        ToggleViews.ScheduleView()
+        ToggleViews.StreamsView()
+        ToggleViews.ScheduleView().frame(width: geo.size.width, height: geo.size.height)
+          .background(.black.opacity(0.8))
           .frame(width: geo.size.width, height: geo.size.height)
           .background(.black.opacity(0.8))
         ToggleViews.ControlsView()

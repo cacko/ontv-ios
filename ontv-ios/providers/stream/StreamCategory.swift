@@ -13,7 +13,7 @@ extension StreamStorage {
     override func update() {
       self.query = Where<Stream>(NSPredicate(format: "category_id = %@", search))
       self.fetch()
-      self.onChangeStream(stream: Player.instance.stream)
+//      self.onChangeStream(stream: Player.instance.stream)
     }
     
     override init() {

@@ -11,7 +11,7 @@ import SwiftUI
 
 enum ContentToggle: Int, DefaultsSerializable {
   case guide, category, epglist, search, title, loading, controls, errror, activityepg, bookmarks,
-    metadata, schedule, livescores, livescoresticker, none, settings
+    metadata, schedule, livescores, livescoresticker, none, settings, streams
 }
 
 enum ContentToggleIcon: String {
@@ -45,6 +45,7 @@ enum ContentToggleIcon: String {
   case settings = "gear"
   case history_arrow = "arrowshape.zigzag.forward"
   case restart = "arrow.clockwise"
+  case streams = "tv.and.mediabox"
 }
 
 class AppSettingsViewController: IASKAppSettingsViewController, IASKSettingsDelegate {

@@ -125,6 +125,9 @@
 		167D34BE278E772700C2E583 /* EPGSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D34BD278E772700C2E583 /* EPGSync.swift */; };
 		167D34C0278E773600C2E583 /* ScheduleSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D34BF278E773600C2E583 /* ScheduleSync.swift */; };
 		167D34C2278E773E00C2E583 /* LeagueSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D34C1278E773E00C2E583 /* LeagueSync.swift */; };
+		168CFE4A279647A0008AD8B0 /* StreamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CFE49279647A0008AD8B0 /* StreamsView.swift */; };
+		168CFE4F279649D4008AD8B0 /* CategoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CFE4E279649D4008AD8B0 /* CategoryStorage.swift */; };
+		168CFE51279649E1008AD8B0 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CFE50279649E1008AD8B0 /* CategoryList.swift */; };
 		16BBBDA827823DFE00292CCF /* UIpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBBDA727823DFE00292CCF /* UIpdatable.swift */; };
 		EA61EEFC4FA834BE2F812F45 /* Pods_ontv_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06519CAA938E92E538F37EB7 /* Pods_ontv_ios.framework */; };
 /* End PBXBuildFile section */
@@ -247,6 +250,9 @@
 		167D34BD278E772700C2E583 /* EPGSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPGSync.swift; sourceTree = "<group>"; };
 		167D34BF278E773600C2E583 /* ScheduleSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSync.swift; sourceTree = "<group>"; };
 		167D34C1278E773E00C2E583 /* LeagueSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueSync.swift; sourceTree = "<group>"; };
+		168CFE49279647A0008AD8B0 /* StreamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamsView.swift; sourceTree = "<group>"; };
+		168CFE4E279649D4008AD8B0 /* CategoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStorage.swift; sourceTree = "<group>"; };
+		168CFE50279649E1008AD8B0 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		16BBBDA727823DFE00292CCF /* UIpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIpdatable.swift; sourceTree = "<group>"; };
 		BBD123D892EF5C8ABF926B8D /* Pods-ontv-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontv-ios.debug.xcconfig"; path = "Target Support Files/Pods-ontv-ios/Pods-ontv-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		EE569CDC83B90E5A196BA865 /* Pods-ontv-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ontv-ios.release.xcconfig"; path = "Target Support Files/Pods-ontv-ios/Pods-ontv-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -352,6 +358,7 @@
 		160F6973277B7FD400EBEE26 /* providers */ = {
 			isa = PBXGroup;
 			children = (
+				168CFE4D279649BB008AD8B0 /* category */,
 				160F6974277B7FD400EBEE26 /* schedule */,
 				160F6977277B7FD400EBEE26 /* livescore */,
 				160F697C277B7FD400EBEE26 /* activity */,
@@ -518,6 +525,7 @@
 				160F69B7277B7FD400EBEE26 /* LivescoreTickerView.swift */,
 				160F69B8277B7FD400EBEE26 /* ControlsView.swift */,
 				160F69B9277B7FD400EBEE26 /* ToggleViews.swift */,
+				168CFE49279647A0008AD8B0 /* StreamsView.swift */,
 			);
 			path = toggleviews;
 			sourceTree = "<group>";
@@ -632,6 +640,15 @@
 				167D34C1278E773E00C2E583 /* LeagueSync.swift */,
 			);
 			path = sync;
+			sourceTree = "<group>";
+		};
+		168CFE4D279649BB008AD8B0 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				168CFE4E279649D4008AD8B0 /* CategoryStorage.swift */,
+				168CFE50279649E1008AD8B0 /* CategoryList.swift */,
+			);
+			path = category;
 			sourceTree = "<group>";
 		};
 		6A6DC93A23F6E6BC42DAE7C5 /* Pods */ = {
@@ -810,6 +827,7 @@
 				160F6A34277B7FD500EBEE26 /* Importable.swift in Sources */,
 				160F6A08277B7FD500EBEE26 /* SearchView.swift in Sources */,
 				167D34C0278E773600C2E583 /* ScheduleSync.swift in Sources */,
+				168CFE4A279647A0008AD8B0 /* StreamsView.swift in Sources */,
 				160F6A0F277B7FD500EBEE26 /* ControlSFSymbol.swift in Sources */,
 				160F6A32277B7FD500EBEE26 /* AbstractEntity.swift in Sources */,
 				160F6A2F277B7FD500EBEE26 /* v1Stream.swift in Sources */,
@@ -879,12 +897,14 @@
 				160F6A42277B7FD500EBEE26 /* Size.swift in Sources */,
 				160F6A24277B7FD500EBEE26 /* EPGContentView.swift in Sources */,
 				160F69F3277B7FD500EBEE26 /* ScheduleEvents.swift in Sources */,
+				168CFE4F279649D4008AD8B0 /* CategoryStorage.swift in Sources */,
 				160F69F8277B7FD500EBEE26 /* Generator.swift in Sources */,
 				160F6A3E277B7FD500EBEE26 /* ApiUrl.swift in Sources */,
 				160F6A30277B7FD500EBEE26 /* v1EPG.swift in Sources */,
 				160F69EB277B7FD500EBEE26 /* AbstractPlayer.swift in Sources */,
 				160F6A27277B7FD500EBEE26 /* LivescoreTickerView.swift in Sources */,
 				160F6A23277B7FD500EBEE26 /* BookmarkView.swift in Sources */,
+				168CFE51279649E1008AD8B0 /* CategoryList.swift in Sources */,
 				160F6A39277B7FD500EBEE26 /* StreamActivity.swift in Sources */,
 				160F6A25277B7FD500EBEE26 /* ScheduleView.swift in Sources */,
 				160F6A3C277B7FD500EBEE26 /* Notification.swift in Sources */,
@@ -1024,7 +1044,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "ontv-ios/ontv-ios.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;
@@ -1063,7 +1083,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "ontv-ios/ontv-ios.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_ASSET_PATHS = "ontv-ios/fonts/Teko-SemiBold.ttf ontv-ios/fonts/Teko-Bold.ttf ontv-ios/fonts/MajorMonoDisplay-Regular.ttf ontv-ios/fonts/Teko-Medium.ttf ontv-ios/fonts/Teko-Light.ttf ontv-ios/fonts/Teko-Regular.ttf ontv-ios/fonts/AtamiStencilBold.otf ontv-ios/fonts/AtamiStencil.otf";
 				DEVELOPMENT_TEAM = SPBF9BNRG3;
 				ENABLE_PREVIEWS = YES;

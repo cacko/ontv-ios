@@ -32,7 +32,10 @@ struct ListHighlightAction: ViewModifier {
   @State var highlightPlaying: Bool = false
 
   private var isPlaying: Bool {
-    self.player.stream.id == self.itemId
+    guard self.player.stream != nil else {
+      return false
+    }
+    return self.player.stream.id == self.itemId
   }
 
   private var isSelected: Bool {
@@ -65,7 +68,6 @@ struct ListHighlightAction: ViewModifier {
       .background(background)
       .onAppear(perform: { onAppear() })
       .onChange(of: selectedId, perform: { _ in onHighlight() })
-      .onChange(of: player.stream.id, perform: { playId in onPlay(playId) })
   }
 }
 

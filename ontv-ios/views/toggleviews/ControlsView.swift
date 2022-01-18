@@ -91,6 +91,12 @@ extension ToggleViews {
         note: Notification.Name.vendorToggle,
         hint: player.vendor.hint
       )
+      ControlItemView(
+        icon: .streams,
+        note: Notification.Name.contentToggle,
+        obj: ContentToggle.streams,
+        hint: "Streams"
+      )
       if player.stream != nil {
         ControlItemView(
           icon: .category,
