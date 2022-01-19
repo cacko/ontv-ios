@@ -97,7 +97,6 @@ class PlayerFFMpeg: AbstractPlayer, PlayerControllerDelegate {
   var options: KSOptions {
     let header = ["User-Agent": "ontv/\(Bundle.main.buildVersionNumber)"]
     let options = KSOptions()
-    options.videoFilters = "hflip,vflip"
     options.avOptions = ["AVURLAssetHTTPHeaderFieldsKey": header]
     options.preferredForwardBufferDuration = 1.0
     options.hardwareDecodeH264 = true

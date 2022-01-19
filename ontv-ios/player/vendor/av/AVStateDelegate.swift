@@ -8,16 +8,15 @@
 import AVFoundation
 import Foundation
 
-
 extension PlayerAV {
-  
+
   override func observeValue(
     forKeyPath keyPath: String?,
     of object: Any?,
     change: [NSKeyValueChangeKey: Any]?,
     context: UnsafeMutableRawPointer?
   ) {
-    
+
     guard context == &playerItemContext else {
       super.observeValue(
         forKeyPath: keyPath,
@@ -27,17 +26,17 @@ extension PlayerAV {
       )
       return
     }
-    
+
     guard keyPath == #keyPath(AVPlayerItem.status) else {
       return
     }
-    
+
     let status: AVPlayerItem.Status
     guard let statusNumber = change?[.newKey] as? NSNumber else {
       return
     }
     status = AVPlayerItem.Status(rawValue: statusNumber.intValue)!
-    
+
     switch status {
     case .readyToPlay:
       guard self.controller.state != PlayerState.playing else {
@@ -45,7 +44,7 @@ extension PlayerAV {
       }
       self.loadMetadata()
       break
-      // Player item is ready to play.
+    // Player item is ready to play.
     case .failed:
       return self.onError(
         PlayerError(
@@ -57,9 +56,11 @@ extension PlayerAV {
     @unknown default: break
     }
   }
-  
+
   func onError(_ error: PlayerError) {
-    self.controller.error = error
-    self.controller.state = .error
+    DispatchQueue.main.async {
+      self.controller.error = error
+      self.controller.state = .error
+    }
   }
 }
