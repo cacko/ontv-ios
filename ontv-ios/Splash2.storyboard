@@ -14,8 +14,8 @@
                     <view key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="iBd-Nr-1sO">
-                                <rect key="frame" x="0.0" y="-59" width="1366" height="1142"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="iBd-Nr-1sO">
+                                <rect key="frame" x="0.0" y="-50" width="1366" height="1074"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="regular"/>
@@ -28,8 +28,8 @@
                             <constraint firstItem="iBd-Nr-1sO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DRf-vv-6x5"/>
                             <constraint firstItem="iBd-Nr-1sO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="F09-7R-9D2"/>
                             <constraint firstItem="iBd-Nr-1sO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Vdq-9b-UaN"/>
-                            <constraint firstItem="iBd-Nr-1sO" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="WJo-5D-KGG"/>
-                            <constraint firstItem="iBd-Nr-1sO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="-83" id="cjm-yD-Q4N"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="top" secondItem="iBd-Nr-1sO" secondAttribute="bottom" id="WJo-5D-KGG"/>
+                            <constraint firstItem="iBd-Nr-1sO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="cjm-yD-Q4N"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
