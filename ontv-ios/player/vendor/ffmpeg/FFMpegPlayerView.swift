@@ -79,7 +79,7 @@ class FFMpegPlayerView: IOSVideoPlayerView {
     }
 
     Player.instance.metadata.video = StreamInfo.Video(
-      codec: videoTrack.codecType.description,
+      codec: videoTrack.codecType.string,
       resolution: videoTrack.naturalSize
     )
 
