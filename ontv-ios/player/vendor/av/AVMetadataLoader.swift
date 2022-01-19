@@ -31,9 +31,9 @@ extension PlayerAV {
                 height: Int(desc.dimensions.height)
               )
             )
+            self.controller.onMetadataLoaded()
           }
         }
-        self.controller.onMetadataLoaded()
         break
       case .audio:
         let descriptions = assetTrack.formatDescriptions as! [CMFormatDescription]

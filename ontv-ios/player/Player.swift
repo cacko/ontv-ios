@@ -320,21 +320,19 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
   }
 
   func onMetadataLoaded() {
-    self.metadataState = .loaded
-    size = self.metadata.video.resolution
-    guard size.width > 0 && size.height > 0 else {
-      self.error = PlayerError(
-        id: .trackFailed,
-        msg: "Codec incompatible switch to FFMPEG renderer"
-      )
-      self.state = .error
-      return
-    }
-    DispatchQueue.main.async {
+      self.metadataState = .loaded
+      self.size = self.metadata.video.resolution
+      guard self.size.width > 0 && self.size.height > 0 else {
+        self.error = PlayerError(
+          id: .trackFailed,
+          msg: "Codec incompatible switch to FFMPEG renderer"
+        )
+        self.state = .error
+        return
+      }
       NotificationCenter.default.post(name: .fit, object: self)
       self.display = true
       self.state = .playing
       self.onStartPlaying()
     }
-  }
 }
