@@ -20,7 +20,6 @@ extension Notification.Name {
   static let selectStream = NSNotification.Name("selectStream")
   static let loggedin = NSNotification.Name("loggedIn")
   static let loaded = NSNotification.Name("loaded")
-  static let fit = NSNotification.Name("fittosize")
   static let minimize = NSNotification.Name("minimize")
   static let bookmark = NSNotification.Name("bookmark")
   static let reload = NSNotification.Name("reload")

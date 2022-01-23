@@ -160,7 +160,7 @@ extension V1 {
     }
 
     static var needsUpdate: Bool {
-      !Defaults[.scheduleUpdated].isCloseTo(precision: 10.minutes.timeInterval)
+      !Defaults[.scheduleUpdated].isCloseTo(precision: 1.minutes.timeInterval)
     }
 
     static var isLoaded: Bool {

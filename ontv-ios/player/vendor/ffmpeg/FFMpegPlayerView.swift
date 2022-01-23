@@ -79,12 +79,10 @@ class FFMpegPlayerView: IOSVideoPlayerView {
     }
 
     DispatchQueue.main.async {
-      Player.instance.metadata.video = StreamInfo.Video(
+      self.controller.metadata.video = StreamInfo.Video(
         codec: videoTrack.codecType.string,
         resolution: videoTrack.naturalSize
       )
-
-      self.controller.size = videoTrack.naturalSize
       self.controller.onMetadataLoaded()
     }
 

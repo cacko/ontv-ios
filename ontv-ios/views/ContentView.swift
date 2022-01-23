@@ -81,7 +81,7 @@ struct SettingsView: UIViewControllerRepresentable {
   ) {
 
   }
-  
+
 }
 
 struct ContentView: View {
@@ -99,7 +99,8 @@ struct ContentView: View {
 
   let showSettings = Binding<Bool>(
     get: {
-      Player.instance.contentToggle == .settings && API.Adapter.state != .boot && !API.Adapter.inProgress
+      Player.instance.contentToggle == .settings && API.Adapter.state != .boot
+        && !API.Adapter.inProgress
     },
     set: { _ in
     }
@@ -111,14 +112,15 @@ struct ContentView: View {
         VideoViewRep()
           .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
           .aspectRatio(player.size.aspectSize, contentMode: .fit)
-          .opacity(player.display && api.loggedIn ? 1 : 0)
-          .onTapGesture(perform: {
-            NotificationCenter.default.post(name: .onTap, object: nil)
-          })
+          .opacity(player.display ? 1 : 0)
+
           .sheet(isPresented: showSearch) {
             SearchView()
           }
       }
+      .onTapGesture(perform: {
+        NotificationCenter.default.post(name: .onTap, object: nil)
+      })
       if api.inProgress {
         ApiInitProgress()
       }
@@ -133,12 +135,15 @@ struct ContentView: View {
       }
       ToggleView()
     }
-    .sheet(isPresented: showSettings, onDismiss: {
-      guard self.player.contentToggle == .settings else {
-        return
+    .sheet(
+      isPresented: showSettings,
+      onDismiss: {
+        guard self.player.contentToggle == .settings else {
+          return
+        }
+        self.player.contentToggle = .none
       }
-      self.player.contentToggle = .none
-    }) {
+    ) {
       NavigationView {
         SettingsView()
           .navigationBarTitle(Text("Settings"), displayMode: .inline)

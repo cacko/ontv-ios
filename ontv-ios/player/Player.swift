@@ -252,6 +252,10 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
     self.retries = 0
     self.state = .playing
     NotificationCenter.default.post(name: .startPlaying, object: self.stream)
+    guard self.controlsState == .always else {
+      return
+    }
+    self.controlsState = .visible
   }
 
   func onStopPlaying() {
@@ -330,7 +334,6 @@ class Player: NSObject, PlayerProtocol, ObservableObject {
         self.state = .error
         return
       }
-      NotificationCenter.default.post(name: .fit, object: self)
       self.display = true
       self.state = .playing
       self.onStartPlaying()
