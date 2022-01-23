@@ -78,24 +78,26 @@ class FFMpegPlayerView: IOSVideoPlayerView {
       return
     }
 
-    Player.instance.metadata.video = StreamInfo.Video(
-      codec: videoTrack.codecType.string,
-      resolution: videoTrack.naturalSize
-    )
+    DispatchQueue.main.async {
+      Player.instance.metadata.video = StreamInfo.Video(
+        codec: videoTrack.codecType.string,
+        resolution: videoTrack.naturalSize
+      )
 
-    self.controller.size = videoTrack.naturalSize
+      self.controller.size = videoTrack.naturalSize
+      self.controller.onMetadataLoaded()
+    }
 
     guard let audioTrack = player.tracks(mediaType: .audio).first else {
       return
     }
 
-    Player.instance.metadata.audio = StreamInfo.Audio(
-      codec: audioTrack.codecType.description,
-      channels: 2,
-      rate: 44100
-    )
     DispatchQueue.main.async {
-      Player.instance.metadataState = .loaded
+      Player.instance.metadata.audio = StreamInfo.Audio(
+        codec: audioTrack.codecType.description,
+        channels: 2,
+        rate: 44100
+      )
     }
   }
 

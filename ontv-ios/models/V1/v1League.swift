@@ -50,12 +50,12 @@ extension V1 {
 
     func loadData(from source: [String: Any]) {
       id = Self.asString(data: source, key: "id")
-      league_id = Self.asInt64(data: source, key: "id")
-      league_name = Self.asString(data: source, key: "name")
-      country_id = Self.asInt64(data: source, key: "countrId")
-      country_name = Self.asString(data: source, key: "sport")
-      sport_id = Self.asInt64(data: source, key: "sportId")
-      sport_name = Self.asString(data: source, key: "sport")
+      league_id = Self.asInt64(data: source, key: "league_id")
+      league_name = Self.asString(data: source, key: "league_name")
+      country_id = Self.asInt64(data: source, key: "country_id")
+      country_name = Self.asString(data: source, key: "country_name")
+      sport_id = Self.asInt64(data: source, key: "sport_id")
+      sport_name = Self.asString(data: source, key: "sport_name")
     }
 
     func update(from source: [String: Any], in transaction: BaseDataTransaction) throws {
@@ -83,18 +83,17 @@ extension V1 {
 
     class var orderBy: OrderBy<EntityType> {
       OrderBy<EntityType>(
-        .ascending("count_name"),
+        .ascending("country_name"),
         .ascending("league_name")
       )
     }
 
     static var needsUpdate: Bool {
-      !Defaults[.leaguesUpdated].isCloseTo(precision: 20.days.timeInterval)
+      !Defaults[.leaguesUpdated].isCloseTo(precision: 2.minutes.timeInterval)
     }
 
     static var isLoaded: Bool {
       Defaults[.leaguesUpdated].timeIntervalSince1970 > 0
     }
-
   }
 }

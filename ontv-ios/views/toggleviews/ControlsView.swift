@@ -214,14 +214,17 @@ extension ToggleViews {
 
   struct StreamControlsView: View {
     @ObservedObject var ticker = LivescoreStorage.events
+    @ObservedObject var api = API.Adapter
 
     var body: some View {
-      ControlItemView(
-        icon: .schedule,
-        note: Notification.Name.contentToggle,
-        obj: ContentToggle.schedule,
-        hint: "TheSportsDb Schedule"
-      )
+      if api.scheduleState == .ready {
+        ControlItemView(
+          icon: .schedule,
+          note: Notification.Name.contentToggle,
+          obj: ContentToggle.schedule,
+          hint: "TheSportsDb Schedule"
+        )
+      }
       ControlItemView(
         icon: .livescores,
         note: Notification.Name.contentToggle,
@@ -236,18 +239,20 @@ extension ToggleViews {
           hint: "Livescore Ticker"
         )
       }
-      ControlItemView(
-        icon: .search,
-        note: Notification.Name.contentToggle,
-        obj: ContentToggle.search,
-        hint: "Search for whatever"
-      )
-      ControlItemView(
-        icon: .bookmark,
-        note: Notification.Name.contentToggle,
-        obj: ContentToggle.bookmarks,
-        hint: "Open bookmarks"
-      )
+      if api.streamsState == .ready {
+        ControlItemView(
+          icon: .search,
+          note: Notification.Name.contentToggle,
+          obj: ContentToggle.search,
+          hint: "Search for whatever"
+        )
+        ControlItemView(
+          icon: .bookmark,
+          note: Notification.Name.contentToggle,
+          obj: ContentToggle.bookmarks,
+          hint: "Open bookmarks"
+        )
+      }
     }
   }
 

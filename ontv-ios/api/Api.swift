@@ -69,7 +69,7 @@ enum API {
         self.state(destination: .leagues, value: .ready)
       case .user:
         self.state(destination: .api, value: .ready)
-      }
+    }
 
       guard queue.count > 0 else {
         return
