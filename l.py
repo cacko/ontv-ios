@@ -15,7 +15,7 @@ def loadall():
 
 
 def makecsv():
-        p = Path("leagues.json")
+        p = Path("leagues-all.json")
         json_data = json.load(p.open())
         countries =  {c["id"]:c for c in json_data["countries"]}
         out = Path("leagues.csv")
@@ -28,11 +28,6 @@ def makecsv():
         fp.close()
 
 def remove_junk():
-        keys = []
-        with open('leagues.csv', newline='') as csvfile:
-                reader = csv.reader(csvfile)
-                keys = [int(x[0]) for x in reader]
-        print(keys)
         allleagues = json.load(open("leagues-all.json"))
         countries = {c.get("id"): c for c in allleagues.get("countries")}
         sports = {s.get("id"): s for s in allleagues.get("sports")}
@@ -46,8 +41,8 @@ def remove_junk():
                 "sport_id": comp.get("sportId"),
                 "sport_name": sports[comp.get("sportId")].get("name")
         } for comp in allleagues.get("competitions") 
-        if comp.get("sportId")==1 and comp.get("id") in keys
+        if comp.get("sportId")==1
         ]))
 
 if __name__ == "__main__":
-        remove_junk()
+        makecsv()
