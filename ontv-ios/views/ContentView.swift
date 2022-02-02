@@ -113,18 +113,16 @@ struct ContentView: View {
           .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
           .aspectRatio(player.size.aspectSize, contentMode: .fit)
           .opacity(player.display ? 1 : 0)
-
           .sheet(isPresented: showSearch) {
             SearchView()
-          }
+          }.onTapGesture(perform: {
+            NotificationCenter.default.post(name: .onTap, object: nil)
+          })
       }
-      .onTapGesture(perform: {
-        NotificationCenter.default.post(name: .onTap, object: nil)
-      })
       if api.inProgress {
         ApiInitProgress()
       }
-      if [PlayerState.opening, PlayerState.buffering].contains(player.state) {
+      if [PlayerState.opening].contains(player.state) {
         LoadingView()
       }
       if player.state == .error || api.state == .error || player.state == .retry {

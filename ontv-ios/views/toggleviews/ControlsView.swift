@@ -217,14 +217,14 @@ extension ToggleViews {
     @ObservedObject var api = API.Adapter
 
     var body: some View {
-      if api.scheduleState == .ready {
+//      if api.scheduleState == .ready {
         ControlItemView(
           icon: .schedule,
           note: Notification.Name.contentToggle,
           obj: ContentToggle.schedule,
           hint: "TheSportsDb Schedule"
         )
-      }
+//      }
       ControlItemView(
         icon: .livescores,
         note: Notification.Name.contentToggle,
